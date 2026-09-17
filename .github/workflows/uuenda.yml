@@ -1,0 +1,59 @@
+name: Uuenda andmeid
+
+on:
+  schedule:
+    # Operatiivnäidud iga tund. GitHubi cron hilineb koormuse all, vt README.
+    - cron: "15 * * * *"
+    # Täisehitus kord ööpäevas, kui EstModeli eelmine päev on kindlalt kohal.
+    - cron: "40 5 * * *"
+  workflow_dispatch:
+    inputs:
+      taisehitus:
+        description: "Tee täisehitus (aegread ja CSV-d uuesti)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: uuendus
+  cancel-in-progress: false
+
+jobs:
+  uuenda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Paigalda sõltuvused
+        run: pip install pyproj
+
+      - name: Vali režiim
+        id: reziim
+        run: |
+          if [ "${{ github.event.schedule }}" = "40 5 * * *" ] || \
+             [ "${{ inputs.taisehitus }}" = "true" ]; then
+            echo "lipud=--valjund docs" >> "$GITHUB_OUTPUT"
+          else
+            echo "lipud=--only-now --valjund docs" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ehita
+        run: python ehita_veeb.py ${{ steps.reziim.outputs.lipud }}
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A docs andmed
+          if git diff --staged --quiet; then
+            echo "muutusi ei ole"
+          else
+            git commit -m "Andmed $(date -u '+%Y-%m-%d %H:%M UTC')"
+            git push
+          fi

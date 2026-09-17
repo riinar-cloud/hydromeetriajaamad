@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="page">
+<link rel="stylesheet" href="varad/fondid/fondid.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#f4f2ee;-webkit-font-smoothing:antialiased}
+  a{color:#2b6288;text-decoration:none;border-bottom:1px solid rgba(43,98,136,.32)}
+  a:hover{color:#1c4460;border-bottom-color:#1c4460}
+  th{text-align:left}
+</style>
+</helmet>
+
+<div style="font-family:'IBM Plex Sans',system-ui,sans-serif;color:#1b1b19;background:#f4f2ee;min-height:100vh">
+
+  <header style="display:flex;justify-content:flex-end;padding:14px 32px;border-bottom:1px solid #dcd7cd;background:#fffefb;position:sticky;top:0;z-index:20">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6b6a64;letter-spacing:.03em">{{ nUpdated }}</span>
+  </header>
+
+  <sc-if value="{{ isStation }}" hint-placeholder-val="{{ true }}">
+  <main data-screen-label="Jaama leht" style="max-width:1180px;margin:0 auto;padding:0 32px 56px">
+
+    <nav style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6b6a64;padding:22px 0 0;letter-spacing:.03em">
+      <a href="#" onClick="{{ backToMap }}">← Kaart</a> / {{ nRiver }} / <span style="color:#1b1b19">{{ nName }}</span>
+    </nav>
+
+
+    <!-- 1. KES JA KUS -->
+    <section style="padding:20px 0 24px">
+      <h1 style="font-family:'Newsreader',serif;font-size:40px;font-weight:400;line-height:1.05;letter-spacing:-.02em;margin:0 0 6px">{{ nName }}</h1>
+      <p style="font-family:'Newsreader',serif;font-size:19px;color:#4a4943;margin:0 0 20px;line-height:1.35;max-width:30ch">{{ nSub }}</p>
+
+      <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:stretch">
+      <div>
+        <dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;margin:0;background:#dcd7cd;border:1px solid #dcd7cd;height:100%">
+          <div style="background:#fffefb;padding:14px 16px">
+            <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:6px">VALGALA</dt>
+            <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:19px">{{ nArea }}</dd>
+          </div>
+          <div style="background:#fffefb;padding:14px 16px">
+            <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:6px">KAUGUS SUUDMEST</dt>
+            <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:19px">{{ nMouth }}</dd>
+          </div>
+          <div style="background:#fffefb;padding:14px 16px">
+            <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:6px">AVATUD</dt>
+            <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:19px">{{ nOpened }}</dd>
+            <dd style="margin:2px 0 0;font-size:12px;color:#6b6a64">{{ nAuto }}</dd>
+          </div>
+          <div style="background:#fffefb;padding:14px 16px">
+            <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:6px">KOORDINAADID</dt>
+            <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1.5">{{ nLat }}<br>{{ nLon }}</dd>
+          </div>
+          <div style="background:#fffefb;padding:14px 16px">
+            <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:6px">KKR KOOD</dt>
+            <dd style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:14px">{{ nCode }}</dd>
+          </div>
+          <div style="background:#fffefb;padding:14px 16px">
+            <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:6px">HALDUSÜKSUS</dt>
+            <dd style="margin:0;font-size:14px;line-height:1.45">{{ nAdmin }}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <sc-if value="{{ hasPhotos }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:8px">{{ photoTiles }}</div>
+        </sc-if>
+        <sc-if value="{{ noPhotos }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative;border:1px solid #dcd7cd;background:#efece5;overflow:hidden;aspect-ratio:8/5">
+          <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 400 300" style="display:block;position:absolute;inset:0">
+            <defs>
+              <pattern id="ph" width="10" height="10" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+                <rect width="10" height="10" fill="#e9e5dc"></rect>
+                <line x1="0" y1="0" x2="0" y2="10" stroke="#ddd8cd" stroke-width="3"></line>
+              </pattern>
+            </defs>
+            <rect width="400" height="300" fill="url(#ph)"></rect>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#57564f;background:#fffefbdd;padding:5px 8px;align-self:flex-start;letter-spacing:.03em">ortofoto — Maa- ja Ruumiamet</span>
+          </div>
+        </div>
+        </sc-if>
+
+      </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px">
+        <a href="{{ nCsvHref }}" download="{{ nCsvName }}" style="flex:none;white-space:nowrap;font-family:'IBM Plex Sans',sans-serif;font-size:13px;padding:11px 18px;background:#1b3d56;color:#fffefb;border:1px solid #1b3d56;text-decoration:none" style-hover="background:#2b6288;border-color:#2b6288">Lae kogu aegrida (CSV)</a>
+        <span style="font-size:12.5px;color:#57564f;line-height:1.5;max-width:52ch">Aegread on valideeritud kuni {{ nValidatedThrough }}. Hilisem on operatiivne toorandmestik, mis võib valideerimisel muutuda.</span>
+      </div>
+    </section>
+
+    <!-- 2. MIS PRAEGU -->
+    <section style="border-top:1px solid #dcd7cd;padding:22px 0 24px">
+      <sc-if value="{{ hasNotes }}" hint-placeholder-val="{{ false }}">{{ notes }}</sc-if>
+      
+
+      <dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:1px;margin:0;background:#dcd7cd;border:1px solid #dcd7cd">
+        <div style="background:#fffefb;padding:18px 20px 16px;display:flex;flex-direction:column">
+          <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:14px">VOOLUHULK <span style="color:#6b6a64">m³/s</span></dt>
+          <dd style="margin:0">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.09em;margin-bottom:5px">VÄÄRTUS TÄNA</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:30px;line-height:1;border-bottom:2px dashed #a8701a;display:inline-block;padding-bottom:3px">{{ nQ }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.04em;margin-top:6px">{{ nWhenQ }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8c5a10;margin-top:8px">{{ nQDelta }}</div>
+          </dd>
+          <dd style="margin:16px 0 0;margin-top:auto;border-top:1px solid #eae6dd;padding-top:12px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.09em;margin-bottom:5px">MEDIAANVÄÄRTUS SAMAL KALENDRIPÄEVAL</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#2b6288">{{ nMedianVal }}</div>
+          </dd>
+        </div>
+        <div style="background:#fffefb;padding:18px 20px 16px;display:flex;flex-direction:column">
+          <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:14px">ÄRAVOOLUMOODUL <span style="color:#6b6a64">l/s/km²</span></dt>
+          <dd style="margin:0">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.09em;margin-bottom:5px">VÄÄRTUS TÄNA</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:30px;line-height:1;border-bottom:2px dashed #a8701a;display:inline-block;padding-bottom:3px">{{ nRunoff }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.04em;margin-top:6px">{{ nWhenRunoff }}</div>
+          </dd>
+          <dd style="margin:16px 0 0;margin-top:auto;border-top:1px solid #eae6dd;padding-top:12px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.09em;margin-bottom:5px">MEDIAANVÄÄRTUS SAMAL KALENDRIPÄEVAL</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#2b6288">{{ nRunoffMed }}</div>
+          </dd>
+        </div>
+        <div style="background:#fffefb;padding:18px 20px 16px;display:flex;flex-direction:column">
+          <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:14px">VEETASE <span style="color:#6b6a64">cm</span></dt>
+          <dd style="margin:0">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.09em;margin-bottom:5px">VÄÄRTUS TÄNA</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:30px;line-height:1;border-bottom:2px dashed #a8701a;display:inline-block;padding-bottom:3px">{{ nLevel }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.04em;margin-top:6px">{{ nWhenLevel }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8c5a10;margin-top:8px">{{ nLevelDelta3 }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8c5a10;margin-top:3px">{{ nLevelDelta6 }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8c5a10;margin-top:3px">{{ nLevelDelta12 }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8c5a10;margin-top:3px">{{ nLevelDelta }}</div>
+          </dd>
+          <dd style="margin:16px 0 0;margin-top:auto;border-top:1px solid #eae6dd;padding-top:12px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.09em;margin-bottom:5px">MEDIAANVÄÄRTUS SAMAL KALENDRIPÄEVAL</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#2b6288">{{ nLevelMed }}</div>
+          </dd>
+        </div>
+        <div style="background:#fffefb;padding:18px 20px 16px;display:flex;flex-direction:column">
+          <dt style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.08em;margin-bottom:14px">VEETEMPERATUUR <span style="color:#6b6a64">°C</span></dt>
+          <dd style="margin:0">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.09em;margin-bottom:5px">VÄÄRTUS TÄNA</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:30px;line-height:1;border-bottom:2px dashed #a8701a;display:inline-block;padding-bottom:3px">{{ nTemp }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.04em;margin-top:6px">{{ nWhenTemp }}</div>
+          </dd>
+          <dd style="margin:16px 0 0;margin-top:auto;border-top:1px solid #eae6dd;padding-top:12px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;letter-spacing:.09em;margin-bottom:5px">MEDIAANVÄÄRTUS SAMAL KALENDRIPÄEVAL</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;color:#2b6288">{{ nTempMed }}</div>
+          </dd>
+        </div>
+      </dl>
+
+      <sc-if value="{{ hasPct }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#fffefb;border:1px solid #dcd7cd;border-top:none;padding:20px 22px 18px">
+        <p style="font-size:14.5px;line-height:1.5;margin:0 0 14px;color:#1b1b19;max-width:78ch;text-wrap:pretty">Tänane vooluhulk on kõrgem <span style="font-family:'IBM Plex Mono',monospace">{{ nPct }}</span> kõigist samal kalendripäeval mõõdetud vooluhulkadest kogu mõõtmisperioodi jooksul.</p>
+        <div style="position:relative;height:22px;border:1px solid #dcd7cd;background:linear-gradient(90deg,#d9a79f 0%,#eddfdc 38%,#f1f0ed 50%,#dae5ec 62%,#94b3c8 100%)">
+          <div style="position:absolute;left:{{ nPctLeft }};top:-4px;bottom:-4px;width:2px;background:{{ nPctColor }}"></div>
+          <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#8a857b"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#6b6a64;margin-top:6px;letter-spacing:.04em">
+          <span>0. PROTSENTIIL</span><span>{{ nMedian }}</span><span>100.</span>
+        </div>
+      </div>
+      </sc-if>
+      <sc-if value="{{ noPct }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#fffefb;border:1px solid #dcd7cd;border-top:none;padding:18px 22px;font-size:14px;color:#57564f">Ajaloolise jaotuse võrdlus ei ole selle jaama kohta saadaval.</div>
+      </sc-if>
+    </section>
+
+    <!-- 3. MIS ON OLNUD -->
+    <section style="border-top:1px solid #dcd7cd;padding:22px 0 0">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:6px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6b6a64">{{ nSeries }}</div>
+      </div>
+      <h2 style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:400;margin:0 0 12px;letter-spacing:.04em;color:#1b1b19">Viimase aasta vooluhulga võrdlus ajalooliste andmetega</h2>
+
+      <div style="background:#fffefb;border:1px solid #dcd7cd;padding:20px 20px 12px;position:relative;min-height:300px">
+      <sc-if value="{{ chartLoading }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8b8a83;letter-spacing:.06em">AEGRIDA LAEB…</div>
+      </sc-if>
+      <sc-if value="{{ chartMissing }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-size:14px;color:#57564f;background:#fffefb">Selle jaama ajakohased andmed puuduvad.</div>
+      </sc-if>
+      <div style="display:flex;align-items:flex-start;gap:8px">
+      <div style="flex:1;min-width:0">
+        <div style="position:relative">
+        <svg viewBox="0 0 1000 340" width="100%" style="display:block;overflow:visible;font-family:'IBM Plex Mono',monospace">
+          <defs>
+            <pattern id="unv" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="8" stroke="#a8701a" stroke-width="1" opacity=".13"></line>
+            </pattern>
+          </defs>
+          <g stroke="#e6e2d9" stroke-width="1">
+            <sc-for list="{{ yTicks }}" as="t" hint-placeholder-count="5">
+              <line x1="0" y1="{{ t.y }}" x2="1000" y2="{{ t.y }}"></line>
+            </sc-for>
+          </g>
+          <path d="{{ wideBandPath }}" fill="#2b6288" opacity=".13"></path>
+          <path d="{{ bandPath }}" fill="#2b6288" opacity=".22"></path>
+          <path d="{{ medPath }}" fill="none" stroke="#2b6288" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" opacity=".75"></path>
+          <path d="{{ valPath }}" fill="none" stroke="#1b3d56" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"></path>
+          <path d="{{ unvPath }}" fill="none" stroke="#1b3d56" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"></path>
+          <g font-size="11" fill="#6b6a64">
+          </g>
+          <text x="0" y="326" font-size="10.5" fill="{{ nAxisInk }}" letter-spacing=".06em">VOOLUHULK m³/s — LOGARITMILINE SKAALA</text>
+        </svg>
+        <div style="position:absolute;left:100%;top:0;bottom:0;width:44px;margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b6a64">
+          <div style="position:absolute;left:0;top:{{ yp0 }};transform:translateY(-50%)">{{ yl0 }}</div>
+          <div style="position:absolute;left:0;top:{{ yp1 }};transform:translateY(-50%)">{{ yl1 }}</div>
+          <div style="position:absolute;left:0;top:{{ yp2 }};transform:translateY(-50%)">{{ yl2 }}</div>
+          <div style="position:absolute;left:0;top:{{ yp3 }};transform:translateY(-50%)">{{ yl3 }}</div>
+          <div style="position:absolute;left:0;top:{{ yp4 }};transform:translateY(-50%)">{{ yl4 }}</div>
+        </div>
+        </div>
+        <div style="position:relative;height:16px;margin-top:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b6a64">
+          <div style="position:absolute;left:{{ xp0 }};transform:translateX(-50%)">{{ xl0 }}</div>
+          <div style="position:absolute;left:{{ xp1 }};transform:translateX(-50%)">{{ xl1 }}</div>
+          <div style="position:absolute;left:{{ xp2 }};transform:translateX(-50%)">{{ xl2 }}</div>
+          <div style="position:absolute;left:{{ xp3 }};transform:translateX(-50%)">{{ xl3 }}</div>
+          <div style="position:absolute;left:{{ xp4 }};transform:translateX(-50%)">{{ xl4 }}</div>
+          <div style="position:absolute;left:{{ xp5 }};transform:translateX(-50%)">{{ xl5 }}</div>
+          <div style="position:absolute;left:{{ xp6 }};transform:translateX(-50%)">{{ xl6 }}</div>
+          <div style="position:absolute;left:{{ xp7 }};transform:translateX(-50%)">{{ xl7 }}</div>
+          <div style="position:absolute;left:{{ xp8 }};transform:translateX(-50%)">{{ xl8 }}</div>
+          <div style="position:absolute;left:{{ xp9 }};transform:translateX(-50%)">{{ xl9 }}</div>
+          <div style="position:absolute;left:{{ xp10 }};transform:translateX(-50%)">{{ xl10 }}</div>
+          <div style="position:absolute;left:{{ xp11 }};transform:translateX(-50%)">{{ xl11 }}</div>
+          <div style="position:absolute;left:{{ xp12 }};transform:translateX(-50%)">{{ xl12 }}</div>
+          <div style="position:absolute;left:{{ xp13 }};transform:translateX(-50%)">{{ xl13 }}</div>
+        </div>
+      </div>
+      <div style="width:44px;flex:none"></div>
+      </div>
+
+        <sc-if value="{{ chartReady }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center;border-top:1px solid #e6e2d9;margin-top:14px;padding-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#57564f">
+          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:0;border-top:2.1px solid #1b3d56"></span>viimane aasta</span>
+          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:0;border-top:1.6px solid #2b6288;opacity:.75"></span>ajalooline mediaan</span>
+          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:11px;background:#2b6288;opacity:.22"></span>25% ja 75% vahemik</span>
+          <sc-if value="{{ hasWide }}" hint-placeholder-val="{{ false }}">
+            <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:11px;background:#2b6288;opacity:.13"></span>10% ja 90% vahemik</span>
+          </sc-if>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isIndex }}" hint-placeholder-val="{{ false }}">
+  <main data-screen-label="Indeksleht — kaart ja tabel" style="max-width:1180px;margin:0 auto;padding:0 32px 56px">
+    <section style="padding:26px 0 22px">
+      <h1 style="font-family:'Newsreader',serif;font-size:44px;font-weight:400;margin:0 0 8px;letter-spacing:-.02em">Eesti hüdromeetriajaamad</h1>
+
+    </section>
+
+    <div style="position:relative;border:1px solid #dcd7cd;background:#e8e4db;overflow:hidden;aspect-ratio:1301/863">
+      <div style="position:absolute;left:-2.89%;top:-12.46%;width:118%;height:118.7%;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr);filter:grayscale(.84) contrast(.9) brightness(1.09)">
+        <img src="varad/kaart/8_143_74.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_144_74.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_145_74.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_146_74.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_147_74.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_148_74.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_143_75.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_144_75.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_145_75.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_146_75.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_147_75.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_148_75.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_143_76.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_144_76.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_145_76.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_146_76.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_147_76.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_148_76.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_143_77.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_144_77.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_145_77.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_146_77.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_147_77.png" alt="" style="display:block;width:100%;height:100%">
+        <img src="varad/kaart/8_148_77.png" alt="" style="display:block;width:100%;height:100%">
+      </div>
+      <sc-for list="{{ dots }}" as="s" hint-placeholder-count="0">
+        <button onClick="{{ s.open }}" title="{{ s.title }}" style="position:absolute;left:{{ s.left }}%;top:{{ s.top }}%;width:{{ s.size }}px;height:{{ s.size }}px;margin-left:{{ s.off }}px;margin-top:{{ s.off }}px;padding:0;border-radius:50%;background:#2b6288;opacity:.8;border:1.5px solid #fffefb;cursor:pointer" style-hover="opacity:1;box-shadow:0 0 0 5px rgba(43,98,136,.25)"></button>
+      </sc-for>
+      <span style="position:absolute;right:7px;bottom:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#57564f;background:#fffefbcc;padding:3px 6px">© OpenStreetMap contributors</span>
+      <div style="position:absolute;left:10px;top:10px;display:flex;align-items:center;gap:10px;background:#fffefbe8;border:1px solid #dcd7cd;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#57564f;letter-spacing:.04em">
+        <span style="display:flex;align-items:flex-end;gap:4px">
+          <span style="width:9px;height:9px;border-radius:50%;background:#2b6288;opacity:.8;border:1.5px solid #fffefb"></span>
+          <span style="width:15px;height:15px;border-radius:50%;background:#2b6288;opacity:.8;border:1.5px solid #fffefb"></span>
+          <span style="width:22px;height:22px;border-radius:50%;background:#2b6288;opacity:.8;border:1.5px solid #fffefb"></span>
+        </span>
+        PUNKTI SUURUS = VALGALA PINDALA
+      </div>
+    </div>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:26px;font-size:13.5px;background:#fffefb;border:1px solid #dcd7cd">
+      <thead>
+        <tr style="border-bottom:1px solid #b9b4a9">
+          <sc-for list="{{ cols }}" as="c" hint-placeholder-count="6">
+            <th onClick="{{ c.sort }}" style="{{ c.style }}">{{ c.label }}</th>
+          </sc-for>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ rows }}" as="r" hint-placeholder-count="12">
+          <tr style="border-bottom:1px solid #eae6dd">
+            <td style="padding:9px 14px;font-family:'IBM Plex Mono',monospace"><a href="#" onClick="{{ r.open }}">{{ r.name }}</a></td>
+            <td style="padding:9px 14px">{{ r.river }}</td>
+            <td style="padding:9px 14px;color:#57564f">{{ r.county }}</td>
+            <td style="padding:9px 14px;font-family:'IBM Plex Mono',monospace;text-align:right">{{ r.area }}</td>
+            <td style="padding:9px 14px;font-family:'IBM Plex Mono',monospace;text-align:right;color:#8c5a10">{{ r.q }}</td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+
+  </main>
+  </sc-if>
+
+  <footer style="border-top:1px solid #dcd7cd;background:#fffefb;padding:30px 32px 44px">
+    <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px;font-size:12.5px;line-height:1.6;color:#57564f">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6b6a64;margin-bottom:8px">ANDMED</div>
+        Keskkonnaagentuur, CC-BY 4.0<br><a href="https://www.ilmateenistus.ee" target="_blank" rel="noopener">ilmateenistus.ee</a>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6b6a64;margin-bottom:8px">FOTOD</div>
+        Ortofotod: Maa- ja Ruumiamet<br>Jaamafotod: Keskkonnaagentuur<br>Autoriviide on iga pildi juures.
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#6b6a64;margin-bottom:8px">KAARDIALUS</div>
+        © OpenStreetMap contributors
+      </div>
+
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;}}">
+const MON = ["jaan","veebr","märts","apr","mai","juuni","juuli","aug","sept","okt","nov","dets"];
+
+class Component extends DCLogic {
+  state = { view: "index", st: null, stCode: null, list: null, sort: "name", dir: 1, selected: null };
+
+  componentDidMount() {
+    fetch("data/stations.json").then(r => r.json())
+      .then(d => this.setState({ list: d.stations, updated: d.updated, validatedThrough: d.validated_through }))
+      .catch(() => {});
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const s = this.state;
+    if (s.view !== "station") return;
+    const rec = (s.list || []).find(x => x.code === s.selected);
+    if (!rec || rec.code === s.stCode) return;
+    this.setState({ stCode: rec.code, st: null, stFailed: false });
+    fetch(`data/stations/${rec.code}.json`)
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(st => { if (st.code === this.state.stCode) this.setState({ st }); })
+      .catch(() => { if (rec.code === this.state.stCode) this.setState({ stFailed: true }); });
+  }
+
+  nf(v, d) { return typeof v !== "number" || !isFinite(v) ? "—" : v.toFixed(d).replace(".", ","); }
+
+  tab(active) {
+    return "flex:none;white-space:nowrap;font-family:'IBM Plex Sans',sans-serif;font-size:13px;padding:8px 14px;cursor:pointer;border:1px solid " +
+      (active ? "#1b3d56;background:#1b3d56;color:#fffefb" : "#cfcabf;background:#fffefb;color:#4a4943");
+  }
+
+  chart() {
+    const st = this.state.st;
+    const W = 1000, H = 280, VB = 340;
+    const empty = { bandPath: "", wideBandPath: "", hasWide: false, medPath: "", valPath: "", unvPath: "", yTicks: [], unvX: 0, unvW: 0, chartLoading: true };
+    for (let i = 0; i < 14; i++) { empty["xl" + i] = ""; empty["xp" + i] = "-999px"; }
+    for (let i = 0; i < 5; i++) { empty["yl" + i] = ""; empty["yp" + i] = "-999px"; }
+    const bad = this.state.stFailed || (st && (!st.year || !st.year.length || !st.daily));
+    if (!st || bad) return { ...empty, chartLoading: !bad, chartMissing: !!bad, chartReady: false };
+
+    const yr = st.year.map(p => ({ date: p.date, validated: p.validated, q: p.q }));
+    const n = yr.length, x = i => i / (n - 1) * W;
+    // contract §2: leap-safe date -> daily index (1..365)
+    const doy = s => {
+      const d = new Date(s + "T00:00:00Z"), y = d.getUTCFullYear();
+      if (d.getUTCMonth() === 1 && d.getUTCDate() === 29) return 59;
+      const yday = Math.floor((d - Date.UTC(y, 0, 1)) / 864e5) + 1;
+      const leap = new Date(Date.UTC(y, 1, 29)).getUTCMonth() === 1;
+      return leap && yday > 60 ? yday - 1 : yday;
+    };
+    const norm = yr.map((p, i) => {
+      const d = st.daily[Math.min(364, doy(p.date) - 1)] || st.daily[0];
+      return { i, p10: d.p10, p25: d.p25, med: d.med, p75: d.p75, p90: d.p90 };
+    });
+    const hasWide = norm.every(p => typeof p.p10 === "number" && typeof p.p90 === "number" && p.p90 > 0);
+
+    // log scale: only a positive number is plottable — this one check covers null, 0 and non-numbers
+    const pos = v => typeof v === "number" && v > 0;
+
+    let lo = Infinity, hi = -Infinity;
+    const lowest  = v => { if (pos(v)) lo = Math.min(lo, v); };
+    const highest = v => { if (pos(v)) hi = Math.max(hi, v); };
+    norm.forEach(p => {
+      lowest(hasWide ? p.p10 : p.p25);
+      highest(hasWide ? p.p90 : p.p75);
+      lowest(p.med); highest(p.med);
+    });
+    yr.forEach(p => { lowest(p.q); highest(p.q); });
+    if (!isFinite(lo) || !isFinite(hi)) { lo = 0.001; hi = 1; }
+    const FLOOR = lo * 0.7, CEIL = hi * 1.35;
+    const LO = Math.log10(FLOOR), HI = Math.log10(CEIL);
+    const y = q => H - (Math.log10(Math.min(Math.max(q, FLOOR), CEIL)) - LO) / (HI - LO) * H;
+
+    const area = (hiKey, loKey) => "M" +
+      norm.map(p => `${x(p.i).toFixed(1)},${y(p[hiKey]).toFixed(1)}`).join("L") + "L" +
+      norm.slice().reverse().map(p => `${x(p.i).toFixed(1)},${y(p[loKey]).toFixed(1)}`).join("L") + "Z";
+    const bandPath = area("p75", "p25");
+    const wideBandPath = hasWide ? area("p90", "p10") : "";
+    const medPath = "M" + norm.map(p => `${x(p.i).toFixed(1)},${y(p.med).toFixed(1)}`).join("L");
+
+    const cut = yr.findIndex(p => !p.validated);
+    const idx = yr.map((p, i) => ({ ...p, i }));
+    // a null q breaks the line: start a fresh M rather than joining across the gap
+    const seg = a => {
+      const runs = [];
+      let cur = [];
+      a.forEach(p => {
+        if (!pos(p.q)) { if (cur.length) runs.push(cur); cur = []; return; }
+        cur.push(p);
+      });
+      if (cur.length) runs.push(cur);
+      return runs.map(r =>
+        "M" + r.map(p => `${x(p.i).toFixed(1)},${y(p.q).toFixed(1)}`).join("L")
+      ).join("");
+    };
+    const valPath = seg(idx.slice(0, cut + 1));
+    const unvPath = seg(idx.slice(Math.max(0, cut - 1)));
+
+    const NICE = [.001, .002, .003, .005, .01, .02, .03, .05, .1, .2, .3, .5, 1, 2, 3, 5, 10, 20, 30, 50, 100, 200, 300, 500, 1000, 2000, 5000];
+    const cand = NICE.filter(v => v >= FLOOR * 1.02 && v <= CEIL * 0.98);
+    const step = Math.max(1, Math.ceil(cand.length / 5));
+    const picked = [];
+    for (let i = 0; i < cand.length && picked.length < 5; i += step) picked.push(cand[i]);
+    const fmt = v => v >= 10 ? String(Math.round(v)) : v >= 1 ? this.nf(v, 1) : v >= 0.01 ? this.nf(v, 2) : this.nf(v, 3);
+    const yTicks = picked.map(v => ({ y: +y(v).toFixed(1) }));
+
+    // x-axis: first of each month present in the window, from the data
+    const xt = [];
+    yr.forEach((p, i) => {
+      if (p.date.slice(8, 10) !== "01") return;
+      const m = +p.date.slice(5, 7);
+      xt.push({ x: +x(i).toFixed(1), label: MON[m - 1] });
+    });
+    const keep = xt.length > 13 ? xt.filter((_, i) => i % 2 === 0) : xt;
+    const flat = {};
+    for (let i = 0; i < 14; i++) {
+      const t = keep[i];
+      flat["xl" + i] = t ? t.label : "";
+      flat["xp" + i] = t ? (t.x / W * 100).toFixed(3) + "%" : "-999px";
+    }
+    for (let i = 0; i < 5; i++) {
+      const v = picked[i];
+      flat["yl" + i] = v == null ? "" : fmt(v);
+      flat["yp" + i] = v == null ? "-999px" : (y(v) / VB * 100).toFixed(2) + "%";
+    }
+    const ux = x(cut + 1);
+    return { bandPath, wideBandPath, hasWide, medPath, valPath, unvPath, yTicks, ...flat, chartLoading: false, chartMissing: false, chartReady: true, unvX: +ux.toFixed(1), unvW: +(W - ux).toFixed(1) };
+  }
+
+  dots() {
+    const list = this.state.list;
+    if (!list) return [];
+    // visible window inside the z8 tile grid (x 143..149, y 74..78)
+    const n = 256, VX0 = 143.147, VX1 = 148.231, VY0 = 74.42, VY1 = 77.79;
+    // real catchments span 2.32 … 56 047 km² — log scale, or the small ones vanish
+    let aLo = Infinity, aHi = 0;
+    list.forEach(s => { if (s.catchment_km2 > 0) { aLo = Math.min(aLo, s.catchment_km2); aHi = Math.max(aHi, s.catchment_km2); } });
+    const span = Math.log10(aHi) - Math.log10(aLo) || 1;
+    return list.map(s => {
+      const tx = (s.lon + 180) / 360 * n;
+      const la = s.lat * Math.PI / 180;
+      const ty = (1 - Math.log(Math.tan(la) + 1 / Math.cos(la)) / Math.PI) / 2 * n;
+      const t = s.catchment_km2 > 0 ? (Math.log10(s.catchment_km2) - Math.log10(aLo)) / span : 0;
+      const size = +(10 + t * 16).toFixed(1);
+      return {
+        left: +((tx - VX0) / (VX1 - VX0) * 100).toFixed(2),
+        top: +((ty - VY0) / (VY1 - VY0) * 100).toFixed(2),
+        size: +size.toFixed(1), off: +(-size / 2).toFixed(1),
+        title: `${s.name} — ${s.river}`,
+        open: () => this.setState({ view: "station", selected: s.code })
+      };
+    });
+  }
+
+  station() {
+    const s = this.state;
+    const rec = (s.list || []).find(x => x.code === s.selected);
+    if (!rec) return {};
+    const f = this.nf.bind(this);
+    const num = v => typeof v === "number" && isFinite(v);
+    const M = rec.measured || {};
+    const when = key => {
+      const m = M[key];
+      if (!m) return "";
+      if (m.date) { const [y, mo, d] = m.date.split("-"); return `${d}.${mo}.${y}`; }
+      if (!m.time) return "";
+      const t = new Date(m.time);
+      if (isNaN(t)) return "";
+      const p = n => String(n).padStart(2, "0");
+      return `${p(t.getDate())}.${p(t.getMonth() + 1)}.${t.getFullYear()} ${p(t.getHours())}:${p(t.getMinutes())} seisuga`;
+    };
+    const sgn = (v, d, u) => num(v) ? (v > 0 ? "+" : v < 0 ? "−" : "") + f(Math.abs(v), d) + " " + u : "";
+    const int = v => num(v) ? String(v) : "—";
+    // small discharges need three decimals or a real value reads as 0,00
+    const q3 = v => !num(v) ? "—" : v !== 0 && Math.abs(v) < 0.1 ? f(v, 3) : f(v, 2);
+    const r1 = v => !num(v) ? "—" : v !== 0 && Math.abs(v) < 0.1 ? f(v, 2) : f(v, 1);
+    return {
+      nName: rec.name,
+      nRiver: rec.river,
+      nSub: rec.river,
+      nArea: num(rec.catchment_km2) ? rec.catchment_km2.toLocaleString("et-EE") + " km²" : "—",
+      nMouth: f(rec.mouth_distance_km, 1) + " km",
+      nOpened: int(rec.opened),
+      nAuto: num(rec.automated) ? "automatiseeritud " + rec.automated : "",
+      nLat: f(rec.lat, 4) + "° N",
+      nLon: f(rec.lon, 4) + "° E",
+      nCode: rec.code,
+      nAdmin: rec.municipality ? rec.municipality + ", " + rec.county + " maakond" : rec.county + " maakond",
+      nSeries: num(rec.series_days) ? rec.series_days.toLocaleString("et-EE") + " päeva alates " + rec.series_start : "",
+      photoTiles: (rec.photos || []).map((p, i) => React.createElement(
+        "div",
+        { key: i, style: { position: "relative", border: "1px solid #dcd7cd", background: "#efece5", overflow: "hidden", aspectRatio: "8 / 5" } },
+        React.createElement("img", {
+          src: p.file, alt: "",
+          style: { display: "block", width: "100%", height: "100%", objectFit: "contain" },
+          onError: e => {
+            const box = e.target.parentNode;
+            e.target.style.display = "none";
+            box.style.background = "repeating-linear-gradient(45deg,#e9e5dc 0 7px,#ddd8cd 7px 10px)";
+          }
+        }),
+        React.createElement("span", {
+          style: {
+            position: "absolute", left: 12, bottom: 12, fontFamily: "'IBM Plex Mono',monospace",
+            fontSize: 11, color: "#57564f", background: "#fffefbdd", padding: "5px 8px", letterSpacing: ".03em"
+          }
+        }, `${p.type} — ${p.source}`)
+      )),
+      hasPhotos: (rec.photos || []).length > 0,
+      noPhotos: (rec.photos || []).length === 0,
+      notes: (rec.notes || []).map((n, i) => React.createElement(
+        "div",
+        { key: i, style: { display: "flex", gap: 10, alignItems: "baseline", padding: "12px 16px", background: "#fdf4e6", border: "1px solid #e3cfa8", marginBottom: 14 } },
+        React.createElement("span", { style: { fontSize: 13.5, lineHeight: 1.5, color: "#6f4a0e" } },
+          React.createElement("strong", { style: { fontWeight: 600 } }, "Tähelepanu! "),
+          `${n.text} (${n.source})`)
+      )),
+      hasNotes: (rec.notes || []).length > 0,
+      nWhenQ: when("q"),
+      nWhenRunoff: when("runoff"),
+      nWhenLevel: when("level"),
+      nWhenTemp: when("water_temp"),
+      nValidatedThrough: (s.validatedThrough || "").split("-").reverse().join("."),
+      nCsvHref: `data/csv/${rec.code}.csv`,
+      nCsvName: `${rec.code}.csv`,
+      nQ: q3(rec.q),
+      nQDelta: sgn(rec.q_delta_24h, 2, "m³/s / 24 h"),
+      hasPct: num(rec.percentile),
+      noPct: !num(rec.percentile),
+      nPct: rec.percentile + "%",
+      nPctW: rec.percentile + "%",
+      nPctLeft: rec.percentile + "%",
+      nPctColor: rec.percentile < 50 ? "#8f4a42" : "#2b6288",
+      nMedian: "MEDIAAN " + q3(rec.median_now) + " m³/s",
+      nMedianVal: q3(rec.median_now),
+      nRunoff: r1(rec.specific_runoff),
+      nRunoffMed: r1(rec.median_specific_runoff),
+      nLevel: int(rec.level_cm),
+      nLevelMed: int(rec.median_level_cm),
+      nLevelDelta: sgn(rec.level_delta_24h, 0, "cm / 24 h"),
+      nLevelDelta12: sgn(rec.level_delta_12h, 0, "cm / 12 h"),
+      nLevelDelta6: sgn(rec.level_delta_6h, 0, "cm / 6 h"),
+      nLevelDelta3: sgn(rec.level_delta_3h, 0, "cm / 3 h"),
+      nTemp: f(rec.water_temp, 1),
+      nTempMed: f(rec.median_water_temp, 1)
+    };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const sortBy = k => () => this.setState(p => ({ sort: k, dir: p.sort === k ? -p.dir : 1 }));
+    const cols = [
+      ["name", "Jaam", "left"], ["river", "Jõgi", "left"], ["county", "Maakond", "left"],
+      ["catchment_km2", "Valgala km²", "right", true], ["q", "Viimane mõõdetud vooluhulk m³/s", "right", false]
+    ].map(([k, label, al, sortable = true]) => ({
+      label: label + (sortable && s.sort === k ? (s.dir > 0 ? " ↑" : " ↓") : ""),
+      sort: sortable ? sortBy(k) : undefined,
+      style: `padding:11px 14px;text-align:${al};cursor:${sortable ? "pointer" : "default"};font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.07em;color:${sortable && s.sort === k ? "#1b3d56" : "#6b6a64"};text-transform:uppercase;white-space:nowrap;user-select:none`
+    }));
+
+    const list = (s.list || []).slice().sort((a, b) => {
+      const k = s.sort, va = a[k], vb = b[k];
+      return (typeof va === "number" ? va - vb : String(va).localeCompare(String(vb), "et")) * s.dir;
+    });
+
+    return {
+      isStation: s.view === "station", isIndex: s.view === "index",
+      showStation: () => this.setState({ view: "station" }),
+      showIndex: () => this.setState({ view: "index" }),
+      tabStationStyle: this.tab(s.view === "station"),
+      tabIndexStyle: this.tab(s.view === "index"),
+      ...this.chart(),
+      ...this.station(),
+      dots: this.dots(),
+      cols,
+      rows: list.map(r => ({
+        name: r.name, river: r.river, county: r.county, code: r.code,
+        area: r.catchment_km2.toLocaleString("et-EE"),
+        q: this.nf(r.q, 2), pct: r.percentile + ".", pctW: r.percentile,
+        open: e => { e.preventDefault(); this.setState({ view: "station", selected: r.code }); }
+      })),
+      nUpdated: (() => {
+        const t = new Date(s.updated || "");
+        if (isNaN(t)) return "";
+        const p = n => String(n).padStart(2, "0");
+        return `lehte uuendati ${p(t.getDate())}.${p(t.getMonth() + 1)}.${t.getFullYear()} ${p(t.getHours())}:${p(t.getMinutes())}`;
+      })(),
+      nAxisInk: this.chart().chartReady ? "#6b6a64" : "transparent",
+      backToMap: e => { if (e && e.preventDefault) e.preventDefault(); this.setState({ view: "index" }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,887 @@
+{
+ "allikas": "ilmateenistus.ee/meist/vaatlusvork/",
+ "margkus": "photo_url ei ole CC-BY — vajab Keskkonnaagentuuri luba",
+ "jaamad": {
+  "SJA8821000": {
+   "automated": 2007,
+   "gauge_zero_m": 29.65,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/09/Ahja.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/ahja-hudromeetriajaam/"
+  },
+  "SJA9946000": {
+   "automated": 2010,
+   "gauge_zero_m": 32.19,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/alajoehj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/alajoe-hudromeetriajaam/"
+  },
+  "SJA9683000": {
+   "automated": 2006,
+   "gauge_zero_m": 0.99,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/audru.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/audru-hudromeetriajaam/"
+  },
+  "SJA2401000": {
+   "automated": 2010,
+   "gauge_zero_m": 30.19,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/separahj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/separa-hudromeetriajaam/"
+  },
+  "SJA7196000": {
+   "automated": 2006,
+   "gauge_zero_m": 40.98,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2026/08/ElvaHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/elva-hudromeetriajaam/"
+  },
+  "SJA5524000": {
+   "automated": 2010,
+   "gauge_zero_m": 33.18,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Jäänähted järvel iga 5 päeva tagant, jää tekkimisel ja lagunemisel iga päev",
+    "Jää ja lume paksus järvel 200 m kaugusel kaldast iga 5 päeva tagant",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/Rannu-JoesuuHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/rannu-joesuu-hudromeetriajaam/"
+  },
+  "SJA7331000": {
+   "automated": 2010,
+   "gauge_zero_m": 29.77,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,1-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2026/08/TartuHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/tartu-kvissentali-hudromeetriajaam/"
+  },
+  "SJA1593000": {
+   "automated": 2010,
+   "gauge_zero_m": 63.73,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/pohjaka2.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/pohjaka-i-hudromeetriajaam/"
+  },
+  "SJA4385000": {
+   "automated": 2007,
+   "gauge_zero_m": 16.57,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/10/Riisa-hj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/riisa-hudromeetriajaam/"
+  },
+  "SJA3814000": {
+   "automated": 2007,
+   "gauge_zero_m": 40.34,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/kehra.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/kehra-hudromeetriajaam/"
+  },
+  "SJA9179000": {
+   "automated": 2006,
+   "gauge_zero_m": 2.86,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda kuus)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/02/KasariHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/kasari-hudromeetriajaam/"
+  },
+  "SJA4444000": {
+   "automated": 2007,
+   "gauge_zero_m": 24.01,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/11/Keila.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/keila-hudromeetriajaam/"
+  },
+  "SJA1098000": {
+   "automated": 2011,
+   "gauge_zero_m": 48.21,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/samihj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/sami-hudromeetriajaam/"
+  },
+  "SJA2259000": {
+   "automated": 2010,
+   "gauge_zero_m": 37.84,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,1-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/KaapaHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/kaapa-hudromeetriajaam/"
+  },
+  "SJB4324000": {
+   "automated": 2022,
+   "gauge_zero_m": 7.82,
+   "parameters": [],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2023/04/Elu_HJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/elu-hudromeetriajaam/"
+  },
+  "SJA1582000": {
+   "automated": 2011,
+   "gauge_zero_m": 33.86,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/PajupeaHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/pajupea-hudromeetriajaam/"
+  },
+  "SJB4488000": {
+   "automated": null,
+   "gauge_zero_m": null,
+   "parameters": [],
+   "photo_url": null,
+   "page": null
+  },
+  "SJA7798000": {
+   "automated": 2006,
+   "gauge_zero_m": 68.22,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/Arbavere_HJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/arbavere-hudromeetriajaam/"
+  },
+  "SJA7233000": {
+   "automated": 2011,
+   "gauge_zero_m": 0.7,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (12 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/luguse.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/luguse-hudromeetriajaam/"
+  },
+  "SJA6159000": {
+   "automated": 2012,
+   "gauge_zero_m": 1.19,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (12 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/11/Uue-Love.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/uue-love-hudromeetriajaam/"
+  },
+  "SJA7746000": {
+   "automated": 2006,
+   "gauge_zero_m": 24.11,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/narvakarjaarihj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/narva-karjaari-hudromeetriajaam/"
+  },
+  "SJA6683000": {
+   "automated": 2006,
+   "gauge_zero_m": 52.15,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,1-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/09/Taheva.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/taheva-hudromeetriajaam/"
+  },
+  "SJB4487000": {
+   "automated": null,
+   "gauge_zero_m": null,
+   "parameters": [],
+   "photo_url": null,
+   "page": null
+  },
+  "SJA4515000": {
+   "automated": 2002,
+   "gauge_zero_m": -0.9,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 10 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vähemalt 16 korda aastas",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/narvalinnahj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/narva-linna-hudromeetriajaam/"
+  },
+  "SJA2718000": {
+   "automated": 2010,
+   "gauge_zero_m": 29.18,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 10 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vähemalt 16 korda aastas",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/vasknarvahj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/vasknarva-hudromeetriajaam/"
+  },
+  "SJA6334000": {
+   "automated": 2010,
+   "gauge_zero_m": 16.79,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/10/Aesoo.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/aesoo-hudromeetriajaam/"
+  },
+  "SJA3204000": {
+   "automated": 2007,
+   "gauge_zero_m": 43.38,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,1-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2020/11/T%C3%B5rve.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/torve-hudromeetriajaam/"
+  },
+  "SJA6279000": {
+   "automated": 2006,
+   "gauge_zero_m": 6.22,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/KloostrimetsaHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/kloostrimetsa-hudromeetriajaam/"
+  },
+  "SJA5928000": {
+   "automated": 2006,
+   "gauge_zero_m": 31.66,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/09/Korela.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/korela-hudromeetriajaam/"
+  },
+  "SJA8796000": {
+   "automated": 2007,
+   "gauge_zero_m": 31.67,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,1-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2026/08/ReolaHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/reola-hudromeetriajaam/"
+  },
+  "SJA4084000": {
+   "automated": 2010,
+   "gauge_zero_m": 51.74,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/tori.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/tori-hudromeetriajaam/"
+  },
+  "SJA2129000": {
+   "automated": 2007,
+   "gauge_zero_m": 32.22,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/luganuse.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/luganuse-hudromeetriajaam/"
+  },
+  "SJA4401000": {
+   "automated": 2011,
+   "gauge_zero_m": 8.88,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/pudisoo.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/pudisoo-hudromeetriajaam/"
+  },
+  "SJA2731000": {
+   "automated": 2006,
+   "gauge_zero_m": 5.62,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2021/05/oore.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/oore-hudromeetriajaam/"
+  },
+  "SJB3766000": {
+   "automated": null,
+   "gauge_zero_m": 50.42,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/11/Sarevere.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/sarevere-hudromeetriajaam/"
+  },
+  "SJA0234000": {
+   "automated": 2006,
+   "gauge_zero_m": 17.22,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/10/Tahkuse.hj_.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/tahkuse-hudromeetriajaam/"
+  },
+  "SJA8256000": {
+   "automated": 2010,
+   "gauge_zero_m": 59.69,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2026/08/PajusiHJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/pajusi-hudromeetriajaam/"
+  },
+  "SJA5604000": {
+   "automated": null,
+   "gauge_zero_m": 2.34,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/toilaoruhj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/toila-oru-hudromeetriajaam/"
+  },
+  "SJA2558000": {
+   "automated": 2006,
+   "gauge_zero_m": 29.78,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/roostojahj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/roostoja-hudromeetriajaam/"
+  },
+  "SJA9057000": {
+   "automated": 2006,
+   "gauge_zero_m": 4.16,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/10/Laadi-hj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/laadi-hudromeetriajaam/"
+  },
+  "SJA7595000": {
+   "automated": 2006,
+   "gauge_zero_m": 19.18,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2021/05/kaansoo.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/kaansoo-hudromeetriajaam/"
+  },
+  "SJA4331000": {
+   "automated": 2010,
+   "gauge_zero_m": 62.94,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/pohjaka1.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/pohjaka-ii-hudromeetriajaam/"
+  },
+  "SJA4907000": {
+   "automated": 2006,
+   "gauge_zero_m": 0.77,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/10/Nurme-hj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/nurme-hudromeetriajaam/"
+  },
+  "SJA8909000": {
+   "automated": 2010,
+   "gauge_zero_m": 53.57,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/varanguhj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/varangu-hudromeetriajaam/"
+  },
+  "SJA8056000": {
+   "automated": null,
+   "gauge_zero_m": 34.59,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/11/tudulinnahj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/tudulinna-hudromeetriajaam/"
+  },
+  "SJA8903000": {
+   "automated": 2006,
+   "gauge_zero_m": 42.16,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2018/10/Tarvastu.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/tarvastu-hudromeetriajaam/"
+  },
+  "SJA6842000": {
+   "automated": null,
+   "gauge_zero_m": 38.74,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/09/Tanassilma.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/tanassilma-hudromeetriajaam/"
+  },
+  "SJA8764000": {
+   "automated": 2011,
+   "gauge_zero_m": 57.08,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/vanakula.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/vanakula-hudromeetriajaam/"
+  },
+  "SJA8799000": {
+   "automated": 2006,
+   "gauge_zero_m": 33.64,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/Valgu_hj.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/valgu-hudromeetriajaam/"
+  },
+  "SJA9204000": {
+   "automated": 2006,
+   "gauge_zero_m": 14.68,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/11/Konuvere.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/konuvere-hudromeetriajaam/"
+  },
+  "SJA3959000": {
+   "automated": 2007,
+   "gauge_zero_m": 5.56,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/02/vihterpalu_HJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/vihterpalu-hudromeetriajaam/"
+  },
+  "SJA1133000": {
+   "automated": 2010,
+   "gauge_zero_m": 66.21,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (soojal aastaajal)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/vodja.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/vodja-hudromeetriajaam/"
+  },
+  "SJA3413000": {
+   "automated": 2010,
+   "gauge_zero_m": 34.1,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,1-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/Tolliste_HJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/tolliste-hudromeetriajaam/"
+  },
+  "SJA2072000": {
+   "automated": 2011,
+   "gauge_zero_m": 19.64,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/huuru.png",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/huuru-hudromeetriajaam/"
+  },
+  "SJA5230000": {
+   "automated": 2010,
+   "gauge_zero_m": 68.15,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2024/09/Kirumpaa.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/kirumpaa-hudromeetriajaam/"
+  },
+  "SJA4456000": {
+   "automated": 2007,
+   "gauge_zero_m": 30.77,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,10-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2013/04/Rapina_HJ.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/rapina-hudromeetriajaam/"
+  },
+  "SJA2835000": {
+   "automated": 2007,
+   "gauge_zero_m": 44.22,
+   "parameters": [
+    "Veetase",
+    "Vooluhulk, m3/s (vähemalt 16 korda aastas)",
+    "Veetemperatuur jõe põhjas",
+    "Manuaalselt mõõdetud veetemperatuur pinnaveekihis (0,1-0,5 m) vooluhulga mõõtmise ajal",
+    "Veetaimestiku, jäänähtuste kirjeldus (esinemisel) vooluhulga mõõtmise ajal",
+    "Kaamera jõe seisundi hindamiseks (jäänähtused)",
+    "Äravool (arvutuslik)",
+    "Õhutemperatuur",
+    "Sademed (aastaringselt)"
+   ],
+   "photo_url": "https://www.ilmateenistus.ee/wp-content/uploads/2020/11/T%C3%B5rva.jpg",
+   "page": "https://www.ilmateenistus.ee/meist/vaatlusvork/torva-hudromeetriajaam/"
+  }
+ }
+}
