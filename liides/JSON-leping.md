@@ -36,7 +36,6 @@ Liides loeb kõik sisu JSON-failidest. Kõik siin loetletud väljad on maketis p
       "series_days": 13541,
 
       "q": 1.38,
-      "q_delta_24h": 0.11,
       "median_now": 0.27,
       "percentile": 83,
       "validated": false,
@@ -75,7 +74,7 @@ Liides loeb kõik sisu JSON-failidest. Kõik siin loetletud väljad on maketis p
 
 ### Operatiivsed näidud
 
-Neli paari: iga näit ja sama kalendripäeva ajalooline mediaan. Liides kuvab need ühel real, sildid "väärtus täna" ja "mediaanväärtus samal kalendripäeval".
+Neli paari: iga näit ja sama kalendripäeva ajalooline mediaan. Liides kuvab need ühel real, sildid "viimane väärtus" ja "mediaanväärtus samal kalendripäeval".
 
 | Väli | Tüüp | Paariline mediaan |
 |---|---|---|
@@ -84,7 +83,9 @@ Neli paari: iga näit ja sama kalendripäeva ajalooline mediaan. Liides kuvab ne
 | `level_cm` | int | `median_level_cm` |
 | `water_temp` | float | `median_water_temp` |
 
-Muutus, ainult veetasemel ja vooluhulgal: `q_delta_24h` (float, m³/s) ning `level_delta_3h`, `level_delta_6h`, `level_delta_12h`, `level_delta_24h` (int, cm). Märk on oluline — liides paneb ise `+` või `−` ette.
+Muutus, ainult veetasemel: `level_delta_3h`, `level_delta_6h`, `level_delta_12h`, `level_delta_24h` (int, cm). Märk on oluline — liides paneb ise `+` või `−` ette.
+
+Vooluhulgal muutuse välja ei ole. Vooluhulk on ööpäevakeskmine ja D-1, seega selle "24 h muutus" kirjeldaks teist ajavahemikku kui veetaseme oma.
 
 Veetaseme neli muutust kuvatakse üksteise all lühemast pikemani (3 h, 6 h, 12 h, 24 h). Jada on üleujutusriski indikaator: kui lühem aken näitab suuremat muutust kui pikem, siis tõus kiireneb. Seetõttu on **järjekord oluline ja kõik neli peavad tulema samast tunniaegreast** — eri allikatest kokku pandud jada ei ole võrreldav.
 
