@@ -764,7 +764,7 @@ def main():
                     vead.append(f"{kkr} jaamamärk: {e}")
         if os.path.exists(orto):
             photos.append({"file": f"photos/ortofoto/{kkr}.jpg", "type": "ortofoto",
-                           "source": "Maa- ja Ruumiamet, jaama märk lisatud"})
+                           "source": "Maa- ja Ruumiamet"})
 
         # jaamafoto ainult siis, kui keegi on selle käsitsi lisanud. Sama loogika:
         # kui lähtekaust puudub (CI), jääb varem kopeeritud pilt väljundisse alles.
