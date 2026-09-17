@@ -1,12 +1,22 @@
 # -*- coding: utf-8 -*-
 """
 Ehitab andmed vastavalt disainipoole JSON-lepingule.
-(disain/Doktoritöö disainibrief/JSON-leping.md)
+Leping: liides/JSON-leping.md (avaldamise repos) või
+        disain/Doktoritöö disainibrief/JSON-leping.md (kohapeal, Claude Designi eksport).
 
-Väljund (CLAUDE/veeb/):
+Sisend:
+  liides/                     liidese failid ja leping
+  pildid/ortofoto/<code>.jpg  puutumata WMS-tõmmised
+  pildid/jaam/<code>.jpg      käsitsi lisatud jaamafotod
+  andmed/                     ids, kraabitud metaandmed, tunnilogi
+
+Väljund (vaikimisi veeb/, CI-s docs/):
   data/stations.json          indeks + operatiivnäidud + jaama päis
   data/stations/<code>.json   daily norm + viimased 12 kuud
-  photos/<code>.jpg           ortofoto
+  data/csv/<code>.csv         kogu mõõtmisperiood
+  photos/ortofoto/<code>.jpg  ortofoto jaama märgiga
+  photos/jaam/<code>.jpg      jaamafoto, kui on
+  varad/                      React, kaardiplaadid, kirjatüübid kohalikuna
 
 Operatiivnäidud (level_cm, water_temp, level_delta_24h) tulevad XML-ist.
 Kui XML jaama ei kajasta, kukume tagasi EstModeli ööpäevase väärtuse peale (D-1),
@@ -15,6 +25,7 @@ et ükski kohustuslik väli ei jääks tühjaks.
 Kasutus:
   python ehita_veeb.py                 kõik
   python ehita_veeb.py --only-now      ainult operatiivväljad stations.json-is
+  python ehita_veeb.py --valjund docs  kirjuta mujale kui veeb/
 """
 import json, os, re, sys, time, datetime, statistics, urllib.request
 import xml.etree.ElementTree as ET
@@ -24,13 +35,19 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 # GitHub Pages oskab haru pealt serveerida ainult juurt või /docs.
 OUT = os.path.join(BASE, sys.argv[sys.argv.index("--valjund") + 1]
                    if "--valjund" in sys.argv else "veeb")
-# Ortofotod genereeritakse siia (vahemälu; kustuta kaust, kui tahad uuesti tõmmata).
-# Jaamafotod on KÄSITSI hallatavad: pane pilt kausta CLAUDE/fotod/<code>.jpg ja build
-# kopeerib selle veebi. Generaator ei puutu neid kunagi.
-FOTOD_KASITSI = os.path.join(BASE, "fotod")
-# Disaini eksport. Liidese failid kopeeritakse siit veebi; .dc.html saab nimeks index.html.
-# Disain hoiab faili kirjeldava nimega meelega — ümbernimetamine on ehitusskripti töö.
-DISAIN = os.path.join(BASE, "disain", "Doktoritöö disainibrief")
+# Pildid, millest väljund tehakse. Kaks kausta, sest neid hallatakse eri moodi:
+#   pildid/ortofoto/  genereeritud WMS-ist, puutumata originaalid (vahemälu)
+#   pildid/jaam/      KÄSITSI lisatud jaamafotod — generaator ei puutu neid kunagi
+# Sama jaotus nagu väljundis, et kaks allikat ei saaks kunagi segamini minna.
+PILDID = os.path.join(BASE, "pildid")
+FOTOD_KASITSI = os.path.join(PILDID, "jaam")
+# Liidese failid; .dc.html saab väljundis nimeks index.html. Disain hoiab faili kirjeldava
+# nimega meelega — ümbernimetamine on ehitusskripti töö.
+# Kaks kohta: kohapeal on ainus tõde Claude Designi eksport (mis kirjutatakse iga korraga
+# üle), avaldamise repos on sellest tehtud koopia kaustas liides/.
+DISAIN = next((k for k in (os.path.join(BASE, "liides"),
+                           os.path.join(BASE, "disain", "Doktoritöö disainibrief"))
+               if os.path.isdir(k)), os.path.join(BASE, "liides"))
 # Tunnilogi: build peab ISE tunniajalugu pidama, sest level_delta_3h/6h/12h jaoks
 # ei ole allikat. XML annab ainult praeguse hetke, f_hydroseire on ~12 h vanas.
 # Leping nõuab, et kõik neli vahet tuleksid SAMAST aegreast -> ainus tee on oma logi.
@@ -129,8 +146,8 @@ def lest_wgs84(x, y):
 # Uued pildid ei tule vanadega baidi täpsusega samad — aluskaart on vahepeal uuenenud.
 ORTO_SAMM = ((400, 110), (900, 160), (5000, 240))
 ORTO_URL = "https://kaart.maaamet.ee/wms/fotokaart"
-# Puutumata WMS-tõmmised. veeb/photos/ortofoto/ all olevad on NEIST tuletatud, märgiga.
-ORTO_ALGNE = os.path.join(BASE, "andmed", "ortofoto")
+# Puutumata WMS-tõmmised. Väljundis olevad on NEIST tuletatud, jaama märgiga.
+ORTO_ALGNE = os.path.join(PILDID, "ortofoto")
 # Jaama märgi läbimõõt MAAPINNAL, mitte pikslites: registrikoordinaadi ebakindlus on
 # meetrites, seega peab märk katma igal jaamal sama maalapi, olenemata kaadri laiusest.
 MARK_M = 24.0

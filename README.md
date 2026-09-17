@@ -9,16 +9,34 @@ Riigi ilmateenistus hoiab neid andmeid kolmel eri lehel. Siin on need koos.
 
 ## Mis siin on
 
-| | |
-|---|---|
-| `docs/` | Avaldatav leht. GitHub Pages serveerib seda. |
-| `docs/data/stations.json` | Kõik 57 jaama, operatiivne seis ja identiteet. |
-| `docs/data/stations/<kood>.json` | Ühe jaama aegrida: ajalooline norm ja viimased 12 kuud. |
-| `docs/data/csv/<kood>.csv` | Kogu mõõtmisperiood, osal jaamadel alates 1922. |
-| `ehita_veeb.py` | Ainus ehitusskript. Tõmbab andmed ja kirjutab `docs/` täis. |
-| `disain/.../JSON-leping.md` | Andmeleping. Ainus tõde selle kohta, mida liides loeb. |
+```
+docs/                     avaldatav leht — GitHub Pages serveerib seda
+  index.html              liides, ehitatud liides/ kaustast
+  data/stations.json      kõik 57 jaama: identiteet ja operatiivne seis
+  data/stations/<kood>.json   ühe jaama aegrida: ajalooline norm ja 12 kuud
+  data/csv/<kood>.csv     kogu mõõtmisperiood, osal jaamadel alates 1922
+  photos/ortofoto/        jaama märgiga, tehtud pildid/ortofoto/ pealt
+  photos/jaam/            jaamafotod, kui neid on
+  varad/                  React, kaardiplaadid, kirjatüübid — et leht ei sõltuks CDN-ist
+
+ehita_veeb.py             ainus ehitusskript: tõmbab andmed ja kirjutab docs/ täis
+liides/                   liidese lähtefailid ja JSON-leping
+andmed/                   ehituse sisend ja seis (JSON)
+pildid/ortofoto/          puutumata WMS-tõmmised — ÄRA joonista neile
+pildid/jaam/              käsitsi lisatavad jaamafotod
+```
+
+**`liides/JSON-leping.md` on ainus tõde selle kohta, mida liides andmetest loeb.**
+Build kontrollib väljundit selle 11 reegli vastu ja ütleb lõpus, kas kõik läbis.
 
 Jaama võti on **KKR kood** (`SJA7595000`), mitte nimi — nimi ei ole allikate vahel unikaalne.
+
+### Miks pildid on kahes kohas
+
+`pildid/ortofoto/` on Maa-ameti WMS-ist tõmmatud originaalid. `docs/photos/ortofoto/` on
+neist igal buildil uuesti tehtud koopiad, millele on joonistatud jaama asukoha märk.
+Nii saab märki muuta ilma WMS-i uuesti tülitamata. Originaale ei tõmmata kunagi teist
+korda — ainult siis, kui fail puudub.
 
 ## Andmeallikad
 
@@ -51,10 +69,14 @@ Käsitsi: Actions -> Uuenda andmeid -> Run workflow.
 ## Kohapeal
 
 ```
-python ehita_veeb.py              # täisehitus kausta veeb/
-python ehita_veeb.py --only-now   # ainult operatiivnäidud
-python avalda.py                  # peegeldab veeb/ -> avaldus/docs/
+python ehita_veeb.py                 # täisehitus, ~8 min
+python ehita_veeb.py --only-now      # ainult operatiivnäidud, sekundid
+python ehita_veeb.py --valjund docs  # kirjuta docs/ sisse (nii teeb CI)
 ```
+
+Vaja on `pyproj` ja `pillow`. Selle repo sisu tekitab CLAUDE kaustas `avalda.py`, mis
+peegeldab sinna `veeb/` väljundi — repo sees seda skripti ei ole, sest tal ei oleks
+siin midagi teha.
 
 Leht vajab HTTP-serverit, `file://` pealt ei tööta:
 

@@ -31,7 +31,9 @@ jobs:
           python-version: "3.12"
 
       - name: Paigalda sõltuvused
-        run: pip install pyproj
+        # pyproj: koordinaaditeisendus L-EST97 -> WGS84
+        # pillow: jaama märgi joonistamine ortofotole
+        run: pip install pyproj pillow
 
       - name: Vali režiim
         id: reziim
@@ -50,7 +52,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A docs andmed
+          git add -A docs andmed pildid
           if git diff --staged --quiet; then
             echo "muutusi ei ole"
           else
