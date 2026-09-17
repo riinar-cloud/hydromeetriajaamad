@@ -129,15 +129,57 @@ def lest_wgs84(x, y):
 # Uued pildid ei tule vanadega baidi täpsusega samad — aluskaart on vahepeal uuenenud.
 ORTO_SAMM = ((400, 110), (900, 160), (5000, 240))
 ORTO_URL = "https://kaart.maaamet.ee/wms/fotokaart"
+# Puutumata WMS-tõmmised. veeb/photos/ortofoto/ all olevad on NEIST tuletatud, märgiga.
+ORTO_ALGNE = os.path.join(BASE, "andmed", "ortofoto")
+# Jaama märgi läbimõõt MAAPINNAL, mitte pikslites: registrikoordinaadi ebakindlus on
+# meetrites, seega peab märk katma igal jaamal sama maalapi, olenemata kaadri laiusest.
+MARK_M = 24.0
+
+
+def ortofoto_r(km2):
+    """Kaadri poollaius meetrites. Vt ORTO_SAMM kommentaari."""
+    for piir, laius in ORTO_SAMM:
+        if (km2 or 0) < piir:
+            return float(laius)
+    return 400.0
+
+
+def margi_jaam(algne, sihtfail, r_meetrit):
+    """Rõngas pildi keskele — jaam ongi kaadri keskpunkt, arvutada ei ole midagi.
+
+    Rõngas, mitte täpp: registrikoordinaat on jaama registreeritud punkt ja kui täpselt
+    see päris mõõtekohaga kattub, ei ole teada. Avatud keskkoht ei kata seda, mida
+    vaadata tahad, ega väida täpsust, mida meil ei ole.
+    """
+    from PIL import Image, ImageDraw
+    pilt = Image.open(algne).convert("RGBA")
+    w, h = pilt.size
+    rp = MARK_M / (2 * r_meetrit / w) / 2         # raadius pikslites
+    # Joonistan 4x suurendusega läbipaistvale kihile ja vähendan tagasi: PIL-i ellips ei
+    # ole pehmendatud ja 19 px rõngas tuleks muidu kandiline.
+    S = 4
+    kiht = Image.new("RGBA", (w * S, h * S), (0, 0, 0, 0))
+    joonis = ImageDraw.Draw(kiht)
+    cx, cy = w * S / 2, h * S / 2
+    punane = max(2.0, rp / 8)                     # joone jämedus käib ringi suurusega kaasa
+    aar = max(1.0, rp / 20)
+    # Tume äär mõlemal pool punast: punane üksi kaob heleda katuse või liivase kalda peal.
+    for raadius, varv, jamedus in (
+            (rp + (punane + aar) / 2, (20, 16, 14, 235), aar),
+            (rp, (208, 42, 32, 255), punane),
+            (rp - (punane + aar) / 2, (20, 16, 14, 235), aar)):
+        joonis.ellipse([(cx - raadius * S), (cy - raadius * S),
+                        (cx + raadius * S), (cy + raadius * S)],
+                       outline=varv, width=max(1, round(jamedus * S)))
+    kiht = kiht.resize((w, h), Image.LANCZOS)
+    pilt = Image.alpha_composite(pilt, kiht).convert("RGB")
+    os.makedirs(os.path.dirname(sihtfail), exist_ok=True)
+    pilt.save(sihtfail, "JPEG", quality=88, optimize=True)
 
 
 def ortofoto(x, y, km2, sihtfail):
     """Maa- ja Ruumiameti ortofoto jaama ümbrusest, 640x400. x, y on L-EST97 meetrites."""
-    r = 400.0
-    for piir, laius in ORTO_SAMM:
-        if (km2 or 0) < piir:
-            r = float(laius)
-            break
+    r = ortofoto_r(km2)
     hh = r * 400 / 640
     url = (f"{ORTO_URL}?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=EESTIFOTO&STYLES="
            f"&SRS=EPSG:3301&BBOX={x - r},{y - hh},{x + r},{y + hh}"
@@ -682,16 +724,22 @@ def main():
 
         # --- fotod: leping p3, massiiv oma viidetega ---
         photos = []
+        algne = os.path.join(ORTO_ALGNE, f"{kkr}.jpg")
         orto = os.path.join(OUT, "photos", "ortofoto", f"{kkr}.jpg")
-        if not os.path.exists(orto):
-            if r.get("kesk_x") and r.get("kesk_y"):
-                try:
-                    ortofoto(r["kesk_x"], r["kesk_y"], km2, orto)
-                except Exception as e:
-                    vead.append(f"{kkr} ortofoto: {e}")
-        if os.path.exists(orto):
-            photos.append({"file": f"photos/ortofoto/{kkr}.jpg",
-                           "type": "ortofoto", "source": "Maa- ja Ruumiamet"})
+        if not os.path.exists(algne) and r.get("kesk_x") and r.get("kesk_y"):
+            try:
+                ortofoto(r["kesk_x"], r["kesk_y"], km2, algne)
+            except Exception as e:
+                vead.append(f"{kkr} ortofoto: {e}")
+        if os.path.exists(algne):
+            # Märk joonistatakse IGA buildiga puutumata originaalist. Nii saab selle
+            # suurust või värvi muuta ilma WMS-i uuesti tülitamata.
+            try:
+                margi_jaam(algne, orto, ortofoto_r(km2))
+                photos.append({"file": f"photos/ortofoto/{kkr}.jpg", "type": "ortofoto",
+                               "source": "Maa- ja Ruumiamet, jaama märk lisatud"})
+            except Exception as e:
+                vead.append(f"{kkr} jaamamärk: {e}")
 
         # jaamafoto ainult siis, kui keegi on selle käsitsi lisanud
         kasitsi = os.path.join(FOTOD_KASITSI, f"{kkr}.jpg")
