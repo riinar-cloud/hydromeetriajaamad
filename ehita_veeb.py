@@ -351,6 +351,31 @@ def salvesta_logi(logi, nyyd):
     return kärbitud
 
 
+def kanna_operatiiv(stations, praegu):
+    """Operatiivnäidud JA nende mõõtmisajad jaama kirjetesse. Tagastab kaetud jaamade arvu.
+
+    ÜKS koht, sest --only-now ja täisehitus peavad andma sama tulemuse. Varem ei andnud:
+    tunnine käik uuendas väärtused, aga jättis measured ajatemplid seisma, nii et leht
+    näitas värskeid numbreid vana kellaajaga. Just seda, mida measured väli pidi ära hoidma.
+    """
+    kaetud = 0
+    for s in stations:
+        o = praegu.get(s["code"], {})
+        if o:
+            kaetud += 1
+        for f in ("level_cm", "water_temp", "level_delta_3h", "level_delta_6h",
+                  "level_delta_12h", "level_delta_24h"):
+            if f in o:
+                s[f] = o[f]
+        if o.get("_tund"):
+            m = s.setdefault("measured", {})
+            if "level_cm" in o:
+                m["level"] = {"time": o["_tund"]}
+            if "water_temp" in o:
+                m["water_temp"] = {"time": o["_tund"]}
+    return kaetud
+
+
 def vahed_logist(logi_jaam, praegune, nyyd):
     """level_delta_3h/6h/12h/24h ühest ja samast tunnireast."""
     out = {}
@@ -627,12 +652,7 @@ def main():
         praegu, vaadeldud = operatiiv(doc["stations"])
         for s in doc["stations"]:
             s.pop("_id", None)
-        for s in doc["stations"]:
-            o = praegu.get(s["code"], {})
-            for f in ("level_cm", "water_temp", "level_delta_3h", "level_delta_6h",
-                  "level_delta_12h", "level_delta_24h"):
-                if f in o:
-                    s[f] = o[f]
+        kanna_operatiiv(doc["stations"], praegu)
         doc["updated"] = vaadeldud.isoformat(timespec="seconds").replace("+00:00", "Z")
         json.dump(doc, open(idx_fail, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         print(f"operatiivväljad uuendatud: {len(praegu)}/{len(doc['stations'])} jaama")
@@ -832,19 +852,7 @@ def main():
 
     print("4/4  operatiivnäidud XML-ist ...", flush=True)
     praegu, vaadeldud = operatiiv(stations)
-    kaetud = 0
-    for s in stations:
-        o = praegu.get(s["code"], {})
-        if o: kaetud += 1
-        for f in ("level_cm", "water_temp", "level_delta_3h", "level_delta_6h",
-                  "level_delta_12h", "level_delta_24h"):
-            if f in o:
-                s[f] = o[f]
-        if o.get("_tund"):
-            if "level_cm" in o:
-                s["measured"]["level"] = {"time": o["_tund"]}
-            if "water_temp" in o:
-                s["measured"]["water_temp"] = {"time": o["_tund"]}
+    kaetud = kanna_operatiiv(stations, praegu)
     print(f"     operatiivselt kaetud {kaetud}/{len(stations)}, ülejäänud D-1 väärtustel", flush=True)
 
     ids = {s["code"]: s.pop("_id", None) for s in stations}
