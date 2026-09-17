@@ -550,7 +550,7 @@ def valideeri(doc, kaust):
         v.append(f"count {doc['count']} != jaamu {len(doc['stations'])}")
     kohustuslik = ["code", "name", "river", "county", "municipality", "lat", "lon",
                    "catchment_km2", "mouth_distance_km", "opened", "automated",
-                   "series_start", "series_days", "q", "q_delta_24h", "median_now",
+                   "series_start", "series_days", "q", "median_now",
                    "percentile", "validated", "specific_runoff", "median_specific_runoff",
                    "level_cm", "median_level_cm", "water_temp",
                    "median_water_temp", "photos", "measured", "notes",
@@ -718,7 +718,9 @@ def main():
             else:
                 med_temp, d1_temp = m, last
 
-        delta_q = r3(viim_q - ppQ[-2][1]) if len(ppQ) >= 2 and (viim_kp - ppQ[-2][0]).days == 1 else 0.0
+        # Vooluhulga 24 h muutust EI arvutata. Vooluhulk on ööpäevakeskmine ja D-1, seega
+        # "24 h muutus" tähendaks siin "eile vs üleeile", veetaseme oma aga viimast 24 tundi.
+        # Kõrvuti kuvatuna lugesid need kaks eri ajavahemikku ja võisid näidata eri suunda.
 
         # viimased 12 kuud, katkematu päevade jada
         algus = viim_kp - datetime.timedelta(days=364)
@@ -793,7 +795,6 @@ def main():
             "notes": NOTES.get(kkr, []),
 
             "q": viim_q,
-            "q_delta_24h": delta_q,
             "median_now": median_now,
             "percentile": percentile,
             "validated": viim_kp.isoformat() <= vt,
