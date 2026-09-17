@@ -15,28 +15,26 @@ docs/                     avaldatav leht — GitHub Pages serveerib seda
   data/stations.json      kõik 57 jaama: identiteet ja operatiivne seis
   data/stations/<kood>.json   ühe jaama aegrida: ajalooline norm ja 12 kuud
   data/csv/<kood>.csv     kogu mõõtmisperiood, osal jaamadel alates 1922
-  photos/ortofoto/        jaama märgiga, tehtud pildid/ortofoto/ pealt
+  photos/ortofoto/        ortofoto jaama märgiga
   photos/jaam/            jaamafotod, kui neid on
   varad/                  React, kaardiplaadid, kirjatüübid — et leht ei sõltuks CDN-ist
 
 ehita_veeb.py             ainus ehitusskript: tõmbab andmed ja kirjutab docs/ täis
 liides/                   liidese lähtefailid ja JSON-leping
 andmed/                   ehituse sisend ja seis (JSON)
-pildid/ortofoto/          puutumata WMS-tõmmised — ÄRA joonista neile
-pildid/jaam/              käsitsi lisatavad jaamafotod
 ```
+
+Lähtepilte siin ei ole. Ortofotod salvestatakse **valmis kujul, jaama märgiga**, ja
+neid ei joonistata üle. Ringita originaalid elavad ainult ehitusmasinas — avalikku repo
+need ei kuulu ja build ei vaja neid.
+
+Kui märki on vaja muuta: kustuta `docs/photos/ortofoto/` ehitusmasinas, jooksuta build
+ja lükka tulemus üles.
 
 **`liides/JSON-leping.md` on ainus tõde selle kohta, mida liides andmetest loeb.**
 Build kontrollib väljundit selle 11 reegli vastu ja ütleb lõpus, kas kõik läbis.
 
 Jaama võti on **KKR kood** (`SJA7595000`), mitte nimi — nimi ei ole allikate vahel unikaalne.
-
-### Miks pildid on kahes kohas
-
-`pildid/ortofoto/` on Maa-ameti WMS-ist tõmmatud originaalid. `docs/photos/ortofoto/` on
-neist igal buildil uuesti tehtud koopiad, millele on joonistatud jaama asukoha märk.
-Nii saab märki muuta ilma WMS-i uuesti tülitamata. Originaale ei tõmmata kunagi teist
-korda — ainult siis, kui fail puudub.
 
 ## Andmeallikad
 

@@ -740,29 +740,37 @@ def main():
         avatud = (r.get("alg_kpv") or "")[:10]
 
         # --- fotod: leping p3, massiiv oma viidetega ---
+        #
+        # Vahemälu on VALMIS pilt väljundis, mitte lähtepilt. Põhjus: avaldamise repos
+        # on ainult väljund, sest ringita originaalid ei kuulu avalikule lehele. CI peab
+        # seega saama hakkama ilma lähtepiltideta — ja saab, sest valmis pilt on repos.
+        # Lähtepildid elavad ainult ehitusmasinas ja neid on vaja ainult siis, kui märki
+        # tahetakse muuta: kustuta väljundist pilt ja jooksuta build.
         photos = []
         algne = os.path.join(ORTO_ALGNE, f"{kkr}.jpg")
         orto = os.path.join(OUT, "photos", "ortofoto", f"{kkr}.jpg")
-        if not os.path.exists(algne) and r.get("kesk_x") and r.get("kesk_y"):
-            try:
-                ortofoto(r["kesk_x"], r["kesk_y"], km2, algne)
-            except Exception as e:
-                vead.append(f"{kkr} ortofoto: {e}")
-        if os.path.exists(algne):
-            # Märk joonistatakse IGA buildiga puutumata originaalist. Nii saab selle
-            # suurust või värvi muuta ilma WMS-i uuesti tülitamata.
-            try:
-                margi_jaam(algne, orto, ortofoto_r(km2))
-                photos.append({"file": f"photos/ortofoto/{kkr}.jpg", "type": "ortofoto",
-                               "source": "Maa- ja Ruumiamet, jaama märk lisatud"})
-            except Exception as e:
-                vead.append(f"{kkr} jaamamärk: {e}")
+        if not os.path.exists(orto):
+            if not os.path.exists(algne) and r.get("kesk_x") and r.get("kesk_y"):
+                try:
+                    ortofoto(r["kesk_x"], r["kesk_y"], km2, algne)
+                except Exception as e:
+                    vead.append(f"{kkr} ortofoto: {e}")
+            if os.path.exists(algne):
+                try:
+                    margi_jaam(algne, orto, ortofoto_r(km2))
+                except Exception as e:
+                    vead.append(f"{kkr} jaamamärk: {e}")
+        if os.path.exists(orto):
+            photos.append({"file": f"photos/ortofoto/{kkr}.jpg", "type": "ortofoto",
+                           "source": "Maa- ja Ruumiamet, jaama märk lisatud"})
 
-        # jaamafoto ainult siis, kui keegi on selle käsitsi lisanud
+        # jaamafoto ainult siis, kui keegi on selle käsitsi lisanud. Sama loogika:
+        # kui lähtekaust puudub (CI), jääb varem kopeeritud pilt väljundisse alles.
         kasitsi = os.path.join(FOTOD_KASITSI, f"{kkr}.jpg")
         jaamafoto = os.path.join(OUT, "photos", "jaam", f"{kkr}.jpg")
         if os.path.exists(kasitsi):
             import shutil; shutil.copy2(kasitsi, jaamafoto)
+        if os.path.exists(jaamafoto):
             photos.append({"file": f"photos/jaam/{kkr}.jpg",
                            "type": "jaamafoto", "source": "Keskkonnaagentuur"})
 
