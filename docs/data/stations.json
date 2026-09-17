@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-17T18:29:52Z",
+ "updated": "2026-09-17T19:20:42Z",
  "count": 57,
  "validated_through": "2025-12-31",
  "stations": [
@@ -21,24 +21,23 @@
     {
      "file": "photos/ortofoto/SJA8821000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 3.87,
-   "q_delta_24h": -0.2,
    "median_now": 4.14,
    "percentile": 38,
    "validated": false,
    "specific_runoff": 4.3,
    "median_specific_runoff": 4.6,
-   "level_cm": 42,
+   "level_cm": 43,
    "median_level_cm": 120,
-   "level_delta_3h": 0,
-   "level_delta_6h": -1,
+   "level_delta_3h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -1,
-   "water_temp": 14.3,
+   "level_delta_24h": 0,
+   "water_temp": 14.1,
    "median_water_temp": 12.9,
    "measured": {
     "q": {
@@ -48,10 +47,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -73,12 +72,11 @@
     {
      "file": "photos/ortofoto/SJA9946000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.18,
-   "q_delta_24h": -0.11,
    "median_now": 0.56,
    "percentile": 75,
    "validated": false,
@@ -87,10 +85,10 @@
    "level_cm": 59,
    "median_level_cm": 43,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 2,
-   "water_temp": 13.0,
+   "water_temp": 12.9,
    "median_water_temp": 11.9,
    "measured": {
     "q": {
@@ -100,10 +98,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -125,23 +123,22 @@
     {
      "file": "photos/ortofoto/SJA9683000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 2.02,
-   "q_delta_24h": -0.1,
    "median_now": 0.512,
    "percentile": 89,
    "validated": false,
    "specific_runoff": 6.3,
    "median_specific_runoff": 1.6,
-   "level_cm": 111,
+   "level_cm": 112,
    "median_level_cm": 102,
-   "level_delta_3h": 0,
-   "level_delta_6h": 1,
+   "level_delta_3h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": 2,
+   "level_delta_24h": 3,
    "water_temp": 14.1,
    "median_water_temp": 13.3,
    "measured": {
@@ -152,10 +149,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -177,12 +174,11 @@
     {
      "file": "photos/ortofoto/SJA2401000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 2.36,
-   "q_delta_24h": -0.45,
    "median_now": 0.693,
    "percentile": 95,
    "validated": false,
@@ -191,10 +187,10 @@
    "level_cm": 107,
    "median_level_cm": 92,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -2,
-   "water_temp": 12.9,
+   "water_temp": 12.7,
    "median_water_temp": 12.7,
    "measured": {
     "q": {
@@ -204,10 +200,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -229,12 +225,11 @@
     {
      "file": "photos/ortofoto/SJA7196000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.12,
-   "q_delta_24h": -0.02,
    "median_now": 0.854,
    "percentile": 69,
    "validated": false,
@@ -242,11 +237,11 @@
    "median_specific_runoff": 3.7,
    "level_cm": 18,
    "median_level_cm": 7,
-   "level_delta_3h": -1,
-   "level_delta_6h": -1,
+   "level_delta_3h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -3,
-   "water_temp": 13.7,
+   "water_temp": 13.6,
    "median_water_temp": 11.9,
    "measured": {
     "q": {
@@ -256,10 +251,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -281,12 +276,11 @@
     {
      "file": "photos/ortofoto/SJA5524000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 26.9,
-   "q_delta_24h": 0.5,
    "median_now": 22.6,
    "percentile": 72,
    "validated": false,
@@ -294,8 +288,8 @@
    "median_specific_runoff": 6.7,
    "level_cm": 31,
    "median_level_cm": 16,
-   "level_delta_3h": 0,
-   "level_delta_6h": -1,
+   "level_delta_3h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 1,
    "water_temp": 15.9,
@@ -308,10 +302,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -333,24 +327,23 @@
     {
      "file": "photos/ortofoto/SJA7331000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 53.9,
-   "q_delta_24h": -0.4,
    "median_now": 35.6,
    "percentile": 79,
    "validated": false,
    "specific_runoff": 6.9,
    "median_specific_runoff": 4.5,
-   "level_cm": 68,
+   "level_cm": 69,
    "median_level_cm": 51,
-   "level_delta_3h": -1,
-   "level_delta_6h": -1,
+   "level_delta_3h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -1,
-   "water_temp": 14.8,
+   "level_delta_24h": 0,
+   "water_temp": 14.7,
    "median_water_temp": 15.1,
    "measured": {
     "q": {
@@ -360,10 +353,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -385,12 +378,11 @@
     {
      "file": "photos/ortofoto/SJA1593000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.432,
-   "q_delta_24h": -0.077,
    "median_now": 0.15,
    "percentile": 80,
    "validated": false,
@@ -437,23 +429,22 @@
     {
      "file": "photos/ortofoto/SJA4385000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 15.4,
-   "q_delta_24h": -2.2,
    "median_now": 5.365,
    "percentile": 82,
    "validated": false,
    "specific_runoff": 8.2,
    "median_specific_runoff": 2.9,
-   "level_cm": 94,
+   "level_cm": 93,
    "median_level_cm": 58,
    "level_delta_3h": -1,
-   "level_delta_6h": -2,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -7,
+   "level_delta_24h": -8,
    "water_temp": 14.0,
    "median_water_temp": 14.0,
    "measured": {
@@ -464,10 +455,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -489,12 +480,11 @@
     {
      "file": "photos/ortofoto/SJA3814000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 6.1,
-   "q_delta_24h": -1.05,
    "median_now": 2.26,
    "percentile": 80,
    "validated": false,
@@ -502,11 +492,11 @@
    "median_specific_runoff": 2.5,
    "level_cm": 76,
    "median_level_cm": 58,
-   "level_delta_3h": -1,
-   "level_delta_6h": 0,
+   "level_delta_3h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": 0,
-   "water_temp": 13.3,
+   "level_delta_24h": 3,
+   "water_temp": 13.2,
    "median_water_temp": 13.7,
    "measured": {
     "q": {
@@ -516,10 +506,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -541,24 +531,23 @@
     {
      "file": "photos/ortofoto/SJA9179000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 10.4,
-   "q_delta_24h": -2.9,
    "median_now": 4.985,
    "percentile": 70,
    "validated": false,
    "specific_runoff": 3.9,
    "median_specific_runoff": 1.9,
-   "level_cm": 72,
+   "level_cm": 73,
    "median_level_cm": 28,
-   "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_3h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -1,
-   "water_temp": 14.4,
+   "level_delta_24h": 0,
+   "water_temp": 14.3,
    "median_water_temp": 14.4,
    "measured": {
     "q": {
@@ -568,10 +557,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -593,23 +582,22 @@
     {
      "file": "photos/ortofoto/SJA4444000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 3.35,
-   "q_delta_24h": -0.36,
    "median_now": 1.7,
    "percentile": 73,
    "validated": false,
    "specific_runoff": 5.3,
    "median_specific_runoff": 2.7,
-   "level_cm": 84,
+   "level_cm": 85,
    "median_level_cm": 65,
-   "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_3h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": 1,
+   "level_delta_24h": 2,
    "water_temp": 13.4,
    "median_water_temp": 13.0,
    "measured": {
@@ -620,10 +608,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -645,12 +633,11 @@
     {
      "file": "photos/ortofoto/SJA1098000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 3.51,
-   "q_delta_24h": -0.33,
    "median_now": 2.06,
    "percentile": 77,
    "validated": false,
@@ -659,7 +646,7 @@
    "level_cm": 160,
    "median_level_cm": 144,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -2,
    "water_temp": 12.2,
@@ -672,10 +659,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -697,12 +684,11 @@
     {
      "file": "photos/ortofoto/SJA2259000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.846,
-   "q_delta_24h": -0.021,
    "median_now": 0.468,
    "percentile": 62,
    "validated": false,
@@ -711,7 +697,7 @@
    "level_cm": 140,
    "median_level_cm": 109,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 0,
    "water_temp": 15.5,
@@ -724,10 +710,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -749,12 +735,11 @@
     {
      "file": "photos/ortofoto/SJB4324000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.072,
-   "q_delta_24h": -0.008,
    "median_now": 0.063,
    "percentile": 57,
    "validated": false,
@@ -763,7 +748,7 @@
    "level_cm": 22,
    "median_level_cm": 15,
    "level_delta_3h": 0,
-   "level_delta_6h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 1,
    "water_temp": 12.9,
@@ -776,10 +761,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -801,12 +786,11 @@
     {
      "file": "photos/ortofoto/SJA1582000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.465,
-   "q_delta_24h": -0.066,
    "median_now": 0.17,
    "percentile": 76,
    "validated": false,
@@ -815,7 +799,7 @@
    "level_cm": 84,
    "median_level_cm": 54,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 1,
    "water_temp": 13.3,
@@ -828,10 +812,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -853,12 +837,11 @@
     {
      "file": "photos/ortofoto/SJB4488000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.07,
-   "q_delta_24h": -0.006,
    "median_now": 0.002,
    "percentile": 98,
    "validated": false,
@@ -903,12 +886,11 @@
     {
      "file": "photos/ortofoto/SJA7798000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.23,
-   "q_delta_24h": -0.03,
    "median_now": 0.801,
    "percentile": 82,
    "validated": false,
@@ -917,10 +899,10 @@
    "level_cm": 60,
    "median_level_cm": 56,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -1,
-   "water_temp": 12.2,
+   "water_temp": 12.1,
    "median_water_temp": 11.4,
    "measured": {
     "q": {
@@ -930,10 +912,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -955,12 +937,11 @@
     {
      "file": "photos/ortofoto/SJA7233000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.135,
-   "q_delta_24h": -0.018,
    "median_now": 0.081,
    "percentile": 62,
    "validated": false,
@@ -968,10 +949,10 @@
    "median_specific_runoff": 0.8,
    "level_cm": 47,
    "median_level_cm": 48,
-   "level_delta_3h": null,
+   "level_delta_3h": 1,
    "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": 4,
+   "level_delta_24h": 5,
    "water_temp": 13.4,
    "median_water_temp": 12.8,
    "measured": {
@@ -982,10 +963,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "date": "2026-09-16"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "date": "2026-09-16"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1007,12 +988,11 @@
     {
      "file": "photos/ortofoto/SJA6159000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.415,
-   "q_delta_24h": -0.044,
    "median_now": 0.28,
    "percentile": 67,
    "validated": false,
@@ -1021,7 +1001,7 @@
    "level_cm": 54,
    "median_level_cm": 45,
    "level_delta_3h": 0,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
    "water_temp": 12.0,
@@ -1034,10 +1014,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1059,12 +1039,11 @@
     {
      "file": "photos/ortofoto/SJA7746000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 2.62,
-   "q_delta_24h": 0.31,
    "median_now": 1.325,
    "percentile": 78,
    "validated": false,
@@ -1073,7 +1052,7 @@
    "level_cm": 114,
    "median_level_cm": 101,
    "level_delta_3h": -1,
-   "level_delta_6h": -2,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 3,
    "water_temp": 14.2,
@@ -1086,10 +1065,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1111,24 +1090,23 @@
     {
      "file": "photos/ortofoto/SJA6683000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 22.7,
-   "q_delta_24h": -4.0,
    "median_now": 5.94,
    "percentile": 95,
    "validated": false,
    "specific_runoff": 12.9,
    "median_specific_runoff": 3.4,
-   "level_cm": 160,
+   "level_cm": 158,
    "median_level_cm": 62,
-   "level_delta_3h": -3,
-   "level_delta_6h": -7,
+   "level_delta_3h": -4,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -44,
-   "water_temp": 14.4,
+   "level_delta_24h": -45,
+   "water_temp": 14.3,
    "median_water_temp": 12.4,
    "measured": {
     "q": {
@@ -1138,10 +1116,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1163,18 +1141,17 @@
     {
      "file": "photos/ortofoto/SJB4487000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.241,
-   "q_delta_24h": -0.027,
    "median_now": 0.028,
    "percentile": 95,
    "validated": false,
    "specific_runoff": 12.4,
    "median_specific_runoff": 1.4,
-   "level_cm": 84,
+   "level_cm": 85,
    "median_level_cm": 56,
    "level_delta_3h": null,
    "level_delta_6h": null,
@@ -1190,7 +1167,7 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "date": "2026-09-16"
     },
     "water_temp": null
    }
@@ -1213,23 +1190,22 @@
     {
      "file": "photos/ortofoto/SJA4515000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 124.0,
-   "q_delta_24h": 5.0,
    "median_now": 352.0,
    "percentile": 2,
    "validated": false,
    "specific_runoff": 2.2,
    "median_specific_runoff": 6.3,
-   "level_cm": 169,
+   "level_cm": 166,
    "median_level_cm": 136,
-   "level_delta_3h": -2,
-   "level_delta_6h": 0,
+   "level_delta_3h": -3,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": 26,
+   "level_delta_24h": 20,
    "water_temp": 15.6,
    "median_water_temp": 15.8,
    "measured": {
@@ -1240,10 +1216,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1265,12 +1241,11 @@
     {
      "file": "photos/ortofoto/SJA2718000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 96.0,
-   "q_delta_24h": -3.5,
    "median_now": 277.0,
    "percentile": 0,
    "validated": false,
@@ -1279,7 +1254,7 @@
    "level_cm": 40,
    "median_level_cm": 59,
    "level_delta_3h": 1,
-   "level_delta_6h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -1,
    "water_temp": 15.4,
@@ -1292,10 +1267,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1317,12 +1292,11 @@
     {
      "file": "photos/ortofoto/SJA6334000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 12.2,
-   "q_delta_24h": -1.8,
    "median_now": 2.5,
    "percentile": 90,
    "validated": false,
@@ -1330,11 +1304,11 @@
    "median_specific_runoff": 2.4,
    "level_cm": 60,
    "median_level_cm": 14,
-   "level_delta_3h": -1,
-   "level_delta_6h": -1,
+   "level_delta_3h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -7,
-   "water_temp": 13.4,
+   "water_temp": 13.3,
    "median_water_temp": 13.6,
    "measured": {
     "q": {
@@ -1344,10 +1318,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1369,24 +1343,23 @@
     {
      "file": "photos/ortofoto/SJA3204000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 6.76,
-   "q_delta_24h": -2.06,
    "median_now": 1.575,
    "percentile": 87,
    "validated": false,
    "specific_runoff": 9.1,
    "median_specific_runoff": 2.1,
-   "level_cm": 42,
+   "level_cm": 40,
    "median_level_cm": 8,
-   "level_delta_3h": -1,
-   "level_delta_6h": -2,
+   "level_delta_3h": -3,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -10,
-   "water_temp": 13.7,
+   "water_temp": 13.6,
    "median_water_temp": 13.8,
    "measured": {
     "q": {
@@ -1396,10 +1369,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1421,12 +1394,11 @@
     {
      "file": "photos/ortofoto/SJA6279000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 6.76,
-   "q_delta_24h": -1.53,
    "median_now": 1.06,
    "percentile": 84,
    "validated": false,
@@ -1435,10 +1407,10 @@
    "level_cm": 117,
    "median_level_cm": 96,
    "level_delta_3h": 0,
-   "level_delta_6h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -2,
-   "water_temp": 14.0,
+   "water_temp": 13.9,
    "median_water_temp": 13.6,
    "measured": {
     "q": {
@@ -1448,10 +1420,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1473,12 +1445,11 @@
     {
      "file": "photos/ortofoto/SJA5928000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 4.08,
-   "q_delta_24h": -0.17,
    "median_now": 3.315,
    "percentile": 80,
    "validated": false,
@@ -1487,7 +1458,7 @@
    "level_cm": 69,
    "median_level_cm": 69,
    "level_delta_3h": -1,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 5,
    "water_temp": 12.4,
@@ -1500,10 +1471,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1525,24 +1496,23 @@
     {
      "file": "photos/ortofoto/SJA8796000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.626,
-   "q_delta_24h": -0.025,
    "median_now": 0.732,
    "percentile": 33,
    "validated": false,
    "specific_runoff": 2.6,
    "median_specific_runoff": 3.0,
-   "level_cm": 60,
+   "level_cm": 59,
    "median_level_cm": 56,
-   "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_3h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": 0,
-   "water_temp": 14.0,
+   "level_delta_24h": -1,
+   "water_temp": 13.9,
    "median_water_temp": 12.1,
    "measured": {
     "q": {
@@ -1552,10 +1522,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1577,12 +1547,11 @@
     {
      "file": "photos/ortofoto/SJA4084000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 2.66,
-   "q_delta_24h": -0.61,
    "median_now": 0.805,
    "percentile": 86,
    "validated": false,
@@ -1591,7 +1560,7 @@
    "level_cm": 95,
    "median_level_cm": 49,
    "level_delta_3h": -1,
-   "level_delta_6h": -2,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -7,
    "water_temp": 13.6,
@@ -1604,10 +1573,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1629,12 +1598,11 @@
     {
      "file": "photos/ortofoto/SJA2129000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 4.55,
-   "q_delta_24h": -0.45,
    "median_now": 1.63,
    "percentile": 78,
    "validated": false,
@@ -1643,10 +1611,10 @@
    "level_cm": 50,
    "median_level_cm": 17,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -2,
-   "water_temp": 12.7,
+   "water_temp": 12.6,
    "median_water_temp": 11.8,
    "measured": {
     "q": {
@@ -1656,10 +1624,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1681,12 +1649,11 @@
     {
      "file": "photos/ortofoto/SJA4401000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.583,
-   "q_delta_24h": -0.113,
    "median_now": 0.36,
    "percentile": 65,
    "validated": false,
@@ -1694,11 +1661,11 @@
    "median_specific_runoff": 2.9,
    "level_cm": 44,
    "median_level_cm": 36,
-   "level_delta_3h": 1,
-   "level_delta_6h": 1,
+   "level_delta_3h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 0,
-   "water_temp": 12.6,
+   "water_temp": 12.5,
    "median_water_temp": 11.7,
    "measured": {
     "q": {
@@ -1708,10 +1675,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1733,12 +1700,11 @@
     {
      "file": "photos/ortofoto/SJA2731000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 56.9,
-   "q_delta_24h": -7.2,
    "median_now": 14.6,
    "percentile": 88,
    "validated": false,
@@ -1747,10 +1713,10 @@
    "level_cm": 92,
    "median_level_cm": 21,
    "level_delta_3h": -2,
-   "level_delta_6h": -3,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -12,
-   "water_temp": 13.8,
+   "water_temp": 13.7,
    "median_water_temp": 13.9,
    "measured": {
     "q": {
@@ -1760,10 +1726,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1785,12 +1751,11 @@
     {
      "file": "photos/ortofoto/SJB3766000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 8.12,
-   "q_delta_24h": -1.29,
    "median_now": 2.07,
    "percentile": 100,
    "validated": false,
@@ -1837,24 +1802,23 @@
     {
      "file": "photos/ortofoto/SJA0234000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 19.3,
-   "q_delta_24h": -2.6,
    "median_now": 6.02,
    "percentile": 86,
    "validated": false,
    "specific_runoff": 9.4,
    "median_specific_runoff": 2.9,
-   "level_cm": 66,
+   "level_cm": 74,
    "median_level_cm": 22,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -6,
-   "water_temp": 13.8,
+   "level_delta_24h": null,
+   "water_temp": 13.4,
    "median_water_temp": 13.6,
    "measured": {
     "q": {
@@ -1889,23 +1853,22 @@
     {
      "file": "photos/ortofoto/SJA8256000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 12.1,
-   "q_delta_24h": -1.6,
    "median_now": 4.24,
    "percentile": 91,
    "validated": false,
    "specific_runoff": 11.2,
    "median_specific_runoff": 3.9,
-   "level_cm": 145,
+   "level_cm": 144,
    "median_level_cm": 100,
    "level_delta_3h": -1,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -7,
+   "level_delta_24h": -8,
    "water_temp": 13.0,
    "median_water_temp": 12.4,
    "measured": {
@@ -1916,10 +1879,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1941,12 +1904,11 @@
     {
      "file": "photos/ortofoto/SJA5604000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.01,
-   "q_delta_24h": -0.08,
    "median_now": 0.451,
    "percentile": 76,
    "validated": false,
@@ -1955,10 +1917,10 @@
    "level_cm": 42,
    "median_level_cm": 32,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 0,
-   "water_temp": 12.0,
+   "water_temp": 11.8,
    "median_water_temp": 11.9,
    "measured": {
     "q": {
@@ -1968,10 +1930,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -1993,7 +1955,7 @@
     {
      "file": "photos/ortofoto/SJA2558000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [
@@ -2004,7 +1966,6 @@
     }
    ],
    "q": 2.66,
-   "q_delta_24h": -0.37,
    "median_now": 1.115,
    "percentile": 80,
    "validated": false,
@@ -2013,10 +1974,10 @@
    "level_cm": 88,
    "median_level_cm": 72,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 0,
-   "water_temp": 11.1,
+   "water_temp": 11.2,
    "median_water_temp": 12.2,
    "measured": {
     "q": {
@@ -2026,10 +1987,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2051,12 +2012,11 @@
     {
      "file": "photos/ortofoto/SJA9057000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 4.87,
-   "q_delta_24h": -0.93,
    "median_now": 1.32,
    "percentile": 85,
    "validated": false,
@@ -2065,7 +2025,7 @@
    "level_cm": 103,
    "median_level_cm": 85,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -1,
    "water_temp": 13.8,
@@ -2078,10 +2038,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2103,12 +2063,11 @@
     {
      "file": "photos/ortofoto/SJA7595000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.12,
-   "q_delta_24h": -0.26,
    "median_now": 0.284,
    "percentile": 78,
    "validated": false,
@@ -2117,7 +2076,7 @@
    "level_cm": 93,
    "median_level_cm": 54,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 1,
    "water_temp": 12.9,
@@ -2130,10 +2089,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2155,12 +2114,11 @@
     {
      "file": "photos/ortofoto/SJA4331000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.392,
-   "q_delta_24h": -0.022,
    "median_now": 0.084,
    "percentile": 98,
    "validated": false,
@@ -2207,12 +2165,11 @@
     {
      "file": "photos/ortofoto/SJA4907000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 2.16,
-   "q_delta_24h": -0.43,
    "median_now": 0.71,
    "percentile": 71,
    "validated": false,
@@ -2221,7 +2178,7 @@
    "level_cm": 86,
    "median_level_cm": 45,
    "level_delta_3h": 2,
-   "level_delta_6h": 4,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 12,
    "water_temp": 14.3,
@@ -2234,10 +2191,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2259,12 +2216,11 @@
     {
      "file": "photos/ortofoto/SJA8909000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.27,
-   "q_delta_24h": -0.07,
    "median_now": 0.974,
    "percentile": 72,
    "validated": false,
@@ -2273,10 +2229,10 @@
    "level_cm": 45,
    "median_level_cm": 40,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 1,
-   "water_temp": 13.9,
+   "water_temp": 13.8,
    "median_water_temp": 12.8,
    "measured": {
     "q": {
@@ -2286,10 +2242,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2311,12 +2267,11 @@
     {
      "file": "photos/ortofoto/SJA8056000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.44,
-   "q_delta_24h": -0.34,
    "median_now": 0.1,
    "percentile": 83,
    "validated": false,
@@ -2325,10 +2280,10 @@
    "level_cm": 42,
    "median_level_cm": 20,
    "level_delta_3h": 0,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -2,
-   "water_temp": 13.0,
+   "water_temp": 12.9,
    "median_water_temp": 12.8,
    "measured": {
     "q": {
@@ -2338,10 +2293,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2363,23 +2318,22 @@
     {
      "file": "photos/ortofoto/SJA8903000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.194,
-   "q_delta_24h": -0.117,
    "median_now": 0.232,
    "percentile": 35,
    "validated": false,
    "specific_runoff": 2.3,
    "median_specific_runoff": 2.8,
-   "level_cm": 52,
+   "level_cm": 53,
    "median_level_cm": null,
-   "level_delta_3h": 1,
-   "level_delta_6h": 0,
+   "level_delta_3h": 3,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -3,
+   "level_delta_24h": -2,
    "water_temp": 14.1,
    "median_water_temp": 13.4,
    "measured": {
@@ -2390,10 +2344,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2415,23 +2369,22 @@
     {
      "file": "photos/ortofoto/SJA6842000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.79,
-   "q_delta_24h": -0.36,
    "median_now": 0.748,
    "percentile": 85,
    "validated": false,
    "specific_runoff": 5.8,
    "median_specific_runoff": 2.4,
-   "level_cm": 64,
+   "level_cm": 63,
    "median_level_cm": 33,
-   "level_delta_3h": 0,
-   "level_delta_6h": -1,
+   "level_delta_3h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -7,
+   "level_delta_24h": -8,
    "water_temp": 14.2,
    "median_water_temp": 14.0,
    "measured": {
@@ -2442,10 +2395,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2467,12 +2420,11 @@
     {
      "file": "photos/ortofoto/SJA8764000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.81,
-   "q_delta_24h": -0.18,
    "median_now": 1.33,
    "percentile": 67,
    "validated": false,
@@ -2481,7 +2433,7 @@
    "level_cm": 25,
    "median_level_cm": 19,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 0,
    "water_temp": 12.6,
@@ -2494,10 +2446,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2519,12 +2471,11 @@
     {
      "file": "photos/ortofoto/SJA8799000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.677,
-   "q_delta_24h": -0.081,
    "median_now": 0.105,
    "percentile": 82,
    "validated": false,
@@ -2533,7 +2484,7 @@
    "level_cm": 49,
    "median_level_cm": 33,
    "level_delta_3h": 1,
-   "level_delta_6h": 2,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 1,
    "water_temp": 13.3,
@@ -2546,10 +2497,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2571,12 +2522,11 @@
     {
      "file": "photos/ortofoto/SJA9204000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.79,
-   "q_delta_24h": -0.16,
    "median_now": 1.45,
    "percentile": 58,
    "validated": false,
@@ -2585,7 +2535,7 @@
    "level_cm": 78,
    "median_level_cm": 48,
    "level_delta_3h": -1,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
    "water_temp": 13.7,
@@ -2598,10 +2548,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2623,23 +2573,22 @@
     {
      "file": "photos/ortofoto/SJA3959000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.12,
-   "q_delta_24h": -0.13,
    "median_now": 0.76,
    "percentile": 61,
    "validated": false,
    "specific_runoff": 2.3,
    "median_specific_runoff": 1.6,
-   "level_cm": 62,
+   "level_cm": 63,
    "median_level_cm": 50,
    "level_delta_3h": 3,
-   "level_delta_6h": 4,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": 6,
+   "level_delta_24h": 7,
    "water_temp": 13.4,
    "median_water_temp": 12.7,
    "measured": {
@@ -2650,10 +2599,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2675,12 +2624,11 @@
     {
      "file": "photos/ortofoto/SJA1133000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 0.272,
-   "q_delta_24h": -0.023,
    "median_now": 0.15,
    "percentile": 78,
    "validated": false,
@@ -2689,9 +2637,9 @@
    "level_cm": 55,
    "median_level_cm": 38,
    "level_delta_3h": -1,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -4,
+   "level_delta_24h": -3,
    "water_temp": 11.7,
    "median_water_temp": 11.3,
    "measured": {
@@ -2702,10 +2650,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2727,12 +2675,11 @@
     {
      "file": "photos/ortofoto/SJA3413000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 8.46,
-   "q_delta_24h": -1.84,
    "median_now": 3.7,
    "percentile": 84,
    "validated": false,
@@ -2740,11 +2687,11 @@
    "median_specific_runoff": 3.5,
    "level_cm": 104,
    "median_level_cm": 27,
-   "level_delta_3h": -1,
-   "level_delta_6h": -2,
+   "level_delta_3h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": 28,
-   "water_temp": 14.8,
+   "water_temp": 14.7,
    "median_water_temp": 13.5,
    "measured": {
     "q": {
@@ -2754,10 +2701,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2779,12 +2726,11 @@
     {
      "file": "photos/ortofoto/SJA2072000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 1.36,
-   "q_delta_24h": -0.12,
    "median_now": 0.534,
    "percentile": 78,
    "validated": false,
@@ -2792,10 +2738,10 @@
    "median_specific_runoff": 2.6,
    "level_cm": 67,
    "median_level_cm": 48,
-   "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_3h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": -4,
+   "level_delta_24h": -3,
    "water_temp": 13.3,
    "median_water_temp": 12.8,
    "measured": {
@@ -2806,10 +2752,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2831,12 +2777,11 @@
     {
      "file": "photos/ortofoto/SJA5230000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 5.88,
-   "q_delta_24h": -0.18,
    "median_now": 3.43,
    "percentile": 97,
    "validated": false,
@@ -2845,10 +2790,10 @@
    "level_cm": 152,
    "median_level_cm": 123,
    "level_delta_3h": 0,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -1,
-   "water_temp": 16.2,
+   "water_temp": 16.1,
    "median_water_temp": 15.3,
    "measured": {
     "q": {
@@ -2858,10 +2803,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2883,7 +2828,7 @@
     {
      "file": "photos/ortofoto/SJA4456000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [
@@ -2899,18 +2844,17 @@
     }
    ],
    "q": 9.91,
-   "q_delta_24h": -0.39,
    "median_now": 5.25,
    "percentile": 85,
    "validated": false,
    "specific_runoff": 8.8,
    "median_specific_runoff": 4.6,
-   "level_cm": 48,
+   "level_cm": 49,
    "median_level_cm": 22,
-   "level_delta_3h": 10,
-   "level_delta_6h": 13,
+   "level_delta_3h": 3,
+   "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": 17,
+   "level_delta_24h": 18,
    "water_temp": 14.6,
    "median_water_temp": 14.0,
    "measured": {
@@ -2921,10 +2865,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   },
@@ -2946,12 +2890,11 @@
     {
      "file": "photos/ortofoto/SJA2835000.jpg",
      "type": "ortofoto",
-     "source": "Maa- ja Ruumiamet, jaama märk lisatud"
+     "source": "Maa- ja Ruumiamet"
     }
    ],
    "notes": [],
    "q": 2.88,
-   "q_delta_24h": -0.27,
    "median_now": 1.08,
    "percentile": 92,
    "validated": false,
@@ -2960,10 +2903,10 @@
    "level_cm": 158,
    "median_level_cm": 139,
    "level_delta_3h": -1,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": -1,
-   "water_temp": 13.4,
+   "water_temp": 13.5,
    "median_water_temp": 12.6,
    "measured": {
     "q": {
@@ -2973,10 +2916,10 @@
      "date": "2026-09-16"
     },
     "level": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     },
     "water_temp": {
-     "time": "2026-09-17T13:00:00Z"
+     "time": "2026-09-17T19:00:00Z"
     }
    }
   }
