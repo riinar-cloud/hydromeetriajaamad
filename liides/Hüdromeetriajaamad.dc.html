@@ -17,6 +17,19 @@
   a{color:#2b6288;text-decoration:none;border-bottom:1px solid rgba(43,98,136,.32)}
   a:hover{color:#1c4460;border-bottom-color:#1c4460}
   th{text-align:left}
+
+  /* mobiil: ainult need asjad, mis inline-voolamisega ei lahene */
+  @media (max-width: 760px) {
+    .paa-veerud{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}
+    .paa-sisu{padding-left:20px !important;padding-right:20px !important}
+    .paa-tabel{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .paa-tabel table{min-width:620px}
+    .paa-yaxis{width:34px !important;font-size:10px !important}
+    .paa-xsildid > div:nth-child(even){display:none}
+    .paa-h1{font-size:30px !important}
+    /* graafik äärest ääreni: iga piksel loeb aasta päevaandmete juures */
+    .paa-graafik{margin-left:-20px;margin-right:-20px;border-left:none;border-right:none;padding:14px 10px 10px !important}
+  }
 </style>
 </helmet>
 
@@ -27,7 +40,7 @@
   </header>
 
   <sc-if value="{{ isStation }}" hint-placeholder-val="{{ true }}">
-  <main data-screen-label="Jaama leht" style="max-width:1180px;margin:0 auto;padding:0 32px 56px">
+  <main class="paa-sisu" data-screen-label="Jaama leht" style="max-width:1180px;margin:0 auto;padding:0 32px 56px">
 
     <nav style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6b6a64;padding:22px 0 0;letter-spacing:.03em">
       <a href="." onClick="{{ backToMap }}">← Kaart</a> / {{ nRiver }} / <span style="color:#1b1b19">{{ nName }}</span>
@@ -36,10 +49,10 @@
 
     <!-- 1. KES JA KUS -->
     <section style="padding:20px 0 24px">
-      <h1 style="font-family:'Newsreader',serif;font-size:40px;font-weight:400;line-height:1.05;letter-spacing:-.02em;margin:0 0 6px">{{ nName }}</h1>
+      <h1 class="paa-h1" style="font-family:'Newsreader',serif;font-size:40px;font-weight:400;line-height:1.05;letter-spacing:-.02em;margin:0 0 6px">{{ nName }}</h1>
       <p style="font-family:'Newsreader',serif;font-size:19px;color:#4a4943;margin:0 0 20px;line-height:1.35;max-width:30ch">{{ nSub }}</p>
 
-      <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:stretch">
+      <div class="paa-veerud" style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:36px;align-items:stretch">
       <div>
         <dl style="margin:0;background:#fffefb;border:1px solid #dcd7cd;height:100%;padding:4px 18px;display:flex;flex-direction:column;justify-content:center">
           <div style="display:grid;grid-template-columns:minmax(0,13ch) minmax(0,1fr);gap:16px;align-items:baseline;padding:11px 0;border-bottom:1px solid #eae6dd">
@@ -99,86 +112,8 @@
       </div>
     </section>
 
-    <!-- 2. MIS ON OLNUD -->
+    <!-- 2. MIS PRAEGU -->
     <section style="border-top:1px solid #dcd7cd;padding:22px 0 24px">
-      <div style="display:flex;justify-content:flex-end;margin-bottom:6px">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6b6a64">{{ nSeries }}</div>
-      </div>
-      <h2 style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:400;margin:0 0 12px;letter-spacing:.04em;color:#1b1b19">Viimase aasta vooluhulga võrdlus ajalooliste andmetega</h2>
-
-      <div style="background:#fffefb;border:1px solid #dcd7cd;padding:20px 20px 12px;position:relative;min-height:300px">
-      <sc-if value="{{ chartLoading }}" hint-placeholder-val="{{ true }}">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8b8a83;letter-spacing:.06em">AEGRIDA LAEB…</div>
-      </sc-if>
-      <sc-if value="{{ chartMissing }}" hint-placeholder-val="{{ false }}">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-size:14px;color:#57564f;background:#fffefb">Selle jaama ajakohased andmed puuduvad.</div>
-      </sc-if>
-      <div style="display:flex;align-items:flex-start;gap:8px">
-      <div style="flex:1;min-width:0">
-        <div style="position:relative">
-        <svg viewBox="0 0 1000 340" width="100%" style="display:block;overflow:visible;font-family:'IBM Plex Mono',monospace">
-          <defs>
-            <pattern id="unv" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
-              <line x1="0" y1="0" x2="0" y2="8" stroke="#a8701a" stroke-width="1" opacity=".13"></line>
-            </pattern>
-          </defs>
-          <g stroke="#e6e2d9" stroke-width="1">
-            <sc-for list="{{ yTicks }}" as="t" hint-placeholder-count="5">
-              <line x1="0" y1="{{ t.y }}" x2="1000" y2="{{ t.y }}"></line>
-            </sc-for>
-          </g>
-          <path d="{{ wideBandPath }}" fill="#2b6288" opacity=".13"></path>
-          <path d="{{ bandPath }}" fill="#2b6288" opacity=".22"></path>
-          <path d="{{ medPath }}" fill="none" stroke="#2b6288" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" opacity=".75"></path>
-          <path d="{{ valPath }}" fill="none" stroke="#1b3d56" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"></path>
-          <path d="{{ unvPath }}" fill="none" stroke="#1b3d56" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"></path>
-          <g font-size="11" fill="#6b6a64">
-          </g>
-          <text x="0" y="326" font-size="10.5" fill="{{ nAxisInk }}" letter-spacing=".06em">VOOLUHULK m³/s — LOGARITMILINE SKAALA</text>
-        </svg>
-        <div style="position:absolute;left:100%;top:0;bottom:0;width:44px;margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b6a64">
-          <div style="position:absolute;left:0;top:{{ yp0 }};transform:translateY(-50%)">{{ yl0 }}</div>
-          <div style="position:absolute;left:0;top:{{ yp1 }};transform:translateY(-50%)">{{ yl1 }}</div>
-          <div style="position:absolute;left:0;top:{{ yp2 }};transform:translateY(-50%)">{{ yl2 }}</div>
-          <div style="position:absolute;left:0;top:{{ yp3 }};transform:translateY(-50%)">{{ yl3 }}</div>
-          <div style="position:absolute;left:0;top:{{ yp4 }};transform:translateY(-50%)">{{ yl4 }}</div>
-        </div>
-        </div>
-        <div style="position:relative;height:16px;margin-top:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b6a64">
-          <div style="position:absolute;left:{{ xp0 }};transform:translateX(-50%)">{{ xl0 }}</div>
-          <div style="position:absolute;left:{{ xp1 }};transform:translateX(-50%)">{{ xl1 }}</div>
-          <div style="position:absolute;left:{{ xp2 }};transform:translateX(-50%)">{{ xl2 }}</div>
-          <div style="position:absolute;left:{{ xp3 }};transform:translateX(-50%)">{{ xl3 }}</div>
-          <div style="position:absolute;left:{{ xp4 }};transform:translateX(-50%)">{{ xl4 }}</div>
-          <div style="position:absolute;left:{{ xp5 }};transform:translateX(-50%)">{{ xl5 }}</div>
-          <div style="position:absolute;left:{{ xp6 }};transform:translateX(-50%)">{{ xl6 }}</div>
-          <div style="position:absolute;left:{{ xp7 }};transform:translateX(-50%)">{{ xl7 }}</div>
-          <div style="position:absolute;left:{{ xp8 }};transform:translateX(-50%)">{{ xl8 }}</div>
-          <div style="position:absolute;left:{{ xp9 }};transform:translateX(-50%)">{{ xl9 }}</div>
-          <div style="position:absolute;left:{{ xp10 }};transform:translateX(-50%)">{{ xl10 }}</div>
-          <div style="position:absolute;left:{{ xp11 }};transform:translateX(-50%)">{{ xl11 }}</div>
-          <div style="position:absolute;left:{{ xp12 }};transform:translateX(-50%)">{{ xl12 }}</div>
-          <div style="position:absolute;left:{{ xp13 }};transform:translateX(-50%)">{{ xl13 }}</div>
-        </div>
-      </div>
-      <div style="width:44px;flex:none"></div>
-      </div>
-
-        <sc-if value="{{ chartReady }}" hint-placeholder-val="{{ true }}">
-        <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center;border-top:1px solid #e6e2d9;margin-top:14px;padding-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#57564f">
-          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:0;border-top:2.1px solid #1b3d56"></span>viimane aasta</span>
-          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:0;border-top:1.6px solid #2b6288;opacity:.75"></span>ajalooline mediaan</span>
-          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:11px;background:#2b6288;opacity:.22"></span>25% ja 75% vahemik</span>
-          <sc-if value="{{ hasWide }}" hint-placeholder-val="{{ false }}">
-            <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:11px;background:#2b6288;opacity:.13"></span>10% ja 90% vahemik</span>
-          </sc-if>
-        </div>
-        </sc-if>
-      </div>
-    </section>
-
-    <!-- 3. MIS PRAEGU -->
-    <section style="border-top:1px solid #dcd7cd;padding:22px 0 0">
       <sc-if value="{{ hasNotes }}" hint-placeholder-val="{{ false }}">{{ notes }}</sc-if>
       
 
@@ -251,7 +186,7 @@
 
       <sc-if value="{{ hasPct }}" hint-placeholder-val="{{ true }}">
       <div style="background:#fffefb;border:1px solid #dcd7cd;border-top:none;padding:20px 22px 18px">
-        <p style="font-size:14.5px;line-height:1.5;margin:0 0 14px;color:#1b1b19;max-width:78ch;text-wrap:pretty">Tänane vooluhulk on kõrgem <span style="font-family:'IBM Plex Mono',monospace">{{ nPct }}</span> kõigist samal kalendripäeval mõõdetud vooluhulkadest kogu mõõtmisperioodi jooksul.</p>
+        <p style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:14px;line-height:1.5;margin:0 0 14px;color:#1b1b19;max-width:72ch;text-wrap:pretty"><sc-if value="{{ nPctClear }}" hint-placeholder-val="{{ true }}">Tänane vooluhulk on {{ nPctPos }} selle kalendripäeva ajaloolise mediaani — suurem kui {{ nPct }} mõõtmisperioodi samadest päevadest.</sc-if><sc-if value="{{ nPctNear }}" hint-placeholder-val="{{ false }}">Tänane vooluhulk on selle kalendripäeva ajaloolise mediaani lähedal — suurem kui {{ nPct }} mõõtmisperioodi samadest päevadest.</sc-if></p>
         <div style="position:relative;height:22px;border:1px solid #dcd7cd;background:linear-gradient(90deg,#d9a79f 0%,#eddfdc 38%,#f1f0ed 50%,#dae5ec 62%,#94b3c8 100%)">
           <div style="position:absolute;left:{{ nPctLeft }};top:-4px;bottom:-4px;width:2px;background:{{ nPctColor }}"></div>
           <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:#8a857b"></div>
@@ -266,17 +201,94 @@
       </sc-if>
     </section>
 
- </main>
+    <!-- 3. MIS ON OLNUD -->
+    <section style="border-top:1px solid #dcd7cd;padding:22px 0 0">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:6px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6b6a64">{{ nSeries }}</div>
+      </div>
+      <h2 style="font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;margin:0 0 12px;letter-spacing:.04em;color:#1b1b19">Viimase aasta vooluhulga võrdlus ajalooliste andmetega</h2>
+
+      <div class="paa-graafik" style="background:#fffefb;border:1px solid #dcd7cd;padding:20px 20px 12px;position:relative;min-height:300px">
+      <sc-if value="{{ chartLoading }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8b8a83;letter-spacing:.06em">AEGRIDA LAEB…</div>
+      </sc-if>
+      <sc-if value="{{ chartMissing }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-size:14px;color:#57564f;background:#fffefb">Selle jaama ajakohased andmed puuduvad.</div>
+      </sc-if>
+      <div style="display:flex;align-items:flex-start;gap:8px">
+      <div style="flex:1;min-width:0">
+        <div style="position:relative">
+        <svg viewBox="{{ vbox }}" width="100%" style="display:block;overflow:visible;font-family:'IBM Plex Mono',monospace">
+          <defs>
+            <pattern id="unv" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="8" stroke="#a8701a" stroke-width="1" opacity=".13"></line>
+            </pattern>
+          </defs>
+          <g stroke="#e6e2d9" stroke-width="{{ swGrid }}">
+            <sc-for list="{{ yTicks }}" as="t" hint-placeholder-count="5">
+              <line x1="0" y1="{{ t.y }}" x2="1000" y2="{{ t.y }}"></line>
+            </sc-for>
+          </g>
+          <path d="{{ wideBandPath }}" fill="#2b6288" opacity=".13"></path>
+          <path d="{{ bandPath }}" fill="#2b6288" opacity=".22"></path>
+          <path d="{{ medPath }}" fill="none" stroke="#2b6288" stroke-width="{{ swMed }}" stroke-linejoin="round" stroke-linecap="round" opacity=".75"></path>
+          <path d="{{ valPath }}" fill="none" stroke="#1b3d56" stroke-width="{{ swYear }}" stroke-linejoin="round" stroke-linecap="round"></path>
+          <path d="{{ unvPath }}" fill="none" stroke="#1b3d56" stroke-width="{{ swYear }}" stroke-linejoin="round" stroke-linecap="round"></path>
+          <g font-size="11" fill="#6b6a64">
+          </g>
+        </svg>
+        <div class="paa-yaxis" style="position:absolute;left:100%;top:0;bottom:0;width:44px;margin-left:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b6a64">
+          <div style="position:absolute;left:0;top:{{ yp0 }};transform:translateY(-50%)">{{ yl0 }}</div>
+          <div style="position:absolute;left:0;top:{{ yp1 }};transform:translateY(-50%)">{{ yl1 }}</div>
+          <div style="position:absolute;left:0;top:{{ yp2 }};transform:translateY(-50%)">{{ yl2 }}</div>
+          <div style="position:absolute;left:0;top:{{ yp3 }};transform:translateY(-50%)">{{ yl3 }}</div>
+          <div style="position:absolute;left:0;top:{{ yp4 }};transform:translateY(-50%)">{{ yl4 }}</div>
+        </div>
+        </div>
+        <div class="paa-xsildid" style="position:relative;height:16px;margin-top:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6b6a64">
+          <div style="position:absolute;left:{{ xp0 }};transform:translateX(-50%)">{{ xl0 }}</div>
+          <div style="position:absolute;left:{{ xp1 }};transform:translateX(-50%)">{{ xl1 }}</div>
+          <div style="position:absolute;left:{{ xp2 }};transform:translateX(-50%)">{{ xl2 }}</div>
+          <div style="position:absolute;left:{{ xp3 }};transform:translateX(-50%)">{{ xl3 }}</div>
+          <div style="position:absolute;left:{{ xp4 }};transform:translateX(-50%)">{{ xl4 }}</div>
+          <div style="position:absolute;left:{{ xp5 }};transform:translateX(-50%)">{{ xl5 }}</div>
+          <div style="position:absolute;left:{{ xp6 }};transform:translateX(-50%)">{{ xl6 }}</div>
+          <div style="position:absolute;left:{{ xp7 }};transform:translateX(-50%)">{{ xl7 }}</div>
+          <div style="position:absolute;left:{{ xp8 }};transform:translateX(-50%)">{{ xl8 }}</div>
+          <div style="position:absolute;left:{{ xp9 }};transform:translateX(-50%)">{{ xl9 }}</div>
+          <div style="position:absolute;left:{{ xp10 }};transform:translateX(-50%)">{{ xl10 }}</div>
+          <div style="position:absolute;left:{{ xp11 }};transform:translateX(-50%)">{{ xl11 }}</div>
+          <div style="position:absolute;left:{{ xp12 }};transform:translateX(-50%)">{{ xl12 }}</div>
+          <div style="position:absolute;left:{{ xp13 }};transform:translateX(-50%)">{{ xl13 }}</div>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:#6b6a64;margin-top:8px">VOOLUHULK m³/s — LOGARITMILINE SKAALA</div>
+      </div>
+      <div class="paa-yaxis" style="width:44px;flex:none"></div>
+      </div>
+
+        <sc-if value="{{ chartReady }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-wrap:wrap;gap:22px;align-items:center;border-top:1px solid #e6e2d9;margin-top:14px;padding-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#57564f">
+          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:0;border-top:2.1px solid #1b3d56"></span>viimane aasta</span>
+          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:0;border-top:1.6px solid #2b6288;opacity:.75"></span>ajalooline mediaan</span>
+          <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:11px;background:#2b6288;opacity:.22"></span>25% ja 75% vahemik</span>
+          <sc-if value="{{ hasWide }}" hint-placeholder-val="{{ false }}">
+            <span style="display:flex;align-items:center;gap:7px"><span style="width:22px;height:11px;background:#2b6288;opacity:.13"></span>10% ja 90% vahemik</span>
+          </sc-if>
+        </div>
+        </sc-if>
+      </div>
+    </section>
+  </main>
   </sc-if>
 
   <sc-if value="{{ isIndex }}" hint-placeholder-val="{{ false }}">
-  <main data-screen-label="Indeksleht — kaart ja tabel" style="max-width:1180px;margin:0 auto;padding:0 32px 56px">
+  <main class="paa-sisu" data-screen-label="Indeksleht — kaart ja tabel" style="max-width:1180px;margin:0 auto;padding:0 32px 56px">
     <section style="padding:26px 0 22px">
-      <h1 style="font-family:'Newsreader',serif;font-size:44px;font-weight:400;margin:0 0 8px;letter-spacing:-.02em">Eesti hüdromeetriajaamad</h1>
+      <h1 class="paa-h1" style="font-family:'Newsreader',serif;font-size:44px;font-weight:400;margin:0 0 8px;letter-spacing:-.02em">Eesti hüdromeetriajaamad</h1>
 
     </section>
 
-    <div style="position:relative;border:1px solid #dcd7cd;background:#e8e4db;overflow:hidden;aspect-ratio:1301/863;max-width:820px">
+    <div ref="{{ kaartRef }}" style="position:relative;border:1px solid #dcd7cd;background:#e8e4db;overflow:hidden;aspect-ratio:1301/863;max-width:820px">
       <div style="position:absolute;left:-2.89%;top:-12.46%;width:118%;height:118.7%;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr);filter:grayscale(.84) contrast(.9) brightness(1.09)">
         <img src="https://tile.openstreetmap.org/8/143/74.png" alt="" style="display:block;width:100%;height:100%">
         <img src="https://tile.openstreetmap.org/8/144/74.png" alt="" style="display:block;width:100%;height:100%">
@@ -304,7 +316,9 @@
         <img src="https://tile.openstreetmap.org/8/148/77.png" alt="" style="display:block;width:100%;height:100%">
       </div>
       <sc-for list="{{ dots }}" as="s" hint-placeholder-count="0">
-        <button onClick="{{ s.open }}" title="{{ s.title }}" style="position:absolute;left:{{ s.left }}%;top:{{ s.top }}%;width:{{ s.size }}px;height:{{ s.size }}px;margin-left:{{ s.off }}px;margin-top:{{ s.off }}px;padding:0;border-radius:50%;background:#2b6288;opacity:.8;border:1.5px solid #fffefb;cursor:pointer" style-hover="opacity:1;box-shadow:0 0 0 5px rgba(43,98,136,.25)"></button>
+        <button onClick="{{ s.open }}" title="{{ s.title }}" style="position:absolute;left:{{ s.left }}%;top:{{ s.top }}%;width:{{ s.hit }}px;height:{{ s.hit }}px;margin-left:{{ s.hitOff }}px;margin-top:{{ s.hitOff }}px;padding:0;border:none;background:none;cursor:pointer;display:flex;align-items:center;justify-content:center">
+          <span style="display:block;width:{{ s.size }}px;height:{{ s.size }}px;border-radius:50%;background:#2b6288;opacity:.8;border:1.5px solid #fffefb" style-hover="opacity:1;box-shadow:0 0 0 5px rgba(43,98,136,.25)"></span>
+        </button>
       </sc-for>
       <span style="position:absolute;right:7px;bottom:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#57564f;background:#fffefbcc;padding:3px 6px">© OpenStreetMap contributors</span>
       <div style="position:absolute;left:10px;top:10px;display:flex;align-items:center;gap:10px;background:#fffefbe8;border:1px solid #dcd7cd;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#57564f;letter-spacing:.04em">
@@ -317,6 +331,7 @@
       </div>
     </div>
 
+    <div class="paa-tabel">
     <table style="width:100%;border-collapse:collapse;margin-top:26px;font-size:13.5px;background:#fffefb;border:1px solid #dcd7cd">
       <thead>
         <tr style="border-bottom:1px solid #b9b4a9">
@@ -337,6 +352,7 @@
         </sc-for>
       </tbody>
     </table>
+    </div>
 
   </main>
   </sc-if>
@@ -366,7 +382,25 @@ const MON = ["jaan","veebr","märts","apr","mai","juuni","juuli","aug","sept","o
 class Component extends DCLogic {
   state = { view: "index", st: null, stCode: null, list: null, sort: "name", dir: 1, selected: null };
 
+  // klassiväli: olemas juba enne esimest renderdust, sest ref-callback kutsub seda
+  mõõdaKaart = () => {
+    const el = this.kaart;
+    if (el && el.clientWidth && el.clientWidth !== this.state.kaardiLaius) this.setState({ kaardiLaius: el.clientWidth });
+  };
+
   componentDidMount() {
+    // brauseri oma taastamine läheks meie kerimiskohaga tülli
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+    // kitsas ekraan: graafiku proportsioon ja kaardipunktide suurus sõltuvad sellest
+    this.mq = matchMedia("(max-width: 760px)");
+    this.mqKuula = () => this.setState({ kitsas: this.mq.matches });
+    this.mq.addEventListener("change", this.mqKuula);
+    this.setState({ kitsas: this.mq.matches });
+
+    addEventListener("resize", this.mõõdaKaart);
+    this.mõõdaKaart();
+
     fetch("data/stations.json").then(r => r.json())
       .then(d => this.setState({ list: d.stations, updated: d.updated, validatedThrough: d.validated_through }))
       .catch(() => {});
@@ -376,19 +410,30 @@ class Component extends DCLogic {
     this.rakendaURL();
   }
 
-  rakendaURL() {                                    // URL -> olek
+  componentWillUnmount() {
+    if (this.mq) this.mq.removeEventListener("change", this.mqKuula);
+    if (this.mõõdaKaart) removeEventListener("resize", this.mõõdaKaart);
+  }
+
+  rakendaURL() {                                    // URL -> olek (ka brauseri tagasi-nupp)
     const kood = decodeURIComponent(location.hash.replace(/^#/, ""));
-    this.setState(kood ? { view: "station", selected: kood } : { view: "index", selected: null });
+    if (kood) this.setState({ view: "station", selected: kood }, () => scrollTo(0, 0));
+    else {
+      const koht = this.indeksiKoht || 0;
+      this.setState({ view: "index", selected: null }, () => scrollTo(0, koht));
+    }
   }
 
   ava(kood) {                                       // ainus tee jaama lehele
+    this.indeksiKoht = scrollY;                     // esilehe koht meelde
     if (location.hash !== "#" + kood) history.pushState(null, "", "#" + kood);
-    this.setState({ view: "station", selected: kood });
+    this.setState({ view: "station", selected: kood }, () => scrollTo(0, 0));
   }
 
   kaardile() {                                      // ainus tee tagasi
+    const koht = this.indeksiKoht || 0;
     if (location.hash) history.pushState(null, "", location.pathname + location.search);
-    this.setState({ view: "index", selected: null });
+    this.setState({ view: "index", selected: null }, () => scrollTo(0, koht));
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -414,8 +459,12 @@ class Component extends DCLogic {
 
   chart() {
     const st = this.state.st;
-    const W = 1000, H = 280, VB = 340;
-    const empty = { bandPath: "", wideBandPath: "", hasWide: false, medPath: "", valPath: "", unvPath: "", yTicks: [], unvX: 0, unvW: 0, chartLoading: true };
+    // kitsal ekraanil püstisem viewBox, muidu suruks 1000:340 graafiku ~86 px ribaks
+    const kitsas = this.state.kitsas;
+    const W = 1000, H = kitsas ? 620 : 280, VB = kitsas ? 700 : 340;
+    // joone paksus on viewBox'i ühikutes: kitsal ekraanil on skaala väiksem, joon peab jämedam olema
+    const sw = kitsas ? { year: 5.2, med: 4, grid: 2.4 } : { year: 2.1, med: 1.6, grid: 1 };
+    const empty = { vbox: `0 0 ${W} ${VB}`, swYear: sw.year, swMed: sw.med, swGrid: sw.grid, bandPath: "", wideBandPath: "", hasWide: false, medPath: "", valPath: "", unvPath: "", yTicks: [], unvX: 0, unvW: 0, chartLoading: true };
     for (let i = 0; i < 14; i++) { empty["xl" + i] = ""; empty["xp" + i] = "-999px"; }
     for (let i = 0; i < 5; i++) { empty["yl" + i] = ""; empty["yp" + i] = "-999px"; }
     const bad = this.state.stFailed || (st && (!st.year || !st.year.length || !st.daily));
@@ -507,7 +556,7 @@ class Component extends DCLogic {
       flat["yp" + i] = v == null ? "-999px" : (y(v) / VB * 100).toFixed(2) + "%";
     }
     const ux = x(cut + 1);
-    return { bandPath, wideBandPath, hasWide, medPath, valPath, unvPath, yTicks, ...flat, chartLoading: false, chartMissing: false, chartReady: true, unvX: +ux.toFixed(1), unvW: +(W - ux).toFixed(1) };
+    return { vbox: `0 0 ${W} ${VB}`, swYear: sw.year, swMed: sw.med, swGrid: sw.grid, bandPath, wideBandPath, hasWide, medPath, valPath, unvPath, yTicks, ...flat, chartLoading: false, chartMissing: false, chartReady: true, unvX: +ux.toFixed(1), unvW: +(W - ux).toFixed(1) };
   }
 
   dots() {
@@ -524,11 +573,15 @@ class Component extends DCLogic {
       const la = s.lat * Math.PI / 180;
       const ty = (1 - Math.log(Math.tan(la) + 1 / Math.cos(la)) / Math.PI) / 2 * n;
       const t = s.catchment_km2 > 0 ? (Math.log10(s.catchment_km2) - Math.log10(aLo)) / span : 0;
-      const size = +(10 + t * 16).toFixed(1);
+      // punkt kahaneb koos kaardiga (745 px = töölaua mõõt), aga mitte alla poole
+      const k = Math.max(0.5, Math.min(1, (this.state.kaardiLaius || 745) / 745));
+      const size = +((10 + t * 16) * k).toFixed(1);
+      const hit = Math.max(30, size);     // puuteala jääb sõrmele tabatav ka väikese punkti juures
       return {
         left: +((tx - VX0) / (VX1 - VX0) * 100).toFixed(2),
         top: +((ty - VY0) / (VY1 - VY0) * 100).toFixed(2),
         size: +size.toFixed(1), off: +(-size / 2).toFixed(1),
+        hit, hitOff: +(-hit / 2).toFixed(1),
         title: `${s.name} — ${s.river}`,
         open: () => this.ava(s.code)
       };
@@ -615,6 +668,10 @@ class Component extends DCLogic {
       hasPct: num(rec.percentile),
       noPct: !num(rec.percentile),
       nPct: rec.percentile + "%",
+      // protsentiil ütleb ise, kummal pool mediaani ollakse; 45–55 on liiga keskel
+      nPctPos: rec.percentile < 45 ? "alla" : "üle",
+      nPctClear: rec.percentile > 55 || rec.percentile < 45,
+      nPctNear: rec.percentile >= 45 && rec.percentile <= 55,
       nPctW: rec.percentile + "%",
       nPctLeft: rec.percentile + "%",
       nPctColor: rec.percentile < 50 ? "#8f4a42" : "#2b6288",
@@ -659,6 +716,7 @@ class Component extends DCLogic {
       ...this.chart(),
       ...this.station(),
       dots: this.dots(),
+      kaartRef: el => { this.kaart = el; if (el && this.mõõdaKaart) requestAnimationFrame(this.mõõdaKaart); },
       cols,
       rows: list.map(r => ({
         name: r.name, river: r.river, county: r.county, code: r.code,
