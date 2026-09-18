@@ -58,7 +58,19 @@ jobs:
           git add -A docs andmed
           if git diff --staged --quiet; then
             echo "muutusi ei ole"
-          else
-            git commit -m "Andmed $(date -u '+%Y-%m-%d %H:%M UTC')"
-            git push
+            exit 0
           fi
+          git commit -m "Andmed $(date -u '+%Y-%m-%d %H:%M UTC')"
+          # Push võib olla tõrjutud, kui vahepeal on keegi teine commit'inud: teine
+          # jooks, käsitsi käivitus või kasutaja ise. Juhtus päriselt 18.09 kell 07:26.
+          # Andmefailid tekitatakse tervikuna uuesti, seega konflikti korral võidab
+          # meie versioon: rebase'i ajal tähendab -X theirs just seda commit'i,
+          # mida parasjagu peale kantakse.
+          for katse in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "push tõrjuti ($katse), tõmban uue seisu ja proovin uuesti"
+            git fetch origin main
+            git rebase -X theirs origin/main || { git rebase --abort; exit 1; }
+          done
+          echo "push ei õnnestunud kolme katsega"
+          exit 1
