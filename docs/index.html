@@ -335,7 +335,7 @@
       <thead>
         <tr style="border-bottom:1px solid #b9b4a9">
           <sc-for list="{{ cols }}" as="c" hint-placeholder-count="6">
-            <th onClick="{{ c.sort }}" style="{{ c.style }}">{{ c.label }}</th>
+            <th onClick="{{ c.sort }}" style="{{ c.style }}">{{ c.label }}<sc-if value="{{ c.label2 }}" hint-placeholder-val="{{ false }}"><span style="display:block">{{ c.label2 }}</span></sc-if></th>
           </sc-for>
         </tr>
       </thead>
@@ -697,11 +697,13 @@ class Component extends DCLogic {
     const sortBy = k => () => this.setState(p => ({ sort: k, dir: p.sort === k ? -p.dir : 1 }));
     const cols = [
       ["name", "Jaam", "left"], ["river", "Jõgi", "left"], ["county", "Maakond", "left"],
-      ["catchment_km2", "Valgala km²", "right", true], ["q", "Viimane mõõdetud vooluhulk m³/s", "right", false]
-    ].map(([k, label, al, sortable = true]) => ({
+      ["catchment_km2", "Valgala km²", "right", true], ["q", "Viimane mõõdetud", "right", false, "vooluhulk m³/s"]
+    ].map(([k, label, al, sortable = true, rida2]) => ({
+      // teine rida on eraldi tekst, mitte automaatne murdmine: veeru laius tuleb pikemast reast
       label: label + (sortable && s.sort === k ? (s.dir > 0 ? " ↑" : " ↓") : ""),
+      label2: rida2 || "",
       sort: sortable ? sortBy(k) : undefined,
-      style: `padding:11px 14px;text-align:${al};cursor:${sortable ? "pointer" : "default"};font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.07em;color:${sortable && s.sort === k ? "#1b3d56" : "#6b6a64"};text-transform:uppercase;white-space:nowrap;user-select:none`
+      style: `padding:11px 14px;text-align:${al};cursor:${sortable ? "pointer" : "default"};font-family:'IBM Plex Mono',monospace;font-size:10.5px;line-height:1.35;letter-spacing:.07em;color:${sortable && s.sort === k ? "#1b3d56" : "#6b6a64"};text-transform:uppercase;user-select:none;vertical-align:bottom;white-space:nowrap`
     }));
 
     const list = (s.list || []).slice().sort((a, b) => {
