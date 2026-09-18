@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-18T07:26:09Z",
+ "updated": "2026-09-18T07:43:54Z",
  "count": 57,
  "validated_through": "2025-12-31",
  "stations": [
@@ -36,7 +36,7 @@
    "level_delta_3h": -1,
    "level_delta_6h": 0,
    "level_delta_12h": -1,
-   "level_delta_24h": -1,
+   "level_delta_24h": -2,
    "water_temp": 12.9,
    "median_water_temp": 12.8,
    "measured": {
@@ -291,7 +291,7 @@
    "level_delta_3h": -1,
    "level_delta_6h": 0,
    "level_delta_12h": 1,
-   "level_delta_24h": 1,
+   "level_delta_24h": 2,
    "water_temp": 14.8,
    "median_water_temp": 14.8,
    "measured": {
@@ -342,7 +342,7 @@
    "level_delta_3h": -1,
    "level_delta_6h": -1,
    "level_delta_12h": -2,
-   "level_delta_24h": -2,
+   "level_delta_24h": -3,
    "water_temp": 14.4,
    "median_water_temp": 14.9,
    "measured": {
@@ -490,13 +490,13 @@
    "validated": false,
    "specific_runoff": 6.4,
    "median_specific_runoff": 2.5,
-   "level_cm": 75,
+   "level_cm": 76,
    "median_level_cm": 58,
-   "level_delta_3h": 0,
-   "level_delta_6h": -1,
-   "level_delta_12h": -1,
-   "level_delta_24h": -1,
-   "water_temp": 12.8,
+   "level_delta_3h": null,
+   "level_delta_6h": null,
+   "level_delta_12h": null,
+   "level_delta_24h": null,
+   "water_temp": 13.5,
    "median_water_temp": 13.4,
    "measured": {
     "q": {
@@ -506,10 +506,10 @@
      "date": "2026-09-17"
     },
     "level": {
-     "time": "2026-09-18T07:00:00Z"
+     "date": "2026-09-17"
     },
     "water_temp": {
-     "time": "2026-09-18T07:00:00Z"
+     "date": "2026-09-17"
     }
    }
   },
@@ -648,7 +648,7 @@
    "level_delta_3h": -1,
    "level_delta_6h": -1,
    "level_delta_12h": -2,
-   "level_delta_24h": -2,
+   "level_delta_24h": -1,
    "water_temp": 11.7,
    "median_water_temp": 11.3,
    "measured": {
@@ -750,7 +750,7 @@
    "level_delta_3h": 0,
    "level_delta_6h": 0,
    "level_delta_12h": -1,
-   "level_delta_24h": -1,
+   "level_delta_24h": -2,
    "water_temp": 12.5,
    "median_water_temp": 14.7,
    "measured": {
@@ -1105,7 +1105,7 @@
    "level_delta_3h": -4,
    "level_delta_6h": -8,
    "level_delta_12h": -16,
-   "level_delta_24h": -48,
+   "level_delta_24h": -47,
    "water_temp": 13.4,
    "median_water_temp": 12.3,
    "measured": {
@@ -1205,7 +1205,7 @@
    "level_delta_3h": 8,
    "level_delta_6h": 8,
    "level_delta_12h": 0,
-   "level_delta_24h": 2,
+   "level_delta_24h": -1,
    "water_temp": 15.2,
    "median_water_temp": 15.7,
    "measured": {
@@ -1307,7 +1307,7 @@
    "level_delta_3h": -1,
    "level_delta_6h": -2,
    "level_delta_12h": -4,
-   "level_delta_24h": -7,
+   "level_delta_24h": -6,
    "water_temp": 13.1,
    "median_water_temp": 13.4,
    "measured": {
@@ -1664,7 +1664,7 @@
    "level_delta_3h": 0,
    "level_delta_6h": 0,
    "level_delta_12h": 0,
-   "level_delta_24h": 0,
+   "level_delta_24h": 1,
    "water_temp": 12.1,
    "median_water_temp": 11.4,
    "measured": {
@@ -2333,7 +2333,7 @@
    "level_delta_3h": -2,
    "level_delta_6h": -5,
    "level_delta_12h": -3,
-   "level_delta_24h": -5,
+   "level_delta_24h": -4,
    "water_temp": 13.7,
    "median_water_temp": 13.3,
    "measured": {
@@ -2384,7 +2384,7 @@
    "level_delta_3h": -1,
    "level_delta_6h": -1,
    "level_delta_12h": -2,
-   "level_delta_24h": -7,
+   "level_delta_24h": -6,
    "water_temp": 13.9,
    "median_water_temp": 13.8,
    "measured": {
@@ -2849,7 +2849,7 @@
    "level_delta_3h": 0,
    "level_delta_6h": -1,
    "level_delta_12h": -1,
-   "level_delta_24h": 42,
+   "level_delta_24h": 57,
    "water_temp": 14.4,
    "median_water_temp": 13.9,
    "measured": {
