@@ -78,15 +78,15 @@ KAARDISTAMATA = {"Linnusaare", "Põhjaka I", "Põhjaka II", "Särevere"}
 # (Võhandu jõgi: Kirumpää ülalpool looduslik vs Räpina allpool, tunnisisene
 # kõikumine 22x suurem). Neid ei tohi kokku sulatada — allikad on eri.
 NOTES = {
+    # Ainult riigi ilmateenistuse enda hoiatus, sõna-sõnalt. Meie mõõdetud tähelepanek,
+    # et hüdroelektrijaam mõjutab ka vooluhulka (Räpina tunnisisene kõikumine ~20x suurem
+    # kui ülalpool asuvas Kirumpää jaamas), oli siin varem teise kirjena. Võetud maha:
+    # see on doktoritöö leid, mitte hoiatus, mida lugeja peab enne numbreid teadma.
     "SJA4456000": [  # Räpina, Võhandu jõgi
         {"type": "regulated",
          "text": "Veetaseme näidud on tugevalt mõjutatud jaama lähedal asuvate "
                  "hüdroelektrijaamade tööst.",
          "source": "Keskkonnaagentuur"},
-        {"type": "regulated",
-         "text": "Hüdroelektrijaama töö mõjutab ka vooluhulka: tunnisisene kõikumine on "
-                 "ligi 20 korda suurem kui samal jõel ülalpool asuvas Kirumpää jaamas.",
-         "source": "Eesti hüdromeetriajaamad"},
     ],
     "SJA2558000": [  # Roostoja, Rannapungerja jõgi
         {"type": "regulated",
@@ -660,6 +660,10 @@ def main():
         for s in doc["stations"]:
             s.pop("_id", None)
         kanna_operatiiv(doc["stations"], praegu)
+        # Hoiatused tulevad NOTES konstandist, mitte võrgust — uuendame ka siin, et
+        # muudatus jõuaks lehele järgmise tunniga, mitte alles öise täisehitusega.
+        for s in doc["stations"]:
+            s["notes"] = NOTES.get(s["code"], [])
         doc["updated"] = vaadeldud.isoformat(timespec="seconds").replace("+00:00", "Z")
         json.dump(doc, open(idx_fail, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         print(f"operatiivväljad uuendatud: {len(praegu)}/{len(doc['stations'])} jaama")
