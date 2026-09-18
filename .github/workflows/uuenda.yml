@@ -4,8 +4,11 @@ on:
   schedule:
     # Operatiivnäidud iga tund. GitHubi cron hilineb koormuse all, vt README.
     - cron: "15 * * * *"
-    # Täisehitus kord ööpäevas, kui EstModeli eelmine päev on kindlalt kohal.
-    - cron: "40 5 * * *"
+    # Täisehitus kord ööpäevas. 07:30 UTC, sest EstModel avaldab eelmise päeva
+    # hommikul kella 9 paiku Eesti aja järgi. Cron on ALATI UTC ega tunne suveaega:
+    # 07:30 UTC on suvel 10:30 ja talvel 09:30, seega kunagi liiga vara.
+    # Varem oli 05:40 UTC ja see jäi mõnel päeval EstModelist ette.
+    - cron: "30 7 * * *"
   workflow_dispatch:
     inputs:
       taisehitus:
@@ -38,7 +41,7 @@ jobs:
       - name: Vali režiim
         id: reziim
         run: |
-          if [ "${{ github.event.schedule }}" = "40 5 * * *" ] || \
+          if [ "${{ github.event.schedule }}" = "30 7 * * *" ] || \
              [ "${{ inputs.taisehitus }}" = "true" ]; then
             echo "lipud=--valjund docs" >> "$GITHUB_OUTPUT"
           else
