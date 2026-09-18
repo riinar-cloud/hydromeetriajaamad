@@ -435,13 +435,20 @@ def operatiiv(jaamad):
         a = (siht - datetime.timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%S")
         b = (siht + datetime.timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%S")
         parim = {}
-        for r in get(f"{KKA}/f_hydroseire?jaam_kood=in.({','.join(map(str, puudu))})"
-                     f"&aegrida_nimi=eq.WL%20avg&timeline_ts_utc=gte.{a}&timeline_ts_utc=lte.{b}"
-                     f"&select=jaam_kood,timeline_ts_utc,vaartus&limit=20000", timeout=90):
-            t = datetime.datetime.fromisoformat(r["timeline_ts_utc"]).replace(tzinfo=datetime.timezone.utc)
-            vahe = abs((t - siht).total_seconds())
-            if r["jaam_kood"] not in parim or vahe < parim[r["jaam_kood"]][0]:
-                parim[r["jaam_kood"]] = (vahe, r["vaartus"])
+        # See on lisandus, mitte alustala: kui f_hydroseire ei vasta, jääb level_delta_24h
+        # nendel jaamadel null-iks, aga kõik muu uuendub. Varem kukkus siin terve tunnine
+        # käik läbi ja leht jäi tunniks seisma millegi pärast, mis on valikuline.
+        try:
+            for r in get(f"{KKA}/f_hydroseire?jaam_kood=in.({','.join(map(str, puudu))})"
+                         f"&aegrida_nimi=eq.WL%20avg&timeline_ts_utc=gte.{a}&timeline_ts_utc=lte.{b}"
+                         f"&select=jaam_kood,timeline_ts_utc,vaartus&limit=20000", timeout=90):
+                t = datetime.datetime.fromisoformat(r["timeline_ts_utc"]).replace(tzinfo=datetime.timezone.utc)
+                vahe = abs((t - siht).total_seconds())
+                if r["jaam_kood"] not in parim or vahe < parim[r["jaam_kood"]][0]:
+                    parim[r["jaam_kood"]] = (vahe, r["vaartus"])
+        except Exception as e:
+            print(f"     hoiatus: f_hydroseire ei vastanud ({type(e).__name__}: {e}); "
+                  f"level_delta_24h jääb {len(puudu)} jaamal täitmata", flush=True)
         for sid in puudu:
             code = koodid[sid]
             if sid in parim and "level_cm" in praegu.get(code, {}):
@@ -881,4 +888,14 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as viga:
+        # CI logi lõpus peab seisma üherealine põhjus. Muidu on ainult punane rist ja
+        # jälitusjada, ning tunni pärast on kõik korras ega saa enam midagi järele vaadata.
+        import traceback
+        traceback.print_exc()
+        print(f"\nKUKKUS: {type(viga).__name__}: {viga}", flush=True)
+        print("Andmeid ei muudetud. Leht näitab edasi eelmist seisu; "
+              "järgmine tunnine käik proovib uuesti.", flush=True)
+        raise SystemExit(1)
