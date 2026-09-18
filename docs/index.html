@@ -567,6 +567,7 @@ class Component extends DCLogic {
     let aLo = Infinity, aHi = 0;
     list.forEach(s => { if (s.catchment_km2 > 0) { aLo = Math.min(aLo, s.catchment_km2); aHi = Math.max(aHi, s.catchment_km2); } });
     const span = Math.log10(aHi) - Math.log10(aLo) || 1;
+    const jame = matchMedia("(pointer: coarse)").matches;
     return list.map(s => {
       const tx = (s.lon + 180) / 360 * n;
       const la = s.lat * Math.PI / 180;
@@ -574,8 +575,9 @@ class Component extends DCLogic {
       const t = s.catchment_km2 > 0 ? (Math.log10(s.catchment_km2) - Math.log10(aLo)) / span : 0;
       // punkt kahaneb koos kaardiga (745 px = töölaua mõõt), aga mitte alla poole
       const k = Math.max(0.5, Math.min(1, (this.state.kaardiLaius || 745) / 745));
-      const size = +((10 + t * 16) * k).toFixed(1);
-      const hit = Math.max(30, size);     // puuteala jääb sõrmele tabatav ka väikese punkti juures
+      const size = +((8 + t * 12) * k).toFixed(1);
+      // puuteala sõltub sisendseadmest: 30 px on sõrme mõõt, hiirel katab see naabri kinni
+      const hit = Math.max(jame ? 30 : 10, size);
       return {
         left: +((tx - VX0) / (VX1 - VX0) * 100).toFixed(2),
         top: +((ty - VY0) / (VY1 - VY0) * 100).toFixed(2),
@@ -584,7 +586,8 @@ class Component extends DCLogic {
         title: `${s.name} — ${s.river}`,
         open: () => this.ava(s.code)
       };
-    });
+    // suuremad enne, väiksemad pärast: väiksemal on vähem ruumi kaotada, seega jääb peale
+    }).sort((a, b) => b.size - a.size);
   }
 
   station() {
