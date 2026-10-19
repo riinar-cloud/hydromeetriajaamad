@@ -63,6 +63,11 @@ EST = "https://estmodel.envir.ee"
 KKA = "https://keskkonnaandmed.envir.ee"
 XMLURL = "https://www.ilmateenistus.ee/ilma_andmed/xml/observations.php"
 UA = {"User-Agent": "Mozilla/5.0 (hydro-site build)"}
+# Minimaalne vahe EstModeli päringute vahel. Täisehitus teeb neid ~237 ja server hakkas
+# 14.10.2026 vastama 429-ga. 0,5 s lisab tervele buildile ~2 minutit — ööpäevase töö
+# juures olematu hind selle eest, et see üldse lõpuni jõuab.
+EST_VAHE = 0.5
+_est_viimane = 0.0
 AKEN = 5
 
 ONLY_NOW = "--only-now" in sys.argv
@@ -97,13 +102,24 @@ NOTES = {
 }
 
 
-def get(url, timeout=60, binary=False, katseid=3):
+def get(url, timeout=60, binary=False, katseid=5):
     """Tõrke korral ütleb, MILLINE aadress ja MIS kood — muidu ei saa CI logist aru.
 
     Kaugjuhitavas keskkonnas on see ainus jälg: kui jooks kukub GitHubis läbi, ei saa
     keegi seda hiljem järele proovida, sest tund hiljem võib allikas juba vastata.
+
+    EstModeli päringud hoitakse teineteisest vähemalt EST_VAHE sekundi kaugusel ja
+    429 (Too Many Requests) korral oodatakse serveri öeldud või kasvavat aega. Täisehitus
+    teeb EstModelile ~237 päringut; alates 14.10.2026 hakkas server neid piirama ja
+    öine täisehitus kukkus iga päev läbi, kuni leht jäi kuus päeva vanaks.
     """
+    global _est_viimane
     for k in range(katseid):
+        if url.startswith(EST):
+            paus = EST_VAHE - (time.monotonic() - _est_viimane)
+            if paus > 0:
+                time.sleep(paus)
+            _est_viimane = time.monotonic()
         try:
             data = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
             return data if binary else json.loads(data.decode("utf-8"))
@@ -118,8 +134,20 @@ def get(url, timeout=60, binary=False, katseid=3):
             silt = f"HTTP {kood}" if kood else type(e).__name__
             if k == katseid - 1:
                 raise RuntimeError(f"{silt} aadressilt {url[:160]}{keha}") from e
-            print(f"     {silt} ({k + 1}/{katseid}), proovin uuesti: {url[:110]}", flush=True)
-            time.sleep(1.5 * (k + 1))
+            if kood == 429:
+                # Serveri enda soovitus on ülim; muidu kasvav ootamine.
+                pea = getattr(e, "headers", None)
+                oota = 0
+                if pea is not None:
+                    try:
+                        oota = int(pea.get("Retry-After") or 0)
+                    except ValueError:
+                        oota = 0
+                oota = min(max(oota, 10 * (k + 1) ** 2), 180)
+            else:
+                oota = 1.5 * (k + 1)
+            print(f"     {silt} ({k + 1}/{katseid}), ootan {oota:.0f}s: {url[:100]}", flush=True)
+            time.sleep(oota)
 
 
 def r3(v):
