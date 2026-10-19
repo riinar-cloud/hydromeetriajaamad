@@ -59,6 +59,9 @@ TUNNILOGI = os.path.join(BASE, "andmed", "tunnilogi.json")
 VARAD = os.path.join(OUT, "varad")
 LOGI_TUNDE = 30          # hoia veidi rohkem kui 24 h
 DELTA_AKNAD = (3, 6, 12, 24)
+# Kui palju tohib näit sihtajast mööda olla, osana akna pikkusest. 24 h aknas tähendab
+# see ±12 h, 3 h aknas ±1,5 h. Aknad on orienteeruvad, mitte täpsed — vt vahed_logist().
+HÄLVE = 0.5
 EST = "https://estmodel.envir.ee"
 KKA = "https://keskkonnaandmed.envir.ee"
 XMLURL = "https://www.ilmateenistus.ee/ilma_andmed/xml/observations.php"
@@ -419,12 +422,32 @@ def kanna_operatiiv(stations, praegu):
 
 
 def vahed_logist(logi_jaam, praegune, nyyd):
-    """level_delta_3h/6h/12h/24h ühest ja samast tunnireast."""
-    out = {}
+    """level_delta_3h/6h/12h/24h lähima näidu järgi, mitte täpse tunni järgi.
+
+    GitHub ei jooksuta tööd tunnis korra, kuigi ajakava nii ütleb: mõõdetud 50 jooksu
+    7 ööpäeva kohta, keskmine vahe 3,4 h, suurim 6,5 h. Täpse tunni nõudmine jättis
+    24 h vahe kõigil jaamadel tühjaks, kuigi 23 h tagune näit oli olemas.
+
+    Aknad on orienteeruvad: lubatud on HÄLVE osa akna pikkusest. Üht näitu ei kasutata
+    kaks korda — muidu annaksid 6 h ja 12 h rida sama numbri eri sildiga.
+    """
+    praegune_tund = datetime.datetime.fromisoformat(tund(nyyd).replace("Z", "+00:00"))
+    kirjed = sorted(
+        (datetime.datetime.fromisoformat(k.replace("Z", "+00:00")), v)
+        for k, v in logi_jaam.items())
+    out, kasutatud = {}, set()
     for h in DELTA_AKNAD:
-        k = tund(nyyd - datetime.timedelta(hours=h))
-        vana = logi_jaam.get(k)
-        out[f"level_delta_{h}h"] = round(praegune - vana) if vana is not None else None
+        siht = praegune_tund - datetime.timedelta(hours=h)
+        lubatud = h * HÄLVE * 3600
+        kand = sorted((abs((t - siht).total_seconds()), t, v) for t, v in kirjed
+                      if t < praegune_tund and t not in kasutatud
+                      and abs((t - siht).total_seconds()) <= lubatud)
+        if kand:
+            _, t, v = kand[0]
+            kasutatud.add(t)
+            out[f"level_delta_{h}h"] = round(praegune - v)
+        else:
+            out[f"level_delta_{h}h"] = None
     return out
 
 
@@ -467,34 +490,12 @@ def operatiiv(jaamad):
             continue
         k.update(vahed_logist(logi.get(code, {}), k["level_cm"], vaadeldud))
 
-    # level_delta_24h tagavara ööpäevasest allikast, kui logis pole veel 24 h ajalugu.
-    # Leping lubab seda: "level_delta_24h peaks siiski olemas olema, sest selle saab ka
-    # ööpäevasest allikast." Lühemaid aknaid EI tohi nii täita — need jäävad null-iks.
-    puudu = [sid for sid, code in koodid.items()
-             if praegu.get(code, {}).get("level_delta_24h") is None]
-    if puudu:
-        siht = vaadeldud - datetime.timedelta(hours=24)
-        a = (siht - datetime.timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%S")
-        b = (siht + datetime.timedelta(hours=3)).strftime("%Y-%m-%dT%H:%M:%S")
-        parim = {}
-        # See on lisandus, mitte alustala: kui f_hydroseire ei vasta, jääb level_delta_24h
-        # nendel jaamadel null-iks, aga kõik muu uuendub. Varem kukkus siin terve tunnine
-        # käik läbi ja leht jäi tunniks seisma millegi pärast, mis on valikuline.
-        try:
-            for r in get(f"{KKA}/f_hydroseire?jaam_kood=in.({','.join(map(str, puudu))})"
-                         f"&aegrida_nimi=eq.WL%20avg&timeline_ts_utc=gte.{a}&timeline_ts_utc=lte.{b}"
-                         f"&select=jaam_kood,timeline_ts_utc,vaartus&limit=20000", timeout=90):
-                t = datetime.datetime.fromisoformat(r["timeline_ts_utc"]).replace(tzinfo=datetime.timezone.utc)
-                vahe = abs((t - siht).total_seconds())
-                if r["jaam_kood"] not in parim or vahe < parim[r["jaam_kood"]][0]:
-                    parim[r["jaam_kood"]] = (vahe, r["vaartus"])
-        except Exception as e:
-            print(f"     hoiatus: f_hydroseire ei vastanud ({type(e).__name__}: {e}); "
-                  f"level_delta_24h jääb {len(puudu)} jaamal täitmata", flush=True)
-        for sid in puudu:
-            code = koodid[sid]
-            if sid in parim and "level_cm" in praegu.get(code, {}):
-                praegu[code]["level_delta_24h"] = round(praegu[code]["level_cm"] - parim[sid][1])
+    # f_hydroseire varuvariant on maha võetud. Kaks põhjust:
+    #  1) arhiiv on ~2 ööpäeva taga, seega "24 h tagasi" on tema jaoks tulevikus
+    #     ja päring ei leidnudki enam midagi — väli oli 0/57 täidetud;
+    #  2) sealt tuli septembris Kasari +36 cm: arhiivis oli nelja tunni pikkune
+    #     rikutud lõik ja me võtsime sealt ühe väärtuse ilma kontrollita.
+    # Leht kasutab nüüd ainult ilmateenistuse XML-i, mille näidud on reaalajas.
 
     for code, k in praegu.items():
         k["_tund"] = t_nyyd          # sisemine: measured.level / measured.water_temp jaoks
