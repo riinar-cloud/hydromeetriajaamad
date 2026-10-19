@@ -98,13 +98,27 @@ NOTES = {
 
 
 def get(url, timeout=60, binary=False, katseid=3):
+    """Tõrke korral ütleb, MILLINE aadress ja MIS kood — muidu ei saa CI logist aru.
+
+    Kaugjuhitavas keskkonnas on see ainus jälg: kui jooks kukub GitHubis läbi, ei saa
+    keegi seda hiljem järele proovida, sest tund hiljem võib allikas juba vastata.
+    """
     for k in range(katseid):
         try:
             data = urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout).read()
             return data if binary else json.loads(data.decode("utf-8"))
-        except Exception:
+        except Exception as e:
+            kood = getattr(e, "code", None)
+            keha = ""
+            if hasattr(e, "read"):
+                try:
+                    keha = " · " + e.read()[:200].decode("utf-8", "replace").strip()
+                except Exception:
+                    pass
+            silt = f"HTTP {kood}" if kood else type(e).__name__
             if k == katseid - 1:
-                raise
+                raise RuntimeError(f"{silt} aadressilt {url[:160]}{keha}") from e
+            print(f"     {silt} ({k + 1}/{katseid}), proovin uuesti: {url[:110]}", flush=True)
             time.sleep(1.5 * (k + 1))
 
 
