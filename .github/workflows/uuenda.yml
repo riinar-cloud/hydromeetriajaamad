@@ -9,10 +9,18 @@ on:
     # 07:30 UTC on suvel 10:30 ja talvel 09:30, seega kunagi liiga vara.
     # Varem oli 05:40 UTC ja see jäi mõnel päeval EstModelist ette.
     - cron: "30 7 * * *"
+    # Kord kuus kogu ajalugu uuesti. Igapäevane täisehitus tõmbab ainult viimased
+    # aastad ja võtab vanema osa CSV-dest; nii ei jõuaks kohale see, kui agentuur
+    # on vanu ridu vahepeal valideerinud või parandanud.
+    - cron: "0 4 1 * *"
   workflow_dispatch:
     inputs:
       taisehitus:
         description: "Tee täisehitus (aegread ja CSV-d uuesti)"
+        type: boolean
+        default: false
+      taielik:
+        description: "Tõmba kogu ajalugu uuesti (aeglane, ~400 MB)"
         type: boolean
         default: false
 
@@ -23,7 +31,8 @@ permissions:
 # täisehitus 3,5 tundi (EstModeli piirangu tõttu) ja blokeeris kogu selle aja tunnised
 # jooksud — veetaseme logisse jäi 3,5-tunnine auk ja 12 h vahe kadus lehelt ära.
 concurrency:
-  group: uuendus-${{ inputs.taisehitus == 'true' || github.event.schedule == '30 7 * * *' }}
+  group: uuendus-${{ inputs.taisehitus == 'true' || inputs.taielik == 'true'
+    || github.event.schedule == '30 7 * * *' || github.event.schedule == '0 4 1 * *' }}
   cancel-in-progress: false
 
 jobs:
@@ -47,8 +56,11 @@ jobs:
       - name: Vali režiim
         id: reziim
         run: |
-          if [ "${{ github.event.schedule }}" = "30 7 * * *" ] || \
-             [ "${{ inputs.taisehitus }}" = "true" ]; then
+          if [ "${{ github.event.schedule }}" = "0 4 1 * *" ] || \
+             [ "${{ inputs.taielik }}" = "true" ]; then
+            echo "lipud=--taielik --valjund docs" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "30 7 * * *" ] || \
+               [ "${{ inputs.taisehitus }}" = "true" ]; then
             echo "lipud=--valjund docs" >> "$GITHUB_OUTPUT"
           else
             echo "lipud=--only-now --valjund docs" >> "$GITHUB_OUTPUT"

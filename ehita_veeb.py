@@ -78,6 +78,10 @@ _429 = {"paringuid": 0, "kordi": 0, "ootus": 0.0}
 AKEN = 5
 
 ONLY_NOW = "--only-now" in sys.argv
+# Täisehitus tõmbab vaikimisi ainult viimased aastad ja võtab vanema osa CSV-dest.
+# --taielik sunnib kogu ajaloo uuesti alla: vaja siis, kui agentuur on vanu ridu
+# valideerinud või parandanud. Töövoog teeb seda kord kuus.
+TAIELIK = "--taielik" in sys.argv
 
 # jaama nimi -> nimi XML-is, kui lahknevad
 XML_NIMI = {"Kehra (Hüdro)": "Kehra", "Uue-Lõve (Hüdro)": "Uue-Lõve",
@@ -278,20 +282,64 @@ def vali_kood(toores, hs):
 SKAALA = {"Q": 1.0, "H": 100.0, "T": 1.0}  # H meetrid -> cm
 
 
-def aegrida(kkr, par):
-    rows = get(f"{EST}/stations/{kkr}/measurements?parameter={par}&start-year=1922&end-year=2026")
-    if not rows:
+VEERG = {"Q": 1, "H": 2, "T": 3}          # CSV veeru number parameetri kohta
+
+
+def loe_csv_ajalugu(kkr, kaust):
+    """Varem ehitatud CSV -> {par: {kuupäev: väärtus}}. Vahemälu, mitte allikas.
+
+    CSV hoiab vooluhulka kadudeta (6 kohta) just selleks, et sellest saaks ajalugu
+    tagasi lugeda. Kui faili ei ole, tagastab tühja ja build tõmbab kogu ajaloo.
+    """
+    tee = os.path.join(kaust, f"{kkr}.csv")
+    if not os.path.exists(tee):
+        return {}
+    out = {"Q": {}, "H": {}, "T": {}}
+    with open(tee, encoding="utf-8-sig", newline="") as f:
+        for rida in f.read().strip().splitlines()[1:]:
+            p = rida.split(";")
+            if len(p) < 5:
+                continue
+            d = datetime.date.fromisoformat(p[0])
+            for par, i in VEERG.items():
+                if p[i]:
+                    out[par][d] = float(p[i].replace(",", "."))
+    return out
+
+
+def aegrida(kkr, par, ajalugu=None, alates=None):
+    """Aegrida EstModelist. Kui `alates` on antud, tõmmatakse ainult see aasta ja
+    uuemad ning vanem osa võetakse `ajalugu` vahemälust.
+
+    Miks: kogu ajaloo tõmbamine on 400 MB päevas kogu jaamastiku peale — Tartu
+    vooluhulk üksi on 5,8 MB — ja sellest on uut ainult üks päev. EstModel hakkas
+    14.10.2026 vastama 429-ga. Jooksev aasta on Tartu puhul 54 kB, sada korda vähem.
+    """
+    algus_aasta = alates if alates else 1922
+    rows = get(f"{EST}/stations/{kkr}/measurements"
+               f"?parameter={par}&start-year={algus_aasta}&end-year={datetime.date.today().year}")
+    if not rows and not (ajalugu or {}).get(par):
         return None
     k = SKAALA[par]
-    pts = sorted((datetime.date.fromisoformat(r["startDate"]), r["value"] * k,
-                  r.get("qualityFlag")) for r in rows)
-    d0, d1 = pts[0][0], pts[-1][0]
-    v = [None] * ((d1 - d0).days + 1)
+    varem = dict((ajalugu or {}).get(par) or {})
+    # Vahemälu on juba meie ühikutes (H sentimeetrites), API tuleb teisendada.
+    vaart = {d: val for d, val in varem.items()}
     esimene_kontrollimata = None
-    for d, val, flag in pts:
-        v[(d - d0).days] = r3(val)
-        if flag == "UNCHECKED" and esimene_kontrollimata is None:
+    for r in rows:
+        d = datetime.date.fromisoformat(r["startDate"])
+        # 6 kohta: allikas ei anna rohkem (mõõdetud), aga JSON-is tuleb ujukomamüra
+        # (0.05670000000000001). Ilma ühtlustamiseta annaksid täielik ja osaline tõmme
+        # eri protsentiile, sest järjestatud loendis võivad kaks kõrvutist ära vahetuda.
+        vaart[d] = round(r["value"] * k, 6)   # värske üle vana: paranduste jaoks
+        if r.get("qualityFlag") == "UNCHECKED" and (esimene_kontrollimata is None
+                                                    or d < esimene_kontrollimata):
             esimene_kontrollimata = d
+    if not vaart:
+        return None
+    d0, d1 = min(vaart), max(vaart)
+    v = [None] * ((d1 - d0).days + 1)
+    for d, val in vaart.items():
+        v[(d - d0).days] = val          # TOORVÄÄRTUS, ümardame alles väljundis
     return {"start": d0, "end": d1, "v": v, "first_unchecked": esimene_kontrollimata}
 
 
@@ -350,30 +398,41 @@ def koma(v, kohti=3):
 
 
 def kirjuta_csv(kkr, Q, ts, vt, sihtkaust):
-    """Kogu aegrida ühte CSV-sse. Q on baasrida; H ja T joondatakse selle järgi."""
+    """Kogu aegrida ühte CSV-sse, KÕIGI kolme näidu ulatuses.
+
+    Varem oli Q baasrida ja H ning T joondati selle järgi — see viskas ära kõik
+    veetaseme ja temperatuuri mõõtmised, mis jäid väljapoole vooluhulga perioodi.
+    Ühes jaamas tähendas see 14 084 kaotatud veetaseme rida (allikas 1922, vooluhulk
+    alles 1960). Leping ütleb, et rida peab olema, kui MÕNI kolmest on mõõdetud.
+    """
     import csv
-    n = len(Q["v"])
+    read = {k: v for k, v in {"Q": Q, "H": ts.get("H"), "T": ts.get("T")}.items() if v}
+    algus = min(v["start"] for v in read.values())
+    lopp = max(v["end"] for v in read.values())
+    n = (lopp - algus).days + 1
     def joonda(par):
-        t = ts.get(par)
+        t = read.get(par)
         if not t:
             return [None] * n
-        nihe = (t["start"] - Q["start"]).days
+        nihe = (t["start"] - algus).days
         arr = [None] * n
         for k, x in enumerate(t["v"]):
             p = nihe + k
             if 0 <= p < n:
                 arr[p] = x
         return arr
-    h, t_ = joonda("H"), joonda("T")
+    q_, h, t_ = joonda("Q"), joonda("H"), joonda("T")
     ridu = 0
     with open(os.path.join(sihtkaust, f"{kkr}.csv"), "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f, delimiter=";", lineterminator="\r\n")
         w.writerow(CSV_PAIS)
         for k in range(n):
-            if Q["v"][k] is None and h[k] is None and t_[k] is None:
+            if q_[k] is None and h[k] is None and t_[k] is None:
                 continue
-            kp = (Q["start"] + datetime.timedelta(days=k)).isoformat()
-            w.writerow([kp, koma(Q["v"][k]), koma(h[k], 1), koma(t_[k], 1),
+            kp = (algus + datetime.timedelta(days=k)).isoformat()
+            # Vooluhulk kadudeta: allikas annab kuni 6 kohta (Linnusaare 0,0551) ja
+            # CSV on ühtlasi ajaloo vahemälu, millest järgmine build vanad aastad loeb.
+            w.writerow([kp, koma(q_[k], 6), koma(h[k], 1), koma(t_[k], 1),
                         "jah" if kp <= vt else "ei"])
             ridu += 1
     return ridu
@@ -760,6 +819,22 @@ def main():
 
     print("3/4  aegread ja normid ...", flush=True)
     stations, vead = [], []
+    # Mis aastast alates värskeid andmeid küsida. Aken algab eelmise valideerimispiiri
+    # aastast, et valideerimise edasiliikumine oleks näha; vanem osa tuleb CSV-dest.
+    csv_kaust = os.path.join(OUT, "data", "csv")
+    alates = None
+    if not TAIELIK:
+        eelmine_vt = None
+        if os.path.exists(idx_fail):
+            try:
+                eelmine_vt = json.load(open(idx_fail, encoding="utf-8")).get("validated_through")
+            except Exception:
+                eelmine_vt = None
+        aasta = datetime.date.today().year
+        alates = min(aasta - 1, int(eelmine_vt[:4])) if eelmine_vt else aasta - 1
+        print(f"     osaline tõmme alates {alates}. aastast "
+              f"(vanem osa CSV-dest; --taielik sunnib kõik uuesti)", flush=True)
+
     for i, s in enumerate(aktiivsed, 1):
         kkr = s["code"]
         r = reg.get(kkr, {})
@@ -771,9 +846,10 @@ def main():
         # Q esimesena: kui jaamal ei ole jooksva aasta vooluhulka, ei ole ta aktiivne ja
         # H ning T jäävad üldse tõmbamata. Nii maksab mitteaktiivne jaam ühe päringu,
         # mitte kolm.
+        ajalugu = {} if TAIELIK else loe_csv_ajalugu(kkr, csv_kaust)
         ts = {}
         try:
-            t = aegrida(kkr, "Q")
+            t = aegrida(kkr, "Q", ajalugu, alates)
             if t: ts["Q"] = t
         except Exception as e:
             vead.append(f"{kkr} Q: {e}")
@@ -783,7 +859,7 @@ def main():
             continue                      # viimane vooluhulk on möödunud aastast
         for par in ("H", "T"):
             try:
-                t = aegrida(kkr, par)
+                t = aegrida(kkr, par, ajalugu, alates)
                 if t: ts[par] = t
             except Exception as e:
                 vead.append(f"{kkr} {par}: {e}")
@@ -836,7 +912,7 @@ def main():
         year = []
         d = algus
         while d <= viim_kp:
-            year.append({"date": d.isoformat(), "q": kaart.get(d),
+            year.append({"date": d.isoformat(), "q": r3(kaart.get(d)),
                          "validated": d.isoformat() <= vt})
             d += datetime.timedelta(days=1)
 
@@ -902,7 +978,7 @@ def main():
             "photos": photos,
             "notes": NOTES.get(kkr, []),
 
-            "q": viim_q,
+            "q": r3(viim_q),
             "median_now": median_now,
             "percentile": percentile,
             "validated": viim_kp.isoformat() <= vt,

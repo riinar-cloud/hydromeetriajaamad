@@ -196,7 +196,13 @@ kuupäev;vooluhulk_m3s;veetase_cm;veetemp_c;valideeritud
 - Semikoolon eraldajaks, koma komakohaks, CRLF, **UTF-8 BOM-iga** (et Excel avaks täpitähed õigesti).
 - Kuupäev ISO `YYYY-MM-DD`, et sortimine töötaks ka tekstina.
 - Tühi lahter = mõõtmine puudub. `0` on mõõdetud null — talvel on veetemperatuur päriselt 0.
-- Päev, mil ühtegi kolmest näidust ei mõõdetud, on failist välja jäetud.
+- Päev, mil ühtegi kolmest näidust ei mõõdetud, on failist välja jäetud. **Fail katab
+  kõigi kolme näidu perioodi**, mitte ainult vooluhulga oma — paljudel jaamadel algab
+  veetase aastakümneid varem. Varem oli fail vooluhulga järgi joondatud ja need read
+  kadusid: ühes jaamas 14 084 veetaseme mõõtmist, kokku 56 723 rida.
+- Vooluhulk on CSV-s **ümardamata** (kuni 6 kohta, nt `0,0551`). Lehel kuvatavad arvud
+  on ümardatud, CSV oma mitte — fail on ühtlasi ajaloo vahemälu, millest järgmine
+  build vanad aastad loeb.
 - Kokku 1 234 278 rida, 30 MB. Tasub serveril gzip sisse lülitada.
 
 ## 2a. Mõõtmise aeg
