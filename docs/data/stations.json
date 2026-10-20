@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T13:32:51Z",
+ "updated": "2026-10-20T06:29:23Z",
  "count": 57,
  "validated_through": "2025-12-31",
  "stations": [
@@ -16,7 +16,7 @@
    "opened": 1959,
    "automated": 2007,
    "series_start": "01.10.1959",
-   "series_days": 24490,
+   "series_days": 24491,
    "photos": [
     {
      "file": "photos/ortofoto/SJA8821000.jpg",
@@ -25,32 +25,36 @@
     }
    ],
    "notes": [],
-   "q": 7.41,
-   "median_now": 4.59,
-   "percentile": 86,
+   "q": 6.46,
+   "median_now": 4.61,
+   "percentile": 79,
    "validated": false,
-   "specific_runoff": 8.3,
+   "specific_runoff": 7.2,
    "median_specific_runoff": 5.1,
-   "level_cm": 56,
-   "median_level_cm": 76,
+   "level_cm": 54,
+   "median_level_cm": 74,
    "level_delta_3h": null,
-   "level_delta_6h": 0,
-   "level_delta_12h": 0,
-   "level_delta_24h": -4,
-   "water_temp": 6.9,
-   "median_water_temp": 6.9,
+   "level_delta_6h": null,
+   "level_delta_12h": -2,
+   "level_delta_24h": -2,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.2,
+   "median_water_temp": 6.7,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -67,7 +71,7 @@
    "opened": 1977,
    "automated": 2010,
    "series_start": "14.11.1977",
-   "series_days": 17871,
+   "series_days": 17872,
    "photos": [
     {
      "file": "photos/ortofoto/SJA9946000.jpg",
@@ -76,32 +80,36 @@
     }
    ],
    "notes": [],
-   "q": 1.89,
-   "median_now": 1.25,
-   "percentile": 74,
+   "q": 1.67,
+   "median_now": 1.255,
+   "percentile": 67,
    "validated": false,
-   "specific_runoff": 13.8,
-   "median_specific_runoff": 9.1,
-   "level_cm": 73,
-   "median_level_cm": 58,
+   "specific_runoff": 12.2,
+   "median_specific_runoff": 9.2,
+   "level_cm": 70,
+   "median_level_cm": 59,
    "level_delta_3h": null,
    "level_delta_6h": null,
-   "level_delta_12h": -2,
-   "level_delta_24h": -4,
-   "water_temp": 6.0,
-   "median_water_temp": 6.3,
+   "level_delta_12h": -3,
+   "level_delta_24h": -5,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 29
+   },
+   "water_temp": 4.3,
+   "median_water_temp": 6.0,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -118,7 +126,7 @@
    "opened": 1985,
    "automated": 2006,
    "series_start": "01.11.1985",
-   "series_days": 11292,
+   "series_days": 11293,
    "photos": [
     {
      "file": "photos/ortofoto/SJA9683000.jpg",
@@ -127,32 +135,36 @@
     }
    ],
    "notes": [],
-   "q": 0.082,
-   "median_now": 1.78,
-   "percentile": 0,
+   "q": 2.68,
+   "median_now": 1.91,
+   "percentile": 61,
    "validated": false,
-   "specific_runoff": 0.3,
-   "median_specific_runoff": 5.5,
-   "level_cm": 123,
-   "median_level_cm": 113,
+   "specific_runoff": 8.3,
+   "median_specific_runoff": 5.9,
+   "level_cm": 121,
+   "median_level_cm": 114,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": -2,
-   "level_delta_24h": -4,
-   "water_temp": 8.0,
-   "median_water_temp": 7.5,
+   "level_delta_24h": -3,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.4,
+   "median_water_temp": 7.3,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -169,7 +181,7 @@
    "opened": 2010,
    "automated": 2010,
    "series_start": "16.06.2010",
-   "series_days": 5770,
+   "series_days": 5771,
    "photos": [
     {
      "file": "photos/ortofoto/SJA2401000.jpg",
@@ -178,32 +190,36 @@
     }
    ],
    "notes": [],
-   "q": 5.48,
-   "median_now": 1.03,
-   "percentile": 94,
+   "q": 4.27,
+   "median_now": 1.04,
+   "percentile": 89,
    "validated": false,
-   "specific_runoff": 14.1,
+   "specific_runoff": 11.0,
    "median_specific_runoff": 2.7,
-   "level_cm": 122,
-   "median_level_cm": 95,
+   "level_cm": 118,
+   "median_level_cm": 96,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
-   "level_delta_12h": -3,
+   "level_delta_6h": null,
+   "level_delta_12h": -4,
    "level_delta_24h": -5,
-   "water_temp": 6.2,
-   "median_water_temp": 5.9,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 4.3,
+   "median_water_temp": 5.8,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -220,7 +236,7 @@
    "opened": 1931,
    "automated": 2006,
    "series_start": "20.07.1931",
-   "series_days": 12617,
+   "series_days": 12618,
    "photos": [
     {
      "file": "photos/ortofoto/SJA7196000.jpg",
@@ -229,32 +245,36 @@
     }
    ],
    "notes": [],
-   "q": 1.69,
-   "median_now": 1.4,
-   "percentile": 58,
+   "q": 1.43,
+   "median_now": 1.43,
+   "percentile": 50,
    "validated": false,
-   "specific_runoff": 7.3,
-   "median_specific_runoff": 6.1,
+   "specific_runoff": 6.2,
+   "median_specific_runoff": 6.2,
    "level_cm": 28,
-   "median_level_cm": 13,
+   "median_level_cm": 14,
    "level_delta_3h": null,
-   "level_delta_6h": 1,
-   "level_delta_12h": -1,
-   "level_delta_24h": -7,
-   "water_temp": 6.3,
-   "median_water_temp": 6.8,
+   "level_delta_6h": null,
+   "level_delta_12h": 0,
+   "level_delta_24h": 1,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.4,
+   "median_water_temp": 6.6,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -271,7 +291,7 @@
    "opened": 1876,
    "automated": 2010,
    "series_start": "03.03.1876",
-   "series_days": 24092,
+   "series_days": 24093,
    "photos": [
     {
      "file": "photos/ortofoto/SJA5524000.jpg",
@@ -280,32 +300,36 @@
     }
    ],
    "notes": [],
-   "q": 21.6,
-   "median_now": 18.8,
-   "percentile": 68,
+   "q": 21.9,
+   "median_now": 18.6,
+   "percentile": 70,
    "validated": false,
-   "specific_runoff": 6.4,
-   "median_specific_runoff": 5.6,
+   "specific_runoff": 6.5,
+   "median_specific_runoff": 5.5,
    "level_cm": 46,
    "median_level_cm": 10,
    "level_delta_3h": null,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": 0,
-   "level_delta_24h": 3,
-   "water_temp": 9.4,
-   "median_water_temp": 7.5,
+   "level_delta_24h": 0,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 7.7,
+   "median_water_temp": 7.3,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -322,7 +346,7 @@
    "opened": 1867,
    "automated": 2010,
    "series_start": "01.04.1867",
-   "series_days": 38277,
+   "series_days": 38278,
    "photos": [
     {
      "file": "photos/ortofoto/SJA7331000.jpg",
@@ -331,32 +355,36 @@
     }
    ],
    "notes": [],
-   "q": 75.9,
-   "median_now": 38.0,
-   "percentile": 89,
+   "q": 74.9,
+   "median_now": 38.2,
+   "percentile": 87,
    "validated": false,
-   "specific_runoff": 9.7,
-   "median_specific_runoff": 4.8,
-   "level_cm": 105,
-   "median_level_cm": 49,
+   "specific_runoff": 9.5,
+   "median_specific_runoff": 4.9,
+   "level_cm": 104,
+   "median_level_cm": 50,
    "level_delta_3h": null,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": -1,
-   "level_delta_24h": -2,
-   "water_temp": 8.5,
-   "median_water_temp": 7.5,
+   "level_delta_24h": -1,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 7.5,
+   "median_water_temp": 7.2,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -373,7 +401,7 @@
    "opened": 1969,
    "automated": 2010,
    "series_start": "01.07.1969",
-   "series_days": 20929,
+   "series_days": 20930,
    "photos": [
     {
      "file": "photos/ortofoto/SJA1593000.jpg",
@@ -382,32 +410,33 @@
     }
    ],
    "notes": [],
-   "q": 1.35,
-   "median_now": 0.19,
-   "percentile": 89,
+   "q": 1.08,
+   "median_now": 0.2,
+   "percentile": 83,
    "validated": false,
-   "specific_runoff": 6.9,
+   "specific_runoff": 5.5,
    "median_specific_runoff": 1.0,
-   "level_cm": 44,
+   "level_cm": 42,
    "median_level_cm": 12,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
-   "water_temp": 8.3,
-   "median_water_temp": 6.2,
+   "level_delta_h": {},
+   "water_temp": 6.3,
+   "median_water_temp": 6.1,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "water_temp": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     }
    }
   },
@@ -424,7 +453,7 @@
    "opened": 1924,
    "automated": 2007,
    "series_start": "23.06.1924",
-   "series_days": 37373,
+   "series_days": 37374,
    "photos": [
     {
      "file": "photos/ortofoto/SJA4385000.jpg",
@@ -433,32 +462,36 @@
     }
    ],
    "notes": [],
-   "q": 30.9,
-   "median_now": 13.3,
-   "percentile": 81,
+   "q": 27.3,
+   "median_now": 13.6,
+   "percentile": 76,
    "validated": false,
-   "specific_runoff": 16.4,
-   "median_specific_runoff": 7.1,
-   "level_cm": 120,
-   "median_level_cm": 84,
+   "specific_runoff": 14.5,
+   "median_specific_runoff": 7.2,
+   "level_cm": 111,
+   "median_level_cm": 86,
    "level_delta_3h": null,
-   "level_delta_6h": -4,
-   "level_delta_12h": -8,
+   "level_delta_6h": null,
+   "level_delta_12h": -9,
    "level_delta_24h": -13,
-   "water_temp": 7.9,
-   "median_water_temp": 7.2,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.9,
+   "median_water_temp": 6.8,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -475,7 +508,7 @@
    "opened": 1937,
    "automated": 2007,
    "series_start": "06.06.1937",
-   "series_days": 16362,
+   "series_days": 16363,
    "photos": [
     {
      "file": "photos/ortofoto/SJA3814000.jpg",
@@ -484,32 +517,36 @@
     }
    ],
    "notes": [],
-   "q": 12.6,
-   "median_now": 5.015,
-   "percentile": 88,
+   "q": 11.4,
+   "median_now": 5.085,
+   "percentile": 81,
    "validated": false,
-   "specific_runoff": 13.8,
-   "median_specific_runoff": 5.5,
-   "level_cm": 95,
-   "median_level_cm": 71,
+   "specific_runoff": 12.5,
+   "median_specific_runoff": 5.6,
+   "level_cm": 91,
+   "median_level_cm": 72,
    "level_delta_3h": null,
-   "level_delta_6h": 1,
-   "level_delta_12h": 0,
-   "level_delta_24h": -5,
-   "water_temp": 7.9,
-   "median_water_temp": 6.7,
+   "level_delta_6h": null,
+   "level_delta_12h": -4,
+   "level_delta_24h": -3,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.5,
+   "median_water_temp": 6.4,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -526,7 +563,7 @@
    "opened": 1924,
    "automated": 2006,
    "series_start": "31.07.1924",
-   "series_days": 37334,
+   "series_days": 37335,
    "photos": [
     {
      "file": "photos/ortofoto/SJA9179000.jpg",
@@ -535,32 +572,36 @@
     }
    ],
    "notes": [],
-   "q": 24.2,
-   "median_now": 15.4,
-   "percentile": 61,
+   "q": 20.1,
+   "median_now": 15.7,
+   "percentile": 55,
    "validated": false,
-   "specific_runoff": 9.2,
-   "median_specific_runoff": 5.8,
-   "level_cm": 90,
-   "median_level_cm": 50,
+   "specific_runoff": 7.6,
+   "median_specific_runoff": 5.9,
+   "level_cm": 85,
+   "median_level_cm": 52,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
-   "level_delta_12h": -4,
-   "level_delta_24h": -9,
-   "water_temp": 8.8,
-   "median_water_temp": 7.9,
+   "level_delta_6h": null,
+   "level_delta_12h": -5,
+   "level_delta_24h": -7,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 7.7,
+   "median_water_temp": 7.7,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -577,7 +618,7 @@
    "opened": 1923,
    "automated": 2007,
    "series_start": "28.03.1923",
-   "series_days": 37912,
+   "series_days": 37913,
    "photos": [
     {
      "file": "photos/ortofoto/SJA4444000.jpg",
@@ -586,32 +627,36 @@
     }
    ],
    "notes": [],
-   "q": 10.1,
-   "median_now": 3.76,
-   "percentile": 80,
+   "q": 8.66,
+   "median_now": 3.91,
+   "percentile": 74,
    "validated": false,
-   "specific_runoff": 15.9,
-   "median_specific_runoff": 5.9,
-   "level_cm": 114,
+   "specific_runoff": 13.6,
+   "median_specific_runoff": 6.1,
+   "level_cm": 111,
    "median_level_cm": 81,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
+   "level_delta_6h": null,
    "level_delta_12h": -3,
-   "level_delta_24h": -7,
-   "water_temp": 7.3,
-   "median_water_temp": 7.4,
+   "level_delta_24h": -5,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.4,
+   "median_water_temp": 7.2,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -628,7 +673,7 @@
    "opened": 1929,
    "automated": 2011,
    "series_start": "19.06.1929",
-   "series_days": 30972,
+   "series_days": 30973,
    "photos": [
     {
      "file": "photos/ortofoto/SJA1098000.jpg",
@@ -637,32 +682,36 @@
     }
    ],
    "notes": [],
-   "q": 7.7,
-   "median_now": 2.87,
+   "q": 7.76,
+   "median_now": 2.895,
    "percentile": 91,
    "validated": false,
-   "specific_runoff": 18.3,
-   "median_specific_runoff": 6.8,
-   "level_cm": 206,
-   "median_level_cm": 157,
+   "specific_runoff": 18.4,
+   "median_specific_runoff": 6.9,
+   "level_cm": 202,
+   "median_level_cm": 158,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
+   "level_delta_6h": null,
    "level_delta_12h": -4,
-   "level_delta_24h": -8,
-   "water_temp": 6.4,
-   "median_water_temp": 6.3,
+   "level_delta_24h": -6,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.0,
+   "median_water_temp": 6.1,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -679,7 +728,7 @@
    "opened": 1954,
    "automated": 2010,
    "series_start": "30.09.1954",
-   "series_days": 26317,
+   "series_days": 26318,
    "photos": [
     {
      "file": "photos/ortofoto/SJA2259000.jpg",
@@ -688,32 +737,36 @@
     }
    ],
    "notes": [],
-   "q": 3.53,
-   "median_now": 0.975,
+   "q": 3.41,
+   "median_now": 0.99,
    "percentile": 92,
    "validated": false,
-   "specific_runoff": 13.4,
-   "median_specific_runoff": 3.7,
-   "level_cm": 189,
+   "specific_runoff": 12.9,
+   "median_specific_runoff": 3.8,
+   "level_cm": 187,
    "median_level_cm": 114,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
-   "level_delta_12h": -1,
-   "level_delta_24h": -2,
-   "water_temp": 8.8,
-   "median_water_temp": 7.0,
+   "level_delta_6h": null,
+   "level_delta_12h": -2,
+   "level_delta_24h": -3,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 8.0,
+   "median_water_temp": 6.8,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -730,7 +783,7 @@
    "opened": 2022,
    "automated": 2022,
    "series_start": "01.11.2022",
-   "series_days": 8775,
+   "series_days": 8776,
    "photos": [
     {
      "file": "photos/ortofoto/SJB4324000.jpg",
@@ -739,32 +792,36 @@
     }
    ],
    "notes": [],
-   "q": 0.273,
+   "q": 0.246,
    "median_now": 0.245,
-   "percentile": 52,
+   "percentile": 50,
    "validated": false,
-   "specific_runoff": 5.2,
+   "specific_runoff": 4.7,
    "median_specific_runoff": 4.7,
-   "level_cm": 29,
+   "level_cm": 28,
    "median_level_cm": 32,
    "level_delta_3h": null,
-   "level_delta_6h": 0,
+   "level_delta_6h": null,
    "level_delta_12h": -1,
-   "level_delta_24h": -2,
-   "water_temp": 6.8,
+   "level_delta_24h": -1,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.5,
    "median_water_temp": 7.6,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -781,7 +838,7 @@
    "opened": 1927,
    "automated": 2011,
    "series_start": "28.10.1927",
-   "series_days": 36085,
+   "series_days": 36086,
    "photos": [
     {
      "file": "photos/ortofoto/SJA1582000.jpg",
@@ -790,32 +847,36 @@
     }
    ],
    "notes": [],
-   "q": 1.08,
-   "median_now": 0.48,
-   "percentile": 73,
+   "q": 0.888,
+   "median_now": 0.49,
+   "percentile": 65,
    "validated": false,
-   "specific_runoff": 12.9,
-   "median_specific_runoff": 5.7,
-   "level_cm": 88,
+   "specific_runoff": 10.6,
+   "median_specific_runoff": 5.8,
+   "level_cm": 84,
    "median_level_cm": 64,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": -4,
-   "level_delta_24h": -7,
-   "water_temp": 6.3,
-   "median_water_temp": 6.9,
+   "level_delta_24h": -5,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 4.5,
+   "median_water_temp": 6.5,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -832,7 +893,7 @@
    "opened": 1961,
    "automated": null,
    "series_start": "01.12.1961",
-   "series_days": 23308,
+   "series_days": 23309,
    "photos": [
     {
      "file": "photos/ortofoto/SJB4488000.jpg",
@@ -841,29 +902,30 @@
     }
    ],
    "notes": [],
-   "q": 0.049,
-   "median_now": 0.009,
-   "percentile": 92,
+   "q": 0.042,
+   "median_now": 0.01,
+   "percentile": 89,
    "validated": false,
-   "specific_runoff": 21.1,
-   "median_specific_runoff": 3.9,
-   "level_cm": 34,
+   "specific_runoff": 18.1,
+   "median_specific_runoff": 4.3,
+   "level_cm": 32,
    "median_level_cm": 8,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
+   "level_delta_h": {},
    "water_temp": null,
    "median_water_temp": null,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "water_temp": null
    }
@@ -881,7 +943,7 @@
    "opened": 1930,
    "automated": 2006,
    "series_start": "10.10.1930",
-   "series_days": 7231,
+   "series_days": 7232,
    "photos": [
     {
      "file": "photos/ortofoto/SJA7798000.jpg",
@@ -890,32 +952,36 @@
     }
    ],
    "notes": [],
-   "q": 3.31,
+   "q": 3.97,
    "median_now": 1.92,
-   "percentile": 84,
+   "percentile": 89,
    "validated": false,
-   "specific_runoff": 13.5,
+   "specific_runoff": 16.1,
    "median_specific_runoff": 7.8,
-   "level_cm": 89,
+   "level_cm": 88,
    "median_level_cm": 68,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
-   "level_delta_12h": -2,
-   "level_delta_24h": -3,
-   "water_temp": 6.9,
-   "median_water_temp": 6.5,
+   "level_delta_6h": null,
+   "level_delta_12h": -1,
+   "level_delta_24h": -2,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.7,
+   "median_water_temp": 6.4,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -932,7 +998,7 @@
    "opened": 1969,
    "automated": 2011,
    "series_start": "30.10.1969",
-   "series_days": 20806,
+   "series_days": 20807,
    "photos": [
     {
      "file": "photos/ortofoto/SJA7233000.jpg",
@@ -941,32 +1007,36 @@
     }
    ],
    "notes": [],
-   "q": 0.704,
-   "median_now": 0.475,
-   "percentile": 62,
+   "q": 0.546,
+   "median_now": 0.48,
+   "percentile": 53,
    "validated": false,
-   "specific_runoff": 7.2,
-   "median_specific_runoff": 4.8,
-   "level_cm": 76,
-   "median_level_cm": 88,
+   "specific_runoff": 5.6,
+   "median_specific_runoff": 4.9,
+   "level_cm": 73,
+   "median_level_cm": 89,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": -3,
-   "level_delta_24h": null,
-   "water_temp": 6.6,
-   "median_water_temp": 7.7,
+   "level_delta_24h": -4,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.0,
+   "median_water_temp": 7.5,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -983,7 +1053,7 @@
    "opened": 1933,
    "automated": 2012,
    "series_start": "08.09.1933",
-   "series_days": 34016,
+   "series_days": 34017,
    "photos": [
     {
      "file": "photos/ortofoto/SJA6159000.jpg",
@@ -992,32 +1062,36 @@
     }
    ],
    "notes": [],
-   "q": 0.901,
-   "median_now": 0.56,
-   "percentile": 58,
+   "q": 0.815,
+   "median_now": 0.58,
+   "percentile": 55,
    "validated": false,
-   "specific_runoff": 6.3,
-   "median_specific_runoff": 3.9,
-   "level_cm": 42,
+   "specific_runoff": 5.7,
+   "median_specific_runoff": 4.1,
+   "level_cm": 40,
    "median_level_cm": 46,
    "level_delta_3h": null,
-   "level_delta_6h": 0,
-   "level_delta_12h": -1,
-   "level_delta_24h": -3,
-   "water_temp": 7.2,
+   "level_delta_6h": null,
+   "level_delta_12h": -2,
+   "level_delta_24h": -2,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.9,
    "median_water_temp": 7.5,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1034,7 +1108,7 @@
    "opened": 2002,
    "automated": 2006,
    "series_start": "04.06.2002",
-   "series_days": 7596,
+   "series_days": 7597,
    "photos": [
     {
      "file": "photos/ortofoto/SJA7746000.jpg",
@@ -1043,32 +1117,36 @@
     }
    ],
    "notes": [],
-   "q": 2.97,
-   "median_now": 1.99,
-   "percentile": 80,
+   "q": 2.82,
+   "median_now": 2.015,
+   "percentile": 76,
    "validated": false,
-   "specific_runoff": 10.1,
-   "median_specific_runoff": 6.8,
-   "level_cm": 110,
-   "median_level_cm": 103,
+   "specific_runoff": 9.6,
+   "median_specific_runoff": 6.9,
+   "level_cm": 111,
+   "median_level_cm": 104,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
-   "level_delta_12h": 2,
-   "level_delta_24h": 1,
-   "water_temp": 6.8,
-   "median_water_temp": 7.0,
+   "level_delta_6h": null,
+   "level_delta_12h": 1,
+   "level_delta_24h": 0,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.9,
+   "median_water_temp": 6.9,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1085,7 +1163,7 @@
    "opened": 2006,
    "automated": 2006,
    "series_start": "27.09.2006",
-   "series_days": 7231,
+   "series_days": 7232,
    "photos": [
     {
      "file": "photos/ortofoto/SJA6683000.jpg",
@@ -1094,32 +1172,36 @@
     }
    ],
    "notes": [],
-   "q": 14.7,
-   "median_now": 8.63,
-   "percentile": 64,
+   "q": 13.7,
+   "median_now": 8.86,
+   "percentile": 61,
    "validated": false,
-   "specific_runoff": 8.3,
-   "median_specific_runoff": 4.9,
-   "level_cm": 119,
-   "median_level_cm": 85,
+   "specific_runoff": 7.8,
+   "median_specific_runoff": 5.0,
+   "level_cm": 113,
+   "median_level_cm": 88,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
-   "level_delta_12h": -4,
-   "level_delta_24h": -7,
-   "water_temp": 7.0,
-   "median_water_temp": 6.9,
+   "level_delta_6h": null,
+   "level_delta_12h": -6,
+   "level_delta_24h": -8,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.6,
+   "median_water_temp": 6.7,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1136,7 +1218,7 @@
    "opened": 1963,
    "automated": null,
    "series_start": "20.10.1963",
-   "series_days": 27226,
+   "series_days": 27227,
    "photos": [
     {
      "file": "photos/ortofoto/SJB4487000.jpg",
@@ -1145,29 +1227,30 @@
     }
    ],
    "notes": [],
-   "q": 0.263,
-   "median_now": 0.057,
-   "percentile": 93,
+   "q": 0.195,
+   "median_now": 0.058,
+   "percentile": 87,
    "validated": false,
-   "specific_runoff": 13.5,
-   "median_specific_runoff": 2.9,
-   "level_cm": 93,
+   "specific_runoff": 10.0,
+   "median_specific_runoff": 3.0,
+   "level_cm": 89,
    "median_level_cm": 64,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
+   "level_delta_h": {},
    "water_temp": null,
-   "median_water_temp": 6.1,
+   "median_water_temp": 6.0,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "water_temp": null
    }
@@ -1185,7 +1268,7 @@
    "opened": 1902,
    "automated": 2002,
    "series_start": "20.08.1902",
-   "series_days": 8692,
+   "series_days": 8693,
    "photos": [
     {
      "file": "photos/ortofoto/SJA4515000.jpg",
@@ -1194,32 +1277,36 @@
     }
    ],
    "notes": [],
-   "q": 128.0,
-   "median_now": 361.0,
+   "q": 138.0,
+   "median_now": 359.0,
    "percentile": 0,
    "validated": false,
-   "specific_runoff": 2.3,
+   "specific_runoff": 2.5,
    "median_specific_runoff": 6.4,
-   "level_cm": 137,
+   "level_cm": 136,
    "median_level_cm": 134,
    "level_delta_3h": null,
-   "level_delta_6h": -11,
-   "level_delta_12h": 8,
-   "level_delta_24h": -16,
-   "water_temp": 9.0,
-   "median_water_temp": 8.9,
+   "level_delta_6h": null,
+   "level_delta_12h": -1,
+   "level_delta_24h": -12,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 8.8,
+   "median_water_temp": 8.7,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1236,7 +1323,7 @@
    "opened": 1902,
    "automated": 2010,
    "series_start": "22.09.1902",
-   "series_days": 37911,
+   "series_days": 37912,
    "photos": [
     {
      "file": "photos/ortofoto/SJA2718000.jpg",
@@ -1245,32 +1332,36 @@
     }
    ],
    "notes": [],
-   "q": 94.7,
-   "median_now": 274.0,
+   "q": 92.5,
+   "median_now": 275.0,
    "percentile": 0,
    "validated": false,
-   "specific_runoff": 2.0,
-   "median_specific_runoff": 5.7,
-   "level_cm": 36,
+   "specific_runoff": 1.9,
+   "median_specific_runoff": 5.8,
+   "level_cm": 39,
    "median_level_cm": 51,
    "level_delta_3h": null,
-   "level_delta_6h": 1,
+   "level_delta_6h": null,
    "level_delta_12h": 3,
-   "level_delta_24h": 3,
+   "level_delta_24h": 4,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
    "water_temp": 10.1,
-   "median_water_temp": 8.8,
+   "median_water_temp": 8.4,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1287,7 +1378,7 @@
    "opened": 1928,
    "automated": 2010,
    "series_start": "25.04.1928",
-   "series_days": 35970,
+   "series_days": 35971,
    "photos": [
     {
      "file": "photos/ortofoto/SJA6334000.jpg",
@@ -1296,32 +1387,36 @@
     }
    ],
    "notes": [],
-   "q": 15.9,
-   "median_now": 5.93,
-   "percentile": 81,
+   "q": 14.2,
+   "median_now": 6.09,
+   "percentile": 77,
    "validated": false,
-   "specific_runoff": 15.2,
-   "median_specific_runoff": 5.7,
-   "level_cm": 85,
+   "specific_runoff": 13.5,
+   "median_specific_runoff": 5.8,
+   "level_cm": 79,
    "median_level_cm": 37,
    "level_delta_3h": null,
-   "level_delta_6h": -3,
-   "level_delta_12h": -5,
-   "level_delta_24h": -10,
-   "water_temp": 7.5,
-   "median_water_temp": 6.7,
+   "level_delta_6h": null,
+   "level_delta_12h": -6,
+   "level_delta_24h": -9,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.5,
+   "median_water_temp": 6.5,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1338,7 +1433,7 @@
    "opened": 1924,
    "automated": 2007,
    "series_start": "14.07.1924",
-   "series_days": 37365,
+   "series_days": 37366,
    "photos": [
     {
      "file": "photos/ortofoto/SJA3204000.jpg",
@@ -1347,32 +1442,36 @@
     }
    ],
    "notes": [],
-   "q": 16.7,
-   "median_now": 3.39,
-   "percentile": 95,
+   "q": 11.8,
+   "median_now": 3.535,
+   "percentile": 88,
    "validated": false,
-   "specific_runoff": 22.6,
-   "median_specific_runoff": 4.6,
-   "level_cm": 57,
+   "specific_runoff": 16.0,
+   "median_specific_runoff": 4.8,
+   "level_cm": 50,
    "median_level_cm": 17,
    "level_delta_3h": null,
-   "level_delta_6h": -7,
-   "level_delta_12h": -11,
-   "level_delta_24h": -17,
-   "water_temp": 7.9,
-   "median_water_temp": 6.7,
+   "level_delta_6h": null,
+   "level_delta_12h": -7,
+   "level_delta_24h": -14,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.1,
+   "median_water_temp": 6.5,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1389,7 +1488,7 @@
    "opened": 1973,
    "automated": 2006,
    "series_start": "10.01.1973",
-   "series_days": 17092,
+   "series_days": 17093,
    "photos": [
     {
      "file": "photos/ortofoto/SJA6279000.jpg",
@@ -1398,32 +1497,36 @@
     }
    ],
    "notes": [],
-   "q": 13.0,
-   "median_now": 3.4,
-   "percentile": 86,
+   "q": 11.1,
+   "median_now": 3.67,
+   "percentile": 81,
    "validated": false,
-   "specific_runoff": 15.7,
-   "median_specific_runoff": 4.1,
-   "level_cm": 133,
+   "specific_runoff": 13.4,
+   "median_specific_runoff": 4.4,
+   "level_cm": 129,
    "median_level_cm": 120,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
-   "level_delta_12h": -3,
+   "level_delta_6h": null,
+   "level_delta_12h": -4,
    "level_delta_24h": -5,
-   "water_temp": 8.4,
-   "median_water_temp": 7.1,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.6,
+   "median_water_temp": 6.9,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1440,7 +1543,7 @@
    "opened": 1961,
    "automated": 2006,
    "series_start": "25.12.1961",
-   "series_days": 9057,
+   "series_days": 9058,
    "photos": [
     {
      "file": "photos/ortofoto/SJA5928000.jpg",
@@ -1449,32 +1552,36 @@
     }
    ],
    "notes": [],
-   "q": 3.94,
-   "median_now": 3.85,
-   "percentile": 54,
+   "q": 3.77,
+   "median_now": 3.83,
+   "percentile": 48,
    "validated": false,
-   "specific_runoff": 5.3,
-   "median_specific_runoff": 5.2,
+   "specific_runoff": 5.1,
+   "median_specific_runoff": 5.1,
    "level_cm": 68,
    "median_level_cm": 69,
    "level_delta_3h": null,
-   "level_delta_6h": 0,
-   "level_delta_12h": -1,
-   "level_delta_24h": -2,
-   "water_temp": 6.2,
-   "median_water_temp": 7.0,
+   "level_delta_6h": null,
+   "level_delta_12h": 0,
+   "level_delta_24h": 0,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 4.9,
+   "median_water_temp": 6.9,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1491,7 +1598,7 @@
    "opened": 1985,
    "automated": 2007,
    "series_start": "01.06.1985",
-   "series_days": 15115,
+   "series_days": 15116,
    "photos": [
     {
      "file": "photos/ortofoto/SJA8796000.jpg",
@@ -1500,32 +1607,36 @@
     }
    ],
    "notes": [],
-   "q": 1.08,
+   "q": 0.993,
    "median_now": 1.15,
-   "percentile": 45,
+   "percentile": 41,
    "validated": false,
-   "specific_runoff": 4.5,
+   "specific_runoff": 4.1,
    "median_specific_runoff": 4.8,
-   "level_cm": 45,
+   "level_cm": 44,
    "median_level_cm": 44,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
-   "level_delta_12h": -2,
-   "level_delta_24h": -3,
-   "water_temp": 6.0,
-   "median_water_temp": 6.3,
+   "level_delta_6h": null,
+   "level_delta_12h": -1,
+   "level_delta_24h": -2,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 4.5,
+   "median_water_temp": 6.2,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1542,7 +1653,7 @@
    "opened": 1930,
    "automated": 2010,
    "series_start": "15.07.1930",
-   "series_days": 25860,
+   "series_days": 25861,
    "photos": [
     {
      "file": "photos/ortofoto/SJA4084000.jpg",
@@ -1551,32 +1662,36 @@
     }
    ],
    "notes": [],
-   "q": 4.58,
-   "median_now": 1.34,
-   "percentile": 91,
+   "q": 3.69,
+   "median_now": 1.385,
+   "percentile": 84,
    "validated": false,
-   "specific_runoff": 16.1,
-   "median_specific_runoff": 4.7,
-   "level_cm": 112,
-   "median_level_cm": 64,
+   "specific_runoff": 13.0,
+   "median_specific_runoff": 4.9,
+   "level_cm": 106,
+   "median_level_cm": 65,
    "level_delta_3h": null,
-   "level_delta_6h": -3,
+   "level_delta_6h": null,
    "level_delta_12h": -6,
-   "level_delta_24h": -12,
-   "water_temp": 9.8,
-   "median_water_temp": 7.0,
+   "level_delta_24h": -9,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 8.9,
+   "median_water_temp": 6.6,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1593,7 +1708,7 @@
    "opened": 1923,
    "automated": 2007,
    "series_start": "29.03.1923",
-   "series_days": 37911,
+   "series_days": 37912,
    "photos": [
     {
      "file": "photos/ortofoto/SJA2129000.jpg",
@@ -1602,32 +1717,36 @@
     }
    ],
    "notes": [],
-   "q": 10.2,
-   "median_now": 3.96,
-   "percentile": 79,
+   "q": 9.37,
+   "median_now": 4.04,
+   "percentile": 77,
    "validated": false,
-   "specific_runoff": 13.0,
-   "median_specific_runoff": 5.0,
-   "level_cm": 73,
-   "median_level_cm": 37,
+   "specific_runoff": 11.9,
+   "median_specific_runoff": 5.1,
+   "level_cm": 69,
+   "median_level_cm": 38,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
+   "level_delta_6h": null,
    "level_delta_12h": -4,
-   "level_delta_24h": -7,
-   "water_temp": 7.3,
-   "median_water_temp": 6.8,
+   "level_delta_24h": -6,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.8,
+   "median_water_temp": 6.7,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1644,7 +1763,7 @@
    "opened": 1960,
    "automated": 2011,
    "series_start": "01.11.1960",
-   "series_days": 24093,
+   "series_days": 24094,
    "photos": [
     {
      "file": "photos/ortofoto/SJA4401000.jpg",
@@ -1653,32 +1772,36 @@
     }
    ],
    "notes": [],
-   "q": 1.86,
-   "median_now": 0.888,
-   "percentile": 86,
+   "q": 1.62,
+   "median_now": 0.9,
+   "percentile": 80,
    "validated": false,
-   "specific_runoff": 15.0,
-   "median_specific_runoff": 7.2,
-   "level_cm": 54,
+   "specific_runoff": 13.1,
+   "median_specific_runoff": 7.3,
+   "level_cm": 52,
    "median_level_cm": 48,
    "level_delta_3h": null,
    "level_delta_6h": null,
-   "level_delta_12h": -1,
-   "level_delta_24h": null,
-   "water_temp": 6.4,
-   "median_water_temp": 6.2,
+   "level_delta_12h": -2,
+   "level_delta_24h": -3,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 29
+   },
+   "water_temp": 5.1,
+   "median_water_temp": 6.1,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1695,7 +1818,7 @@
    "opened": 1922,
    "automated": 2006,
    "series_start": "05.08.1922",
-   "series_days": 38277,
+   "series_days": 38278,
    "photos": [
     {
      "file": "photos/ortofoto/SJA2731000.jpg",
@@ -1704,32 +1827,36 @@
     }
    ],
    "notes": [],
-   "q": 81.1,
-   "median_now": 33.8,
-   "percentile": 78,
+   "q": 71.9,
+   "median_now": 34.65,
+   "percentile": 73,
    "validated": false,
-   "specific_runoff": 15.8,
-   "median_specific_runoff": 6.6,
-   "level_cm": 122,
-   "median_level_cm": 52,
+   "specific_runoff": 14.0,
+   "median_specific_runoff": 6.8,
+   "level_cm": 112,
+   "median_level_cm": 53,
    "level_delta_3h": null,
-   "level_delta_6h": -3,
-   "level_delta_12h": -6,
+   "level_delta_6h": null,
+   "level_delta_12h": -10,
    "level_delta_24h": -13,
-   "water_temp": 8.4,
-   "median_water_temp": 7.3,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.9,
+   "median_water_temp": 7.0,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1746,7 +1873,7 @@
    "opened": 2017,
    "automated": null,
    "series_start": "02.12.2017",
-   "series_days": 2514,
+   "series_days": 2515,
    "photos": [
     {
      "file": "photos/ortofoto/SJB3766000.jpg",
@@ -1755,32 +1882,33 @@
     }
    ],
    "notes": [],
-   "q": 8.73,
-   "median_now": 2.765,
-   "percentile": 94,
+   "q": 8.13,
+   "median_now": 2.84,
+   "percentile": 92,
    "validated": false,
-   "specific_runoff": 15.3,
-   "median_specific_runoff": 4.8,
-   "level_cm": 179,
+   "specific_runoff": 14.2,
+   "median_specific_runoff": 5.0,
+   "level_cm": 145,
    "median_level_cm": 78,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
-   "water_temp": 8.9,
+   "level_delta_h": {},
+   "water_temp": 7.0,
    "median_water_temp": 7.2,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "water_temp": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     }
    }
   },
@@ -1797,7 +1925,7 @@
    "opened": 1931,
    "automated": 2006,
    "series_start": "15.08.1931",
-   "series_days": 34764,
+   "series_days": 34765,
    "photos": [
     {
      "file": "photos/ortofoto/SJA0234000.jpg",
@@ -1806,32 +1934,33 @@
     }
    ],
    "notes": [],
-   "q": 31.6,
-   "median_now": 11.4,
-   "percentile": 81,
+   "q": 27.6,
+   "median_now": 11.8,
+   "percentile": 75,
    "validated": false,
-   "specific_runoff": 15.4,
-   "median_specific_runoff": 5.6,
-   "level_cm": 83,
-   "median_level_cm": 33,
+   "specific_runoff": 13.5,
+   "median_specific_runoff": 5.8,
+   "level_cm": 75,
+   "median_level_cm": 35,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
-   "water_temp": 9.4,
-   "median_water_temp": 7.3,
+   "level_delta_h": {},
+   "water_temp": 8.2,
+   "median_water_temp": 6.9,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "water_temp": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     }
    }
   },
@@ -1848,7 +1977,7 @@
    "opened": 1931,
    "automated": 2010,
    "series_start": "15.07.1931",
-   "series_days": 34795,
+   "series_days": 34796,
    "photos": [
     {
      "file": "photos/ortofoto/SJA8256000.jpg",
@@ -1857,32 +1986,36 @@
     }
    ],
    "notes": [],
-   "q": 19.2,
-   "median_now": 5.75,
-   "percentile": 94,
+   "q": 18.0,
+   "median_now": 5.93,
+   "percentile": 91,
    "validated": false,
-   "specific_runoff": 17.7,
-   "median_specific_runoff": 5.3,
-   "level_cm": 154,
+   "specific_runoff": 16.6,
+   "median_specific_runoff": 5.5,
+   "level_cm": 150,
    "median_level_cm": 98,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
-   "level_delta_12h": -3,
-   "level_delta_24h": -5,
-   "water_temp": 7.1,
-   "median_water_temp": 6.2,
+   "level_delta_6h": null,
+   "level_delta_12h": -4,
+   "level_delta_24h": -6,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.8,
+   "median_water_temp": 5.9,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1899,7 +2032,7 @@
    "opened": 2006,
    "automated": null,
    "series_start": "14.06.2006",
-   "series_days": 6866,
+   "series_days": 6867,
    "photos": [
     {
      "file": "photos/ortofoto/SJA5604000.jpg",
@@ -1908,32 +2041,36 @@
     }
    ],
    "notes": [],
-   "q": 2.46,
-   "median_now": 0.643,
+   "q": 2.26,
+   "median_now": 0.673,
    "percentile": 73,
    "validated": false,
-   "specific_runoff": 11.4,
-   "median_specific_runoff": 3.0,
-   "level_cm": 51,
+   "specific_runoff": 10.5,
+   "median_specific_runoff": 3.1,
+   "level_cm": 49,
    "median_level_cm": 35,
    "level_delta_3h": null,
-   "level_delta_6h": 1,
-   "level_delta_12h": 1,
-   "level_delta_24h": 0,
-   "water_temp": 5.9,
-   "median_water_temp": 6.3,
+   "level_delta_6h": null,
+   "level_delta_12h": -2,
+   "level_delta_24h": -1,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 4.3,
+   "median_water_temp": 6.2,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -1950,7 +2087,7 @@
    "opened": 1955,
    "automated": 2006,
    "series_start": "01.11.1955",
-   "series_days": 19284,
+   "series_days": 19285,
    "photos": [
     {
      "file": "photos/ortofoto/SJA2558000.jpg",
@@ -1965,32 +2102,36 @@
      "source": "Keskkonnaagentuur"
     }
    ],
-   "q": 4.75,
-   "median_now": 2.005,
-   "percentile": 89,
+   "q": 4.35,
+   "median_now": 2.05,
+   "percentile": 85,
    "validated": false,
-   "specific_runoff": 14.9,
-   "median_specific_runoff": 6.3,
-   "level_cm": 130,
-   "median_level_cm": 83,
+   "specific_runoff": 13.6,
+   "median_specific_runoff": 6.4,
+   "level_cm": 121,
+   "median_level_cm": 84,
    "level_delta_3h": null,
-   "level_delta_6h": 0,
-   "level_delta_12h": -4,
-   "level_delta_24h": -6,
-   "water_temp": 7.2,
-   "median_water_temp": 6.7,
+   "level_delta_6h": null,
+   "level_delta_12h": -9,
+   "level_delta_24h": -9,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.8,
+   "median_water_temp": 6.5,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2007,7 +2148,7 @@
    "opened": 2006,
    "automated": 2006,
    "series_start": "06.10.2006",
-   "series_days": 7231,
+   "series_days": 7232,
    "photos": [
     {
      "file": "photos/ortofoto/SJA9057000.jpg",
@@ -2016,32 +2157,36 @@
     }
    ],
    "notes": [],
-   "q": 8.23,
-   "median_now": 3.74,
-   "percentile": 65,
+   "q": 7.0,
+   "median_now": 4.11,
+   "percentile": 61,
    "validated": false,
-   "specific_runoff": 15.1,
-   "median_specific_runoff": 6.9,
-   "level_cm": 110,
-   "median_level_cm": 97,
+   "specific_runoff": 12.9,
+   "median_specific_runoff": 7.6,
+   "level_cm": 107,
+   "median_level_cm": 98,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
+   "level_delta_6h": null,
    "level_delta_12h": -3,
    "level_delta_24h": -5,
-   "water_temp": 7.6,
-   "median_water_temp": 7.3,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.2,
+   "median_water_temp": 7.1,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2058,7 +2203,7 @@
    "opened": 1979,
    "automated": 2006,
    "series_start": "01.11.1979",
-   "series_days": 13574,
+   "series_days": 13575,
    "photos": [
     {
      "file": "photos/ortofoto/SJA7595000.jpg",
@@ -2067,32 +2212,33 @@
     }
    ],
    "notes": [],
-   "q": 2.63,
-   "median_now": 1.12,
-   "percentile": 74,
+   "q": 2.21,
+   "median_now": 1.225,
+   "percentile": 69,
    "validated": false,
-   "specific_runoff": 14.8,
-   "median_specific_runoff": 6.3,
-   "level_cm": 103,
-   "median_level_cm": 71,
+   "specific_runoff": 12.4,
+   "median_specific_runoff": 6.9,
+   "level_cm": 104,
+   "median_level_cm": 72,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
-   "level_delta_12h": -3,
-   "level_delta_24h": -6,
-   "water_temp": 6.8,
-   "median_water_temp": 6.3,
+   "level_delta_6h": null,
+   "level_delta_12h": null,
+   "level_delta_24h": null,
+   "level_delta_h": {},
+   "water_temp": 6.6,
+   "median_water_temp": 6.1,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "date": "2026-10-19"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "date": "2026-10-19"
     }
    }
   },
@@ -2109,7 +2255,7 @@
    "opened": 1975,
    "automated": 2010,
    "series_start": "15.10.1975",
-   "series_days": 18632,
+   "series_days": 18633,
    "photos": [
     {
      "file": "photos/ortofoto/SJA4331000.jpg",
@@ -2118,32 +2264,33 @@
     }
    ],
    "notes": [],
-   "q": 0.338,
-   "median_now": 0.11,
-   "percentile": 94,
+   "q": 0.29,
+   "median_now": 0.114,
+   "percentile": 90,
    "validated": false,
-   "specific_runoff": 43.9,
-   "median_specific_runoff": 14.3,
-   "level_cm": 104,
+   "specific_runoff": 37.7,
+   "median_specific_runoff": 14.8,
+   "level_cm": 102,
    "median_level_cm": 57,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
-   "water_temp": 8.7,
-   "median_water_temp": 7.5,
+   "level_delta_h": {},
+   "water_temp": 7.7,
+   "median_water_temp": 7.4,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "water_temp": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     }
    }
   },
@@ -2160,7 +2307,7 @@
    "opened": 2006,
    "automated": 2006,
    "series_start": "27.09.2006",
-   "series_days": 7230,
+   "series_days": 7231,
    "photos": [
     {
      "file": "photos/ortofoto/SJA4907000.jpg",
@@ -2169,32 +2316,33 @@
     }
    ],
    "notes": [],
-   "q": 6.52,
-   "median_now": 1.97,
-   "percentile": 60,
+   "q": 5.11,
+   "median_now": 2.09,
+   "percentile": 56,
    "validated": false,
-   "specific_runoff": 11.9,
-   "median_specific_runoff": 3.6,
-   "level_cm": 96,
-   "median_level_cm": 65,
+   "specific_runoff": 9.3,
+   "median_specific_runoff": 3.8,
+   "level_cm": 93,
+   "median_level_cm": 66,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
    "level_delta_24h": null,
-   "water_temp": 7.4,
-   "median_water_temp": 7.2,
+   "level_delta_h": {},
+   "water_temp": 7.6,
+   "median_water_temp": 7.0,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "date": "2026-10-19"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "date": "2026-10-19"
     }
    }
   },
@@ -2211,7 +2359,7 @@
    "opened": 2006,
    "automated": 2010,
    "series_start": "22.08.2006",
-   "series_days": 5770,
+   "series_days": 5771,
    "photos": [
     {
      "file": "photos/ortofoto/SJA8909000.jpg",
@@ -2220,32 +2368,36 @@
     }
    ],
    "notes": [],
-   "q": 7.35,
-   "median_now": 1.4,
-   "percentile": 99,
+   "q": 3.98,
+   "median_now": 1.38,
+   "percentile": 87,
    "validated": false,
-   "specific_runoff": 19.5,
+   "specific_runoff": 10.6,
    "median_specific_runoff": 3.7,
-   "level_cm": 64,
+   "level_cm": 62,
    "median_level_cm": 44,
    "level_delta_3h": null,
-   "level_delta_6h": 1,
-   "level_delta_12h": -1,
-   "level_delta_24h": -2,
-   "water_temp": 7.0,
-   "median_water_temp": 6.8,
+   "level_delta_6h": null,
+   "level_delta_12h": -2,
+   "level_delta_24h": -1,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.5,
+   "median_water_temp": 6.7,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2262,7 +2414,7 @@
    "opened": 1955,
    "automated": null,
    "series_start": "30.08.1955",
-   "series_days": 25981,
+   "series_days": 25982,
    "photos": [
     {
      "file": "photos/ortofoto/SJA8056000.jpg",
@@ -2271,32 +2423,36 @@
     }
    ],
    "notes": [],
-   "q": 3.91,
-   "median_now": 0.69,
-   "percentile": 88,
+   "q": 3.08,
+   "median_now": 0.751,
+   "percentile": 82,
    "validated": false,
-   "specific_runoff": 16.3,
-   "median_specific_runoff": 2.9,
-   "level_cm": 58,
-   "median_level_cm": 36,
+   "specific_runoff": 12.8,
+   "median_specific_runoff": 3.1,
+   "level_cm": 54,
+   "median_level_cm": 37,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
+   "level_delta_6h": null,
    "level_delta_12h": -4,
-   "level_delta_24h": -8,
-   "water_temp": 6.1,
-   "median_water_temp": 5.9,
+   "level_delta_24h": -6,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 4.0,
+   "median_water_temp": 5.7,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2313,7 +2469,7 @@
    "opened": 2006,
    "automated": 2006,
    "series_start": "19.10.2006",
-   "series_days": 6987,
+   "series_days": 6988,
    "photos": [
     {
      "file": "photos/ortofoto/SJA8903000.jpg",
@@ -2322,32 +2478,36 @@
     }
    ],
    "notes": [],
-   "q": 0.97,
-   "median_now": 0.511,
-   "percentile": 76,
+   "q": 0.758,
+   "median_now": 0.518,
+   "percentile": 67,
    "validated": false,
-   "specific_runoff": 11.6,
-   "median_specific_runoff": 6.1,
-   "level_cm": 54,
+   "specific_runoff": 9.1,
+   "median_specific_runoff": 6.2,
+   "level_cm": 60,
    "median_level_cm": null,
    "level_delta_3h": null,
-   "level_delta_6h": -4,
-   "level_delta_12h": -8,
-   "level_delta_24h": -8,
-   "water_temp": 8.5,
-   "median_water_temp": 7.2,
+   "level_delta_6h": null,
+   "level_delta_12h": 6,
+   "level_delta_24h": 2,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 7.3,
+   "median_water_temp": 6.9,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2364,7 +2524,7 @@
    "opened": 1924,
    "automated": null,
    "series_start": "25.07.1924",
-   "series_days": 12710,
+   "series_days": 12711,
    "photos": [
     {
      "file": "photos/ortofoto/SJA6842000.jpg",
@@ -2373,32 +2533,36 @@
     }
    ],
    "notes": [],
-   "q": 4.82,
-   "median_now": 1.325,
-   "percentile": 90,
+   "q": 3.97,
+   "median_now": 1.365,
+   "percentile": 87,
    "validated": false,
-   "specific_runoff": 15.7,
-   "median_specific_runoff": 4.3,
-   "level_cm": 71,
-   "median_level_cm": 52,
+   "specific_runoff": 12.9,
+   "median_specific_runoff": 4.4,
+   "level_cm": 65,
+   "median_level_cm": 54,
    "level_delta_3h": null,
-   "level_delta_6h": -2,
-   "level_delta_12h": -4,
+   "level_delta_6h": null,
+   "level_delta_12h": -6,
    "level_delta_24h": -8,
-   "water_temp": 8.4,
-   "median_water_temp": 7.2,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 7.2,
+   "median_water_temp": 6.7,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2415,7 +2579,7 @@
    "opened": 1928,
    "automated": 2011,
    "series_start": "25.10.1928",
-   "series_days": 29572,
+   "series_days": 29573,
    "photos": [
     {
      "file": "photos/ortofoto/SJA8764000.jpg",
@@ -2424,32 +2588,36 @@
     }
    ],
    "notes": [],
-   "q": 5.31,
-   "median_now": 2.83,
-   "percentile": 83,
+   "q": 6.33,
+   "median_now": 2.86,
+   "percentile": 89,
    "validated": false,
-   "specific_runoff": 17.2,
-   "median_specific_runoff": 9.2,
-   "level_cm": 46,
+   "specific_runoff": 20.6,
+   "median_specific_runoff": 9.3,
+   "level_cm": 42,
    "median_level_cm": 27,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
-   "level_delta_12h": -2,
+   "level_delta_6h": null,
+   "level_delta_12h": -4,
    "level_delta_24h": -5,
-   "water_temp": 6.3,
-   "median_water_temp": 6.5,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 4.7,
+   "median_water_temp": 6.0,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2466,7 +2634,7 @@
    "opened": 1975,
    "automated": 2006,
    "series_start": "01.07.1975",
-   "series_days": 3663,
+   "series_days": 3664,
    "photos": [
     {
      "file": "photos/ortofoto/SJA8799000.jpg",
@@ -2475,32 +2643,36 @@
     }
    ],
    "notes": [],
-   "q": 1.25,
-   "median_now": 0.492,
-   "percentile": 66,
+   "q": 1.06,
+   "median_now": 0.5,
+   "percentile": 63,
    "validated": false,
-   "specific_runoff": 10.3,
+   "specific_runoff": 8.8,
    "median_specific_runoff": 4.1,
-   "level_cm": 57,
+   "level_cm": 55,
    "median_level_cm": 48,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": -2,
-   "level_delta_24h": -4,
-   "water_temp": 5.6,
+   "level_delta_24h": -3,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 3.5,
    "median_water_temp": 6.3,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2517,7 +2689,7 @@
    "opened": 1926,
    "automated": 2006,
    "series_start": "13.07.1926",
-   "series_days": 26589,
+   "series_days": 26590,
    "photos": [
     {
      "file": "photos/ortofoto/SJA9204000.jpg",
@@ -2526,32 +2698,36 @@
     }
    ],
    "notes": [],
-   "q": 7.78,
-   "median_now": 3.845,
-   "percentile": 74,
+   "q": 6.86,
+   "median_now": 3.905,
+   "percentile": 69,
    "validated": false,
-   "specific_runoff": 13.3,
-   "median_specific_runoff": 6.6,
-   "level_cm": 130,
-   "median_level_cm": 68,
+   "specific_runoff": 11.7,
+   "median_specific_runoff": 6.7,
+   "level_cm": 126,
+   "median_level_cm": 66,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
-   "level_delta_12h": -3,
-   "level_delta_24h": -7,
-   "water_temp": 6.8,
-   "median_water_temp": 6.8,
+   "level_delta_6h": null,
+   "level_delta_12h": -4,
+   "level_delta_24h": -5,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.0,
+   "median_water_temp": 6.6,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2568,7 +2744,7 @@
    "opened": 1929,
    "automated": 2007,
    "series_start": "27.06.1929",
-   "series_days": 35177,
+   "series_days": 35178,
    "photos": [
     {
      "file": "photos/ortofoto/SJA3959000.jpg",
@@ -2577,32 +2753,36 @@
     }
    ],
    "notes": [],
-   "q": 14.1,
-   "median_now": 3.215,
-   "percentile": 92,
+   "q": 12.3,
+   "median_now": 3.39,
+   "percentile": 91,
    "validated": false,
-   "specific_runoff": 29.5,
-   "median_specific_runoff": 6.7,
-   "level_cm": 172,
-   "median_level_cm": 84,
+   "specific_runoff": 25.7,
+   "median_specific_runoff": 7.1,
+   "level_cm": 161,
+   "median_level_cm": 86,
    "level_delta_3h": null,
-   "level_delta_6h": -3,
-   "level_delta_12h": -7,
-   "level_delta_24h": -11,
-   "water_temp": 7.6,
-   "median_water_temp": 7.4,
+   "level_delta_6h": null,
+   "level_delta_12h": -11,
+   "level_delta_24h": -14,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 6.3,
+   "median_water_temp": 7.1,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2619,7 +2799,7 @@
    "opened": 1963,
    "automated": 2010,
    "series_start": "16.09.1963",
-   "series_days": 22937,
+   "series_days": 22938,
    "photos": [
     {
      "file": "photos/ortofoto/SJA1133000.jpg",
@@ -2628,32 +2808,36 @@
     }
    ],
    "notes": [],
-   "q": 0.711,
+   "q": 0.643,
    "median_now": 0.19,
-   "percentile": 88,
+   "percentile": 85,
    "validated": false,
-   "specific_runoff": 9.9,
+   "specific_runoff": 9.0,
    "median_specific_runoff": 2.7,
    "level_cm": 59,
    "median_level_cm": 40,
    "level_delta_3h": null,
-   "level_delta_6h": 0,
-   "level_delta_12h": -1,
-   "level_delta_24h": -1,
-   "water_temp": 8.2,
-   "median_water_temp": 8.0,
+   "level_delta_6h": null,
+   "level_delta_12h": 0,
+   "level_delta_24h": 0,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 7.4,
+   "median_water_temp": 7.8,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2670,7 +2854,7 @@
    "opened": 1921,
    "automated": 2010,
    "series_start": "29.08.1921",
-   "series_days": 38277,
+   "series_days": 38278,
    "photos": [
     {
      "file": "photos/ortofoto/SJA3413000.jpg",
@@ -2679,32 +2863,36 @@
     }
    ],
    "notes": [],
-   "q": 8.19,
-   "median_now": 5.925,
-   "percentile": 65,
+   "q": 7.45,
+   "median_now": 6.11,
+   "percentile": 59,
    "validated": false,
-   "specific_runoff": 7.8,
-   "median_specific_runoff": 5.7,
-   "level_cm": 98,
-   "median_level_cm": 37,
+   "specific_runoff": 7.1,
+   "median_specific_runoff": 5.8,
+   "level_cm": 95,
+   "median_level_cm": 38,
    "level_delta_3h": null,
-   "level_delta_6h": -3,
-   "level_delta_12h": 0,
+   "level_delta_6h": null,
+   "level_delta_12h": -3,
    "level_delta_24h": -6,
-   "water_temp": 7.4,
-   "median_water_temp": 6.9,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.8,
+   "median_water_temp": 6.6,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2721,7 +2909,7 @@
    "opened": 1930,
    "automated": 2011,
    "series_start": "26.06.1930",
-   "series_days": 21476,
+   "series_days": 21477,
    "photos": [
     {
      "file": "photos/ortofoto/SJA2072000.jpg",
@@ -2730,32 +2918,36 @@
     }
    ],
    "notes": [],
-   "q": 2.63,
-   "median_now": 1.31,
-   "percentile": 75,
+   "q": 2.33,
+   "median_now": 1.375,
+   "percentile": 70,
    "validated": false,
-   "specific_runoff": 13.0,
-   "median_specific_runoff": 6.5,
-   "level_cm": 82,
-   "median_level_cm": 63,
+   "specific_runoff": 11.5,
+   "median_specific_runoff": 6.8,
+   "level_cm": 74,
+   "median_level_cm": 64,
    "level_delta_3h": null,
-   "level_delta_6h": 2,
-   "level_delta_12h": 0,
-   "level_delta_24h": -1,
-   "water_temp": 7.3,
-   "median_water_temp": 7.1,
+   "level_delta_6h": null,
+   "level_delta_12h": -8,
+   "level_delta_24h": -6,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.7,
+   "median_water_temp": 6.8,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2772,7 +2964,7 @@
    "opened": 2010,
    "automated": 2010,
    "series_start": "10.09.2010",
-   "series_days": 4309,
+   "series_days": 4310,
    "photos": [
     {
      "file": "photos/ortofoto/SJA5230000.jpg",
@@ -2781,32 +2973,35 @@
     }
    ],
    "notes": [],
-   "q": 4.51,
+   "q": 4.37,
    "median_now": 3.35,
-   "percentile": 82,
+   "percentile": 79,
    "validated": false,
-   "specific_runoff": 7.7,
+   "specific_runoff": 7.5,
    "median_specific_runoff": 5.7,
-   "level_cm": 75,
-   "median_level_cm": 63,
+   "level_cm": 74,
+   "median_level_cm": 62,
    "level_delta_3h": null,
    "level_delta_6h": null,
    "level_delta_12h": null,
-   "level_delta_24h": null,
-   "water_temp": 10.2,
-   "median_water_temp": 8.4,
+   "level_delta_24h": -2,
+   "level_delta_h": {
+    "24h": 23
+   },
+   "water_temp": 8.1,
+   "median_water_temp": 8.2,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "date": "2026-10-18"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "date": "2026-10-18"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2823,7 +3018,7 @@
    "opened": 1924,
    "automated": 2007,
    "series_start": "05.07.1924",
-   "series_days": 24855,
+   "series_days": 24856,
    "photos": [
     {
      "file": "photos/ortofoto/SJA4456000.jpg",
@@ -2838,32 +3033,36 @@
      "source": "Keskkonnaagentuur"
     }
    ],
-   "q": 8.26,
-   "median_now": 6.75,
-   "percentile": 67,
+   "q": 8.77,
+   "median_now": 6.765,
+   "percentile": 72,
    "validated": false,
-   "specific_runoff": 7.3,
+   "specific_runoff": 7.7,
    "median_specific_runoff": 6.0,
-   "level_cm": 7,
-   "median_level_cm": 16,
+   "level_cm": 29,
+   "median_level_cm": 15,
    "level_delta_3h": null,
-   "level_delta_6h": -13,
-   "level_delta_12h": -11,
-   "level_delta_24h": -3,
-   "water_temp": 8.7,
-   "median_water_temp": 7.4,
+   "level_delta_6h": null,
+   "level_delta_12h": 22,
+   "level_delta_24h": 9,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 7.9,
+   "median_water_temp": 7.1,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   },
@@ -2880,7 +3079,7 @@
    "opened": 1928,
    "automated": 2007,
    "series_start": "18.03.1928",
-   "series_days": 29633,
+   "series_days": 29634,
    "photos": [
     {
      "file": "photos/ortofoto/SJA2835000.jpg",
@@ -2889,32 +3088,36 @@
     }
    ],
    "notes": [],
-   "q": 2.86,
-   "median_now": 1.63,
-   "percentile": 77,
+   "q": 2.59,
+   "median_now": 1.64,
+   "percentile": 71,
    "validated": false,
-   "specific_runoff": 10.5,
+   "specific_runoff": 9.5,
    "median_specific_runoff": 6.0,
-   "level_cm": 162,
-   "median_level_cm": 147,
+   "level_cm": 160,
+   "median_level_cm": 148,
    "level_delta_3h": null,
-   "level_delta_6h": -1,
+   "level_delta_6h": null,
    "level_delta_12h": -2,
-   "level_delta_24h": -4,
-   "water_temp": 7.1,
-   "median_water_temp": 6.6,
+   "level_delta_24h": -3,
+   "level_delta_h": {
+    "12h": 17,
+    "24h": 23
+   },
+   "water_temp": 5.7,
+   "median_water_temp": 6.2,
    "measured": {
     "q": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "runoff": {
-     "date": "2026-10-18"
+     "date": "2026-10-19"
     },
     "level": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     },
     "water_temp": {
-     "time": "2026-10-19T13:00:00Z"
+     "time": "2026-10-20T06:00:00Z"
     }
    }
   }

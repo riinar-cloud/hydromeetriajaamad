@@ -612,6 +612,12 @@ class Component extends DCLogic {
     // small discharges need three decimals or a real value reads as 0,00
     const q3 = v => !num(v) ? "—" : v !== 0 && Math.abs(v) < 0.1 ? f(v, 3) : f(v, 2);
     const r1 = v => !num(v) ? "—" : v !== 0 && Math.abs(v) < 0.1 ? f(v, 2) : f(v, 1);
+    // Veetaseme vahe: ajavahe tuleb level_delta_h väljalt, kui andmepool selle andis.
+    // Nominaalne arv jääb varuks, et vana andmestik ei jätaks silti poolikuks.
+    const vahe = (v, kood, nominaal) => {
+      const h = (rec.level_delta_h || {})[kood];
+      return sgn(v, 0, "cm / " + (num(h) ? h : nominaal) + " h");
+    };
     return {
       // ühik ainult siis, kui väärtus on arv — "— °C" loeks nagu mõõdetud väärtus
       uQ: num(rec.q), uQMed: num(rec.median_now),
@@ -683,10 +689,13 @@ class Component extends DCLogic {
       nRunoffMed: r1(rec.median_specific_runoff),
       nLevel: int(rec.level_cm),
       nLevelMed: int(rec.median_level_cm),
-      nLevelDelta: sgn(rec.level_delta_24h, 0, "cm / 24 h"),
-      nLevelDelta12: sgn(rec.level_delta_12h, 0, "cm / 12 h"),
-      nLevelDelta6: sgn(rec.level_delta_6h, 0, "cm / 6 h"),
-      nLevelDelta3: sgn(rec.level_delta_3h, 0, "cm / 3 h"),
+      // Aken on orienteeruv: veetase tuleb reaalajas XML-ist, mis ajalugu ei anna, ja
+      // build kogub ise logi. Sildile kirjutatakse TEGELIK vahe level_delta_h väljalt,
+      // sest nominaalne 24 h ei vasta praktikas ühelgi jaamal tõele (tüüpiliselt 23 h).
+      nLevelDelta: vahe(rec.level_delta_24h, "24h", 24),
+      nLevelDelta12: vahe(rec.level_delta_12h, "12h", 12),
+      nLevelDelta6: vahe(rec.level_delta_6h, "6h", 6),
+      nLevelDelta3: vahe(rec.level_delta_3h, "3h", 3),
       nTemp: f(rec.water_temp, 1),
       nTempMed: f(rec.median_water_temp, 1)
     };

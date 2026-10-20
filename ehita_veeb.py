@@ -409,7 +409,7 @@ def kanna_operatiiv(stations, praegu):
         if o:
             kaetud += 1
         for f in ("level_cm", "water_temp", "level_delta_3h", "level_delta_6h",
-                  "level_delta_12h", "level_delta_24h"):
+                  "level_delta_12h", "level_delta_24h", "level_delta_h"):
             if f in o:
                 s[f] = o[f]
         if o.get("_tund"):
@@ -435,7 +435,7 @@ def vahed_logist(logi_jaam, praegune, nyyd):
     kirjed = sorted(
         (datetime.datetime.fromisoformat(k.replace("Z", "+00:00")), v)
         for k, v in logi_jaam.items())
-    out, kasutatud = {}, set()
+    out, kasutatud, tunnid = {}, set(), {}
     for h in DELTA_AKNAD:
         siht = praegune_tund - datetime.timedelta(hours=h)
         lubatud = h * HÄLVE * 3600
@@ -446,8 +446,12 @@ def vahed_logist(logi_jaam, praegune, nyyd):
             _, t, v = kand[0]
             kasutatud.add(t)
             out[f"level_delta_{h}h"] = round(praegune - v)
+            # Tegelik vahe tunnides: liides kirjutab selle sildile, sest nominaalne
+            # 24 h ei vasta praktikas ühelgi jaamal tõele (tüüpiliselt 23 h).
+            tunnid[f"{h}h"] = round((praegune_tund - t).total_seconds() / 3600)
         else:
             out[f"level_delta_{h}h"] = None
+    out["level_delta_h"] = tunnid
     return out
 
 
@@ -629,7 +633,8 @@ def valideeri(doc, kaust):
                    "percentile", "validated", "specific_runoff", "median_specific_runoff",
                    "level_cm", "median_level_cm", "water_temp",
                    "median_water_temp", "photos", "measured", "notes",
-                   "level_delta_3h", "level_delta_6h", "level_delta_12h", "level_delta_24h"]
+                   "level_delta_3h", "level_delta_6h", "level_delta_12h", "level_delta_24h",
+                   "level_delta_h"]
     for s in doc["stations"]:
         for f in kohustuslik:
             if f not in s:
@@ -683,6 +688,15 @@ def valideeri(doc, kaust):
                 continue
             if ("date" in m) == ("time" in m):
                 v.append(f"{s['code']}: measured.{võti} peab sisaldama kas date VÕI time")
+        # 12. level_delta_h võti on olemas TÄPSELT nende akende kohta, millel on väärtus
+        tunnid = s.get("level_delta_h") or {}
+        for h in DELTA_AKNAD:
+            on_vahe = s.get(f"level_delta_{h}h") is not None
+            on_tund = f"{h}h" in tunnid
+            if on_vahe != on_tund:
+                v.append(f"{s['code']}: level_delta_{h}h ja level_delta_h['{h}h'] ei käi kokku")
+            if on_tund and not (isinstance(tunnid[f"{h}h"], int) and tunnid[f"{h}h"] > 0):
+                v.append(f"{s['code']}: level_delta_h['{h}h'] peab olema positiivne täisarv")
     return v
 
 
@@ -881,6 +895,7 @@ def main():
             "level_delta_6h": None,
             "level_delta_12h": None,
             "level_delta_24h": None,
+            "level_delta_h": {},
             "water_temp": round(d1_temp, 1) if d1_temp is not None else None,
             "median_water_temp": round(med_temp, 1) if med_temp is not None else None,
             # Leping p2a. Vooluhulk ja äravoolumoodul on ööpäevased -> date.
@@ -928,7 +943,7 @@ def main():
         for p in probleemid[:25]:
             print("   ", p)
     else:
-        print("  kõik 11 lepingu kontrolli läbitud")
+        print("  kõik 12 lepingu kontrolli läbitud")
     if vead:
         print(f"\nehitusvead ({len(vead)}): {vead}")
     print(f"\nvalmis: {len(stations)} jaama -> {OUT}")

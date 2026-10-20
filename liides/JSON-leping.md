@@ -83,13 +83,33 @@ Neli paari: iga näit ja sama kalendripäeva ajalooline mediaan. Liides kuvab ne
 | `level_cm` | int | `median_level_cm` |
 | `water_temp` | float | `median_water_temp` |
 
-Muutus, ainult veetasemel: `level_delta_3h`, `level_delta_6h`, `level_delta_12h`, `level_delta_24h` (int, cm). Märk on oluline — liides paneb ise `+` või `−` ette.
+Muutus, ainult veetasemel: `level_delta_3h`, `level_delta_6h`, `level_delta_12h`, `level_delta_24h` (int, cm) ja nende **tegelikud ajavahed** `level_delta_h` (vt allpool). Märk on oluline — liides paneb ise `+` või `−` ette.
 
 Vooluhulgal muutuse välja ei ole. Vooluhulk on ööpäevakeskmine ja D-1, seega selle "24 h muutus" kirjeldaks teist ajavahemikku kui veetaseme oma.
 
 Veetaseme neli muutust kuvatakse üksteise all lühemast pikemani (3 h, 6 h, 12 h, 24 h). Jada on üleujutusriski indikaator: kui lühem aken näitab suuremat muutust kui pikem, siis tõus kiireneb. Seetõttu on **järjekord oluline ja kõik neli peavad tulema samast tunniaegreast** — eri allikatest kokku pandud jada ei ole võrreldav.
 
-`level_delta_3h`, `level_delta_6h` ja `level_delta_12h` on `null`, kui jaamal puudub tunniaegrida (vt osa 2a). `level_delta_24h` peaks siiski olemas olema, sest selle saab ka ööpäevasest allikast.
+Iga vahe on `null`, kui logis ei ole sobivat varasemat näitu.
+
+### Aknad on orienteeruvad, mitte täpsed
+
+Veetase tuleb reaalajas XML-ist, mis ajalugu ei anna — ainult praeguse hetke. Vahede arvutamiseks peab build **ise tunnilogi koguma**: iga käivitus salvestab hetkeseisu.
+
+Logi ei ole ühtlane. Ajakava ütleb "iga tund", aga mõõdetult jooksis ajastatud töö **50 korda 7 ööpäeva jooksul** — keskmine vahe 3,4 h, suurim 6,5 h. Seetõttu otsitakse igale aknale **lähim näit**, lubatud eksimusega pool akna pikkusest, ja üht näitu ei kasutata kahes aknas.
+
+Tagajärg: **nominaalne silt ei vasta tõele.** Mõõdetud 18.10.2026 seisuga oli 6 h ja 12 h vahe täpne kõigil jaamadel, aga 24 h vahe ei olnud täpne **mitte ühelgi**: tüüpiliselt 23 h, kuuel jaamal 26 h ja ühel 19 h.
+
+Seepärast on väli **`level_delta_h`**, mis annab iga akna **tegeliku** vahe tundides:
+
+```json
+"level_delta_h": { "6h": 6, "12h": 12, "24h": 23 }
+```
+
+- Võti on olemas **täpselt siis**, kui vastav `level_delta_<võti>` ei ole `null`.
+- Väärtus on positiivne täisarv tunde.
+- **Liides kirjutab sildile selle arvu, mitte nominaalset.** `−2 cm / 23 h`, mitte `−2 cm / 24 h`.
+
+3 h rida on sageli tühi: kui kahe käivituse vahe oli kuus tundi, siis kolme tunni tagust näitu ei ole olemas ja ükski reegel ei suuda seda tekitada.
 
 `percentile` (int 0–100) on tänase vooluhulga koht sama kalendripäeva ajaloolises jaotuses kogu mõõtmisperioodi ulatuses. 50 = mediaan.
 
@@ -284,3 +304,4 @@ Ortofotod ja jaamafotod on eri kaustades, sest ortofotod genereeritakse automaat
 9. Iga `photos` kirje `file` on serveris olemas ja `source` on täidetud.
 10. Iga `measured` võti sisaldab kas `date` või `time`, mitte mõlemat.
 11. Iga `notes` kirjel on `type`, `text` ja `source`.
+12. Iga `level_delta_h` võti vastab mitte-null vahele ja on positiivne täisarv; akendel ilma väärtuseta ei ole võtit.
