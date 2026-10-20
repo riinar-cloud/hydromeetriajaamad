@@ -71,6 +71,10 @@ UA = {"User-Agent": "Mozilla/5.0 (hydro-site build)"}
 # juures olematu hind selle eest, et see üldse lõpuni jõuab.
 EST_VAHE = 0.5
 _est_viimane = 0.0
+# Mõõdik: mitu päringut tegime, mitu korda server piiras ja kui kaua kokku ootasime.
+# Ilma selleta on ainus jälg buildi kogukestus, millest ei saa järeldada, kas piir käib
+# päringute ARVU või andmeMAHU kohta — ja lahendus on kummalgi juhul eri.
+_429 = {"paringuid": 0, "kordi": 0, "ootus": 0.0}
 AKEN = 5
 
 ONLY_NOW = "--only-now" in sys.argv
@@ -119,6 +123,8 @@ def get(url, timeout=60, binary=False, katseid=5):
     global _est_viimane
     for k in range(katseid):
         if url.startswith(EST):
+            if k == 0:
+                _429["paringuid"] += 1
             paus = EST_VAHE - (time.monotonic() - _est_viimane)
             if paus > 0:
                 time.sleep(paus)
@@ -147,6 +153,8 @@ def get(url, timeout=60, binary=False, katseid=5):
                     except ValueError:
                         oota = 0
                 oota = min(max(oota, 10 * (k + 1) ** 2), 180)
+                _429["kordi"] += 1
+                _429["ootus"] += oota
             else:
                 oota = 1.5 * (k + 1)
             print(f"     {silt} ({k + 1}/{katseid}), ootan {oota:.0f}s: {url[:100]}", flush=True)
@@ -733,10 +741,12 @@ def main():
     kraabitud = json.load(open(meta_fail, encoding="utf-8"))["jaamad"] if os.path.exists(meta_fail) else {}
 
     print("1/4  jaamad ...", flush=True)
-    hydro = [s for s in get(f"{EST}/stations") if s["type"] == "HYDROLOGICAL"]
-    aktiivsed = [s for s in hydro
-                 if get(f"{EST}/stations/{s['code']}/measurements?parameter=Q&start-year=2026&end-year=2026")]
-    print(f"     aktiivse Q-ga: {len(aktiivsed)}", flush=True)
+    # Aktiivsust EI kontrollita eraldi päringuga. Varem küsiti iga jaama kohta "kas on
+    # 2026 Q-andmeid" ja seejärel tõmmati sama Q uuesti terve ajaloo ulatuses — 65
+    # lisapäringut, mille vastus visati ära. EstModel hakkas 14.10.2026 piirama (429) ja
+    # siis loeb iga päring: 237 -> 180. Aktiivsus selgub nüüd Q aegreast endast.
+    aktiivsed = [s for s in get(f"{EST}/stations") if s["type"] == "HYDROLOGICAL"]
+    print(f"     hüdroloogilisi jaamu: {len(aktiivsed)}", flush=True)
 
     print("2/4  register ...", flush=True)
     koodid = ",".join(s["code"] for s in aktiivsed)
@@ -758,15 +768,25 @@ def main():
         km2 = h.get("valgala_suurus_km2") or s.get("area")
         km2 = round(km2, 2) if km2 else None
 
+        # Q esimesena: kui jaamal ei ole jooksva aasta vooluhulka, ei ole ta aktiivne ja
+        # H ning T jäävad üldse tõmbamata. Nii maksab mitteaktiivne jaam ühe päringu,
+        # mitte kolm.
         ts = {}
-        for par in ("Q", "H", "T"):
+        try:
+            t = aegrida(kkr, "Q")
+            if t: ts["Q"] = t
+        except Exception as e:
+            vead.append(f"{kkr} Q: {e}")
+        if "Q" not in ts:
+            continue
+        if ts["Q"]["end"].year < datetime.date.today().year:
+            continue                      # viimane vooluhulk on möödunud aastast
+        for par in ("H", "T"):
             try:
                 t = aegrida(kkr, par)
                 if t: ts[par] = t
             except Exception as e:
                 vead.append(f"{kkr} {par}: {e}")
-        if "Q" not in ts:
-            vead.append(f"{kkr}: Q puudub"); continue
 
         Q = ts["Q"]
         ppQ = paarid(Q)
@@ -946,6 +966,9 @@ def main():
         print("  kõik 12 lepingu kontrolli läbitud")
     if vead:
         print(f"\nehitusvead ({len(vead)}): {vead}")
+    if _429["paringuid"]:
+        print(f"\nEstModel: {_429['paringuid']} päringut, piiranguid (429) {_429['kordi']}, "
+              f"ootamist kokku {_429['ootus'] / 60:.0f} min")
     print(f"\nvalmis: {len(stations)} jaama -> {OUT}")
 
 

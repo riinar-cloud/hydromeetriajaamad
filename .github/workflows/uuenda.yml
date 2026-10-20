@@ -19,13 +19,19 @@ on:
 permissions:
   contents: write
 
+# Täisehitus ja tunnine uuendus EI tohi olla samas järjekorras. 20.10.2026 kestis
+# täisehitus 3,5 tundi (EstModeli piirangu tõttu) ja blokeeris kogu selle aja tunnised
+# jooksud — veetaseme logisse jäi 3,5-tunnine auk ja 12 h vahe kadus lehelt ära.
 concurrency:
-  group: uuendus
+  group: uuendus-${{ inputs.taisehitus == 'true' || github.event.schedule == '30 7 * * *' }}
   cancel-in-progress: false
 
 jobs:
   uuenda:
     runs-on: ubuntu-latest
+    # Täisehitus võttis 20.10 piirangu tõttu 3,5 tundi. Piir hoiab ära, et mõni jooks
+    # saaks tunde põleda ja järgmised enda taha kinni hoida.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
