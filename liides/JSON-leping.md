@@ -195,7 +195,15 @@ kuupäev;vooluhulk_m3s;veetase_cm;veetemp_c;valideeritud
 
 - Semikoolon eraldajaks, koma komakohaks, CRLF, **UTF-8 BOM-iga** (et Excel avaks täpitähed õigesti).
 - Kuupäev ISO `YYYY-MM-DD`, et sortimine töötaks ka tekstina.
-- Tühi lahter = mõõtmine puudub. `0` on mõõdetud null — talvel on veetemperatuur päriselt 0.
+- Tühi lahter = mõõtmine puudub. `0` on mõõdetud null — talvel on veetemperatuur
+  päriselt 0.
+- **Erand jooksvas otsas:** veetaseme ja veetemperatuuri veerud võivad vooluhulga
+  veerust kuni **7 päeva** maas olla. Neid tõmmatakse EstModelist kord nädalas, mitte
+  iga päev, sest EstModel laseb läbi ~1 päringu minutis ja kolme näidu tõmbamine
+  kõigile jaamadele on 182 päringut. Lehel kuvatav veetase ei sõltu sellest — see
+  tuleb ilmateenistuse XML-ist reaalajas. Lõhe liigub koos ajaga ja täitub tagantjärele;
+  ükski vana rida ei jää tühjaks. Analüüsiks kasutatav valideeritud osa ei ole kunagi
+  mõjutatud, sest valideerimispiir liigub kord aastas.
 - Päev, mil ühtegi kolmest näidust ei mõõdetud, on failist välja jäetud. **Fail katab
   kõigi kolme näidu perioodi**, mitte ainult vooluhulga oma — paljudel jaamadel algab
   veetase aastakümneid varem. Varem oli fail vooluhulga järgi joondatud ja need read

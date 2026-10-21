@@ -12,11 +12,20 @@ on:
     # Kord kuus kogu ajalugu uuesti. Igapäevane täisehitus tõmbab ainult viimased
     # aastad ja võtab vanema osa CSV-dest; nii ei jõuaks kohale see, kui agentuur
     # on vanu ridu vahepeal valideerinud või parandanud.
+    # Kord nädalas veetase ja temperatuur kõigile jaamadele. Igapäevane jooks tõmbab
+    # EstModelist ainult vooluhulga: lehel kuvatav veetase tuleb ilmateenistuse XML-ist
+    # reaalajas ja EstModeli H on CSV-s ööpäeva keskmine. Analüüsiks kasutatakse
+    # valideeritud andmeid, mis liiguvad kord aastas.
+    - cron: "0 3 * * 0"
     - cron: "0 4 1 * *"
   workflow_dispatch:
     inputs:
       taisehitus:
         description: "Tee täisehitus (aegread ja CSV-d uuesti)"
+        type: boolean
+        default: false
+      koik_naidud:
+        description: "Tõmba ka veetase ja temperatuur kõigile (nädalane jooks)"
         type: boolean
         default: false
       taielik:
@@ -32,7 +41,8 @@ permissions:
 # jooksud — veetaseme logisse jäi 3,5-tunnine auk ja 12 h vahe kadus lehelt ära.
 concurrency:
   group: uuendus-${{ inputs.taisehitus == 'true' || inputs.taielik == 'true'
-    || github.event.schedule == '30 7 * * *' || github.event.schedule == '0 4 1 * *' }}
+    || github.event.schedule == '30 7 * * *' || github.event.schedule == '0 4 1 * *'
+    || github.event.schedule == '0 3 * * 0' || inputs.koik_naidud == 'true' }}
   cancel-in-progress: false
 
 jobs:
@@ -40,7 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     # Täisehitus võttis 20.10 piirangu tõttu 3,5 tundi. Piir hoiab ära, et mõni jooks
     # saaks tunde põleda ja järgmised enda taha kinni hoida.
-    timeout-minutes: 45
+    # EstModel laseb läbi ~1 päringu minutis. Igapäevane jooks teeb 68 päringut
+    # (~60 min), nädalane 182 (~160 min). Piir hoiab ära tundide kaupa põlemise.
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
 
@@ -59,6 +71,9 @@ jobs:
           if [ "${{ github.event.schedule }}" = "0 4 1 * *" ] || \
              [ "${{ inputs.taielik }}" = "true" ]; then
             echo "lipud=--taielik --valjund docs" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 3 * * 0" ] || \
+               [ "${{ inputs.koik_naidud }}" = "true" ]; then
+            echo "lipud=--koik-naidud --valjund docs" >> "$GITHUB_OUTPUT"
           elif [ "${{ github.event.schedule }}" = "30 7 * * *" ] || \
                [ "${{ inputs.taisehitus }}" = "true" ]; then
             echo "lipud=--valjund docs" >> "$GITHUB_OUTPUT"

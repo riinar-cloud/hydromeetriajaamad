@@ -82,12 +82,32 @@ ONLY_NOW = "--only-now" in sys.argv
 # --taielik sunnib kogu ajaloo uuesti alla: vaja siis, kui agentuur on vanu ridu
 # valideerinud või parandanud. Töövoog teeb seda kord kuus.
 TAIELIK = "--taielik" in sys.argv
+# Igapäevane ehitus tõmbab EstModelist AINULT vooluhulga. Veetase ja temperatuur
+# tulevad sealt ainult kahel otstarbel: CSV veergudeks ja nende viie jaama kuvamiseks,
+# mida ilmateenistuse XML ei kajasta. Lehel näidatav veetase tuleb mujalt — XML-ist,
+# reaalajas. --koik-naidud tõmbab H ja T kõigile; töövoog teeb seda kord nädalas.
+#
+# Miks: EstModel laseb läbi umbes ühe päringu minutis (mõõdetud 237 päringut 208
+# minutiga). 180 päringut ei mahtunud 45 minutisse ja täisehitus katkes.
+KOIK_NAIDUD = "--koik-naidud" in sys.argv or TAIELIK
 
 # jaama nimi -> nimi XML-is, kui lahknevad
 XML_NIMI = {"Kehra (Hüdro)": "Kehra", "Uue-Lõve (Hüdro)": "Uue-Lõve",
             "Narva karjääri": "Narva Karjääri", "Tulijärve": "Tulijarve-WL"}
 # XML-is puuduvad või mitmeti tõlgendatavad (Linnusaarel kaks kandidaati)
 KAARDISTAMATA = {"Linnusaare", "Põhjaka I", "Põhjaka II", "Särevere"}
+
+# Jaamad, mille veetase ja temperatuur EI tule ilmateenistuse XML-ist, vaid EstModeli
+# ööpäevasest reast. Neile tuleb H ja T tõmmata iga päev — muidu näitaks leht nädala
+# vanust näitu. Ülejäänud 52 jaama saavad veetaseme reaalajas XML-ist ja EstModeli H
+# läheb neil ainult CSV-sse, kus nädalane viivitus ei muuda midagi.
+XMLITA = {
+    "SJB4488000",   # Linnusaare
+    "SJB4487000",   # Tulijärve
+    "SJB3766000",   # Särevere
+    "SJA1593000",   # Põhjaka I
+    "SJA4331000",   # Põhjaka II
+}
 
 # Hoiatused jaamade kohta, mille näite mõjutab hüdroelektrijaama töö.
 # Esimene on TSITAAT ilmateenistuse operatiivlehelt; teine on meie oma mõõtmine
@@ -805,7 +825,22 @@ def main():
     # lisapäringut, mille vastus visati ära. EstModel hakkas 14.10.2026 piirama (429) ja
     # siis loeb iga päring: 237 -> 180. Aktiivsus selgub nüüd Q aegreast endast.
     aktiivsed = [s for s in get(f"{EST}/stations") if s["type"] == "HYDROLOGICAL"]
-    print(f"     hüdroloogilisi jaamu: {len(aktiivsed)}", flush=True)
+    # Igapäevaselt küsime Q ainult jaamadelt, mis eelmisel korral aktiivsed olid.
+    # Mitteaktiivne jaam maksab ühe päringu ja piirangu juures loeb iga päring.
+    # --taielik skaneerib kogu nimekirja uuesti ja leiab nii ka uued jaamad.
+    ids_fail = os.path.join(BASE, "andmed", "ids.json")
+    if not TAIELIK and os.path.exists(ids_fail):
+        try:
+            teada = set(json.load(open(ids_fail, encoding="utf-8")))
+            if teada:
+                enne = len(aktiivsed)
+                aktiivsed = [s for s in aktiivsed if s["code"] in teada]
+                print(f"     hüdroloogilisi jaamu {enne}, neist teadaolevalt aktiivseid "
+                      f"{len(aktiivsed)} (--taielik skaneerib kõik üle)", flush=True)
+        except Exception as e:
+            print(f"     hoiatus: ids.json ei õnnestunud lugeda ({e})", flush=True)
+    else:
+        print(f"     hüdroloogilisi jaamu: {len(aktiivsed)}", flush=True)
 
     print("2/4  register ...", flush=True)
     koodid = ",".join(s["code"] for s in aktiivsed)
@@ -857,12 +892,25 @@ def main():
             continue
         if ts["Q"]["end"].year < datetime.date.today().year:
             continue                      # viimane vooluhulk on möödunud aastast
-        for par in ("H", "T"):
-            try:
-                t = aegrida(kkr, par, ajalugu, alates)
-                if t: ts[par] = t
-            except Exception as e:
-                vead.append(f"{kkr} {par}: {e}")
+        # H ja T ainult siis, kui vaja: kord nädalas kõigile, iga päev neile jaamadele,
+        # mille veetase ei tule XML-ist (muidu näitaks leht neil nädala vanust näitu).
+        if KOIK_NAIDUD or kkr in XMLITA:
+            for par in ("H", "T"):
+                try:
+                    t = aegrida(kkr, par, ajalugu, alates)
+                    if t: ts[par] = t
+                except Exception as e:
+                    vead.append(f"{kkr} {par}: {e}")
+        else:
+            # Vanad väärtused CSV-st, et aegrida ja CSV ei jääks poolikuks.
+            for par in ("H", "T"):
+                vana = (ajalugu or {}).get(par)
+                if vana:
+                    d0, d1 = min(vana), max(vana)
+                    v = [None] * ((d1 - d0).days + 1)
+                    for d, x in vana.items():
+                        v[(d - d0).days] = x
+                    ts[par] = {"start": d0, "end": d1, "v": v, "first_unchecked": None}
 
         Q = ts["Q"]
         ppQ = paarid(Q)
